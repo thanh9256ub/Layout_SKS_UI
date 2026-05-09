@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skysoft Go</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+</head>
+
+
+<body>
+    <section id="sp-main-body">
+        <div class="container-fluid">
+            <div class="main-content bg-white route-screen camera-screen">
+                <div id="filter-camera">
+                    <form id="filterForm" class="camera-filter" autocomplete="off">
+                        <div class="filter-main">
+                            <div class="field">
+                                <span class="icon">🚛</span>
+                                <select id="groupSelect">
+                                    <option value="all">Tất cả loại xe</option>
+                                    <option value="camera">Nhóm TB Cam quay</option>
+                                    <option value="taxi">Nhóm Taxi M8</option>
+                                    <option value="bus">Nhóm xe Bus - Camera</option>
+                                    <option value="truck">Nhóm xe tải hàng - Cảm biến dầu</option>
+                                </select>
+                            </div>
+                            <div class="field" style="position: relative;">
+                                <span class="icon">🔎</span>
+                                <input type="text" id="plateInput" placeholder="Biển số (VD: 30A-12345)"
+                                    autocomplete="off" />
+                                <ul id="plate-suggestions" class="suggestions-list"></ul>
+                            </div>
+                            <!-- <div class="field">
+                                <span class="icon">🗓️</span>
+                                <input type="date" id="dateInput" />
+                            </div> -->
+                            <div class="actions">
+                                <button type="submit" class="btn-search">Tìm kiếm</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="list-image">
+                    <div class="container">
+                        <div class="gallery-grid" id="gallery"></div>
+                    </div>
+                    <div class="lightbox" id="lightbox">
+                        <div class="lightbox-filter-container">
+                            <!-- Removed lightbox-title from here -->
+                            <form id="lightboxFilterForm" class="camera-filter" autocomplete="off">
+                                <div class="filter-main">
+                                    <div class="field" style="position: relative;">
+                                        <span class="icon">🔎</span>
+                                        <input type="text" id="plateInput" placeholder="Biển số (VD: 30A-12345)"
+                                            autocomplete="off" />
+                                        <ul id="plate-suggestions" class="suggestions-list"></ul>
+                                    </div>
+                                    <div class="field">
+                                        <span class="icon">📷</span>
+                                        <input type="text" id="camInput" placeholder="Camera (tùy chọn)" />
+                                    </div>
+                                    <div class="field">
+                                        <span class="icon">🗓️</span>
+                                        <input type="date" id="lbDateInput" />
+                                    </div>
+                                    <div class="field">
+                                        <span class="icon">⏱</span>
+                                        <input type="time" id="timeFrom" placeholder="Từ giờ" />
+                                    </div>
+                                    <div class="field">
+                                        <span class="icon">⏱</span>
+                                        <input type="time" id="timeTo" placeholder="Đến giờ" />
+                                    </div>
+                                    <div class="actions">
+                                        <button type="submit" class="btn btn-warning text-white">Lọc</button>
+                                        <button class="btn-light" onclick="closeLightbox()">Hủy</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="lightbox-content">
+                            <button class="lightbox-nav prev" onclick="navigateImage(-1)">‹</button>
+                            <div class="lightbox-image-container">
+                                <img class="lightbox-image" id="lightboxImage" src="" alt="">
+                                <div class="lightbox-info-bar" id="lightboxInfoBar">
+                                </div>
+                            </div>
+                            <button class="lightbox-nav next" onclick="navigateImage(1)">›</button>
+                        </div>
+                        <div class="thumbnail-progress-container">
+                            <div class="progress-bar-track" id="progressTrack">
+                                <div class="progress-bar-fill" id="progressFill"></div>
+                                <div class="progress-bar-thumb" id="progressThumb"></div>
+                                <div class="progress-time-tooltip" id="progressTooltip">
+                                    <div class="tooltip-time"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lightbox-thumbnails">
+                            <div class="thumbnails-scroll" id="thumbnails"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/local-fetch.js"></script>
+    <script src="../js/auth-guard.js"></script>
+    <script src="../js/navbar-loader.js"></script>
+    <script src="../js/router.js"></script>
+    <script src="../js/home/navbar.js"></script>
+</body>
+
+</html>

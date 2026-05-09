@@ -1,0 +1,1634 @@
+{
+  "temperature": [
+    {
+      "time": "15/01/2024 10:30:25",
+      "coordinate": "21.0285, 105.8542",
+      "speed": "45 km/h",
+      "machineStatus": "Bật",
+      "gpsStatus": "Tốt",
+      "temperA": "25.5",
+      "temperB": "28.3",
+      "address": "123 Đường ABC, Quận XYZ, Hà Nội",
+      "vibration": "0.5"
+    },
+    {
+      "time": "15/01/2024 10:31:10",
+      "coordinate": "21.0287, 105.8545",
+      "speed": "50 km/h",
+      "machineStatus": "Bật",
+      "gpsStatus": "Tốt",
+      "temperA": "26.1",
+      "temperB": "29.0",
+      "address": "125 Đường ABC, Quận XYZ, Hà Nội",
+      "vibration": "0.6"
+    },
+    {
+      "time": "15/01/2024 10:32:00",
+      "coordinate": "21.0290, 105.8548",
+      "speed": "48 km/h",
+      "machineStatus": "Bật",
+      "gpsStatus": "Tốt",
+      "temperA": "25.8",
+      "temperB": "28.7",
+      "address": "127 Đường ABC, Quận XYZ, Hà Nội",
+      "vibration": "0.55"
+    },
+    {
+      "time": "15/01/2024 10:33:15",
+      "coordinate": "21.0293, 105.8551",
+      "speed": "52 km/h",
+      "machineStatus": "Bật",
+      "gpsStatus": "Tốt",
+      "temperA": "26.5",
+      "temperB": "29.5",
+      "address": "129 Đường ABC, Quận XYZ, Hà Nội",
+      "vibration": "0.65"
+    },
+    {
+      "time": "15/01/2024 10:34:30",
+      "coordinate": "21.0296, 105.8554",
+      "speed": "47 km/h",
+      "machineStatus": "Bật",
+      "gpsStatus": "Tốt",
+      "temperA": "26.0",
+      "temperB": "28.9",
+      "address": "131 Đường ABC, Quận XYZ, Hà Nội",
+      "vibration": "0.58"
+    }
+  ],
+  "stopPoints": [
+    {
+      "time": "15/01/2024 08:30:25",
+      "distance": "15.5",
+      "travelTime": "00:25:30",
+      "stopTime": "00:05:00",
+      "engineIdleTime": "00:02:30",
+      "point": "Điểm dừng 1",
+      "address": "123 Đường ABC, Quận XYZ, Hà Nội"
+    },
+    {
+      "time": "15/01/2024 09:15:10",
+      "distance": "32.8",
+      "travelTime": "00:45:00",
+      "stopTime": "00:10:00",
+      "engineIdleTime": "00:03:00",
+      "point": "Điểm dừng 2",
+      "address": "456 Đường DEF, Quận ABC, Hà Nội"
+    },
+    {
+      "time": "15/01/2024 10:00:00",
+      "distance": "48.2",
+      "travelTime": "01:15:30",
+      "stopTime": "00:08:00",
+      "engineIdleTime": "00:04:00",
+      "point": "Điểm dừng 3",
+      "address": "789 Đường GHI, Quận DEF, Hà Nội"
+    },
+    {
+      "time": "15/01/2024 11:20:15",
+      "distance": "65.5",
+      "travelTime": "01:40:00",
+      "stopTime": "00:12:00",
+      "engineIdleTime": "00:05:00",
+      "point": "Điểm dừng 4",
+      "address": "321 Đường JKL, Quận GHI, Hà Nội"
+    },
+    {
+      "time": "15/01/2024 12:30:45",
+      "distance": "82.3",
+      "travelTime": "02:10:00",
+      "stopTime": "00:15:00",
+      "engineIdleTime": "00:06:00",
+      "point": "Điểm dừng 5",
+      "address": "654 Đường MNO, Quận JKL, Hà Nội"
+    }
+  ],
+  "journeyAdco": [
+    {
+      "plate": "29A-12345",
+      "start": "06/11/2025 08:00:00",
+      "end": "06/11/2025 18:30:00",
+      "km": "245.5",
+      "maxSpeed": "85 km/h",
+      "avgSpeed": "52 km/h",
+      "startLocation": "123 Đường ABC, Quận XYZ, Hà Nội",
+      "endLocation": "456 Đường DEF, Quận ABC, Hà Nội",
+      "drivingTime": "08:30:00",
+      "restTime": "01:00:00",
+      "workingTime": "10:30:00"
+    },
+    {
+      "plate": "29B-67890",
+      "start": "06/11/2025 07:30:00",
+      "end": "06/11/2025 17:45:00",
+      "km": "198.3",
+      "maxSpeed": "78 km/h",
+      "avgSpeed": "48 km/h",
+      "startLocation": "789 Đường GHI, Quận DEF, Hà Nội",
+      "endLocation": "321 Đường JKL, Quận GHI, Hà Nội",
+      "drivingTime": "07:15:00",
+      "restTime": "01:00:00",
+      "workingTime": "10:15:00"
+    },
+    {
+      "plate": "29C-11111",
+      "start": "06/11/2025 09:00:00",
+      "end": "06/11/2025 19:00:00",
+      "km": "312.8",
+      "maxSpeed": "92 km/h",
+      "avgSpeed": "55 km/h",
+      "startLocation": "654 Đường MNO, Quận JKL, Hà Nội",
+      "endLocation": "987 Đường PQR, Quận MNO, Hà Nội",
+      "drivingTime": "09:00:00",
+      "restTime": "01:00:00",
+      "workingTime": "10:00:00"
+    },
+    {
+      "plate": "29A-12345",
+      "start": "06/11/2025 08:15:00",
+      "end": "06/11/2025 18:00:00",
+      "km": "267.4",
+      "maxSpeed": "88 km/h",
+      "avgSpeed": "53 km/h",
+      "startLocation": "111 Đường STU, Quận PQR, Hà Nội",
+      "endLocation": "222 Đường VWX, Quận STU, Hà Nội",
+      "drivingTime": "08:45:00",
+      "restTime": "01:00:00",
+      "workingTime": "09:45:00"
+    },
+    {
+      "plate": "29B-67890",
+      "start": "06/11/2025 07:00:00",
+      "end": "06/11/2025 17:30:00",
+      "km": "223.6",
+      "maxSpeed": "80 km/h",
+      "avgSpeed": "50 km/h",
+      "startLocation": "333 Đường YZA, Quận VWX, Hà Nội",
+      "endLocation": "444 Đường BCD, Quận YZA, Hà Nội",
+      "drivingTime": "08:00:00",
+      "restTime": "02:30:00",
+      "workingTime": "10:30:00"
+    }
+  ],
+  "vehicleHistory": [
+    {
+      "time": "06/11/2025 08:00:15",
+      "coordinate": "21.0285, 105.8542",
+      "speed": "45 km/h",
+      "machineStatus": "Bật",
+      "gpsStatus": "Tốt",
+      "fuel": "75.5 L",
+      "address": "123 Đường ABC, Quận XYZ, Hà Nội",
+      "vibration": "0.5"
+    },
+    {
+      "time": "06/11/2025 08:15:30",
+      "coordinate": "21.0287, 105.8545",
+      "speed": "52 km/h",
+      "machineStatus": "Bật",
+      "gpsStatus": "Tốt",
+      "fuel": "74.8 L",
+      "address": "125 Đường ABC, Quận XYZ, Hà Nội",
+      "vibration": "0.6"
+    },
+    {
+      "time": "06/11/2025 08:30:45",
+      "coordinate": "21.0290, 105.8548",
+      "speed": "48 km/h",
+      "machineStatus": "Bật",
+      "gpsStatus": "Tốt",
+      "fuel": "74.2 L",
+      "address": "127 Đường ABC, Quận XYZ, Hà Nội",
+      "vibration": "0.55"
+    },
+    {
+      "time": "06/11/2025 08:45:20",
+      "coordinate": "21.0293, 105.8551",
+      "speed": "60 km/h",
+      "machineStatus": "Bật",
+      "gpsStatus": "Tốt",
+      "fuel": "73.5 L",
+      "address": "129 Đường ABC, Quận XYZ, Hà Nội",
+      "vibration": "0.65"
+    },
+    {
+      "time": "06/11/2025 09:00:10",
+      "coordinate": "21.0296, 105.8554",
+      "speed": "38 km/h",
+      "machineStatus": "Bật",
+      "gpsStatus": "Tốt",
+      "fuel": "72.9 L",
+      "address": "131 Đường ABC, Quận XYZ, Hà Nội",
+      "vibration": "0.48"
+    },
+    {
+      "time": "06/11/2025 09:15:35",
+      "coordinate": "21.0299, 105.8557",
+      "speed": "55 km/h",
+      "machineStatus": "Bật",
+      "gpsStatus": "Tốt",
+      "fuel": "72.1 L",
+      "address": "133 Đường ABC, Quận XYZ, Hà Nội",
+      "vibration": "0.58"
+    },
+    {
+      "time": "06/11/2025 09:30:50",
+      "coordinate": "21.0302, 105.8560",
+      "speed": "42 km/h",
+      "machineStatus": "Bật",
+      "gpsStatus": "Tốt",
+      "fuel": "71.4 L",
+      "address": "135 Đường ABC, Quận XYZ, Hà Nội",
+      "vibration": "0.52"
+    },
+    {
+      "time": "06/11/2025 09:45:25",
+      "coordinate": "21.0305, 105.8563",
+      "speed": "50 km/h",
+      "machineStatus": "Bật",
+      "gpsStatus": "Tốt",
+      "fuel": "70.8 L",
+      "address": "137 Đường ABC, Quận XYZ, Hà Nội",
+      "vibration": "0.62"
+    },
+    {
+      "time": "06/11/2025 10:00:40",
+      "coordinate": "21.0308, 105.8566",
+      "speed": "47 km/h",
+      "machineStatus": "Bật",
+      "gpsStatus": "Tốt",
+      "fuel": "70.2 L",
+      "address": "139 Đường ABC, Quận XYZ, Hà Nội",
+      "vibration": "0.55"
+    },
+    {
+      "time": "06/11/2025 10:15:15",
+      "coordinate": "21.0311, 105.8569",
+      "speed": "43 km/h",
+      "machineStatus": "Bật",
+      "gpsStatus": "Tốt",
+      "fuel": "69.6 L",
+      "address": "141 Đường ABC, Quận XYZ, Hà Nội",
+      "vibration": "0.50"
+    },
+    {
+      "time": "06/11/2025 10:30:30",
+      "coordinate": "21.0314, 105.8572",
+      "speed": "58 km/h",
+      "machineStatus": "Bật",
+      "gpsStatus": "Tốt",
+      "fuel": "68.9 L",
+      "address": "143 Đường ABC, Quận XYZ, Hà Nội",
+      "vibration": "0.68"
+    },
+    {
+      "time": "06/11/2025 10:45:45",
+      "coordinate": "21.0317, 105.8575",
+      "speed": "40 km/h",
+      "machineStatus": "Bật",
+      "gpsStatus": "Tốt",
+      "fuel": "68.3 L",
+      "address": "145 Đường ABC, Quận XYZ, Hà Nội",
+      "vibration": "0.45"
+    },
+    {
+      "time": "06/11/2025 11:00:20",
+      "coordinate": "21.0320, 105.8578",
+      "speed": "53 km/h",
+      "machineStatus": "Bật",
+      "gpsStatus": "Tốt",
+      "fuel": "67.7 L",
+      "address": "147 Đường ABC, Quận XYZ, Hà Nội",
+      "vibration": "0.60"
+    },
+    {
+      "time": "06/11/2025 11:15:35",
+      "coordinate": "21.0323, 105.8581",
+      "speed": "45 km/h",
+      "machineStatus": "Bật",
+      "gpsStatus": "Tốt",
+      "fuel": "67.1 L",
+      "address": "149 Đường ABC, Quận XYZ, Hà Nội",
+      "vibration": "0.55"
+    },
+    {
+      "time": "06/11/2025 11:30:50",
+      "coordinate": "21.0326, 105.8584",
+      "speed": "49 km/h",
+      "machineStatus": "Bật",
+      "gpsStatus": "Tốt",
+      "fuel": "66.5 L",
+      "address": "151 Đường ABC, Quận XYZ, Hà Nội",
+      "vibration": "0.52"
+    }
+  ],
+  "routeBasedRoadmap": [
+    {
+      "plate": "29A-12345",
+      "startEnd": "Bắt đầu",
+      "departureDestination": "La Tiến",
+      "checkPoint": "Trạm 1 - La Tiến",
+      "arrivalTime": "08:00:00",
+      "timeSpent": "5 phút",
+      "stopAtPoint": "Có",
+      "km": "0.0",
+      "numberOfStops": "1",
+      "cumulativeStops": "1",
+      "overspeed": "0",
+      "cumulativeOverspeed": "0"
+    },
+    {
+      "plate": "29A-12345",
+      "startEnd": "",
+      "departureDestination": "",
+      "checkPoint": "Trạm 2 - Cầu Giấy",
+      "arrivalTime": "08:15:00",
+      "timeSpent": "3 phút",
+      "stopAtPoint": "Có",
+      "km": "2.3",
+      "numberOfStops": "1",
+      "cumulativeStops": "2",
+      "overspeed": "0",
+      "cumulativeOverspeed": "0"
+    },
+    {
+      "plate": "29A-12345",
+      "startEnd": "",
+      "departureDestination": "",
+      "checkPoint": "Trạm 3 - Ngã Tư Sở",
+      "arrivalTime": "08:30:00",
+      "timeSpent": "0 phút",
+      "stopAtPoint": "Không",
+      "km": "5.5",
+      "numberOfStops": "0",
+      "cumulativeStops": "2",
+      "overspeed": "1",
+      "cumulativeOverspeed": "1"
+    },
+    {
+      "plate": "29A-12345",
+      "startEnd": "",
+      "departureDestination": "",
+      "checkPoint": "Trạm 4 - Bến Xe Giáp Bát",
+      "arrivalTime": "08:45:00",
+      "timeSpent": "8 phút",
+      "stopAtPoint": "Có",
+      "km": "8.2",
+      "numberOfStops": "1",
+      "cumulativeStops": "3",
+      "overspeed": "0",
+      "cumulativeOverspeed": "1"
+    },
+    {
+      "plate": "29A-12345",
+      "startEnd": "Kết thúc",
+      "departureDestination": "Giáp Bát",
+      "checkPoint": "Trạm 5 - Giáp Bát",
+      "arrivalTime": "09:00:00",
+      "timeSpent": "0 phút",
+      "stopAtPoint": "Không",
+      "km": "10.0",
+      "numberOfStops": "0",
+      "cumulativeStops": "3",
+      "overspeed": "0",
+      "cumulativeOverspeed": "1"
+    },
+    {
+      "plate": "29B-67890",
+      "startEnd": "Bắt đầu",
+      "departureDestination": "La Tiến",
+      "checkPoint": "Trạm 1 - La Tiến",
+      "arrivalTime": "08:30:00",
+      "timeSpent": "4 phút",
+      "stopAtPoint": "Có",
+      "km": "0.0",
+      "numberOfStops": "1",
+      "cumulativeStops": "1",
+      "overspeed": "0",
+      "cumulativeOverspeed": "0"
+    },
+    {
+      "plate": "29B-67890",
+      "startEnd": "",
+      "departureDestination": "",
+      "checkPoint": "Trạm 2 - Cầu Giấy",
+      "arrivalTime": "08:45:00",
+      "timeSpent": "2 phút",
+      "stopAtPoint": "Có",
+      "km": "2.3",
+      "numberOfStops": "1",
+      "cumulativeStops": "2",
+      "overspeed": "0",
+      "cumulativeOverspeed": "0"
+    },
+    {
+      "plate": "29B-67890",
+      "startEnd": "",
+      "departureDestination": "",
+      "checkPoint": "Trạm 3 - Ngã Tư Sở",
+      "arrivalTime": "09:00:00",
+      "timeSpent": "0 phút",
+      "stopAtPoint": "Không",
+      "km": "5.5",
+      "numberOfStops": "0",
+      "cumulativeStops": "2",
+      "overspeed": "0",
+      "cumulativeOverspeed": "0"
+    },
+    {
+      "plate": "29B-67890",
+      "startEnd": "",
+      "departureDestination": "",
+      "checkPoint": "Trạm 4 - Bến Xe Giáp Bát",
+      "arrivalTime": "09:15:00",
+      "timeSpent": "6 phút",
+      "stopAtPoint": "Có",
+      "km": "8.2",
+      "numberOfStops": "1",
+      "cumulativeStops": "3",
+      "overspeed": "0",
+      "cumulativeOverspeed": "0"
+    },
+    {
+      "plate": "29B-67890",
+      "startEnd": "Kết thúc",
+      "departureDestination": "Giáp Bát",
+      "checkPoint": "Trạm 5 - Giáp Bát",
+      "arrivalTime": "09:30:00",
+      "timeSpent": "0 phút",
+      "stopAtPoint": "Không",
+      "km": "10.0",
+      "numberOfStops": "0",
+      "cumulativeStops": "3",
+      "overspeed": "1",
+      "cumulativeOverspeed": "1"
+    },
+    {
+      "plate": "29C-11111",
+      "startEnd": "Bắt đầu",
+      "departureDestination": "La Tiến",
+      "checkPoint": "Trạm 1 - La Tiến",
+      "arrivalTime": "09:00:00",
+      "timeSpent": "6 phút",
+      "stopAtPoint": "Có",
+      "km": "0.0",
+      "numberOfStops": "1",
+      "cumulativeStops": "1",
+      "overspeed": "0",
+      "cumulativeOverspeed": "0"
+    },
+    {
+      "plate": "29C-11111",
+      "startEnd": "",
+      "departureDestination": "",
+      "checkPoint": "Trạm 2 - Cầu Giấy",
+      "arrivalTime": "09:18:00",
+      "timeSpent": "4 phút",
+      "stopAtPoint": "Có",
+      "km": "2.3",
+      "numberOfStops": "1",
+      "cumulativeStops": "2",
+      "overspeed": "0",
+      "cumulativeOverspeed": "0"
+    },
+    {
+      "plate": "29C-11111",
+      "startEnd": "",
+      "departureDestination": "",
+      "checkPoint": "Trạm 3 - Ngã Tư Sở",
+      "arrivalTime": "09:35:00",
+      "timeSpent": "0 phút",
+      "stopAtPoint": "Không",
+      "km": "5.5",
+      "numberOfStops": "0",
+      "cumulativeStops": "2",
+      "overspeed": "2",
+      "cumulativeOverspeed": "2"
+    },
+    {
+      "plate": "29C-11111",
+      "startEnd": "",
+      "departureDestination": "",
+      "checkPoint": "Trạm 4 - Bến Xe Giáp Bát",
+      "arrivalTime": "09:50:00",
+      "timeSpent": "10 phút",
+      "stopAtPoint": "Có",
+      "km": "8.2",
+      "numberOfStops": "1",
+      "cumulativeStops": "3",
+      "overspeed": "0",
+      "cumulativeOverspeed": "2"
+    },
+    {
+      "plate": "29C-11111",
+      "startEnd": "Kết thúc",
+      "departureDestination": "Giáp Bát",
+      "checkPoint": "Trạm 5 - Giáp Bát",
+      "arrivalTime": "10:05:00",
+      "timeSpent": "0 phút",
+      "stopAtPoint": "Không",
+      "km": "10.0",
+      "numberOfStops": "0",
+      "cumulativeStops": "3",
+      "overspeed": "0",
+      "cumulativeOverspeed": "2"
+    }
+  ],
+  "fuelUsage": [
+    {
+      "plate": "29A-12345",
+      "date": "27/11/2025",
+      "time": "08:00:00",
+      "inTank": "75.5",
+      "initialStock": "80.0",
+      "added": "0.0",
+      "consumed": "4.5",
+      "finalStock": "75.5",
+      "location": "Trạm xăng La Tiến, Hà Nội"
+    },
+    {
+      "plate": "29A-12345",
+      "date": "27/11/2025",
+      "time": "10:30:00",
+      "inTank": "60.2",
+      "initialStock": "75.5",
+      "added": "0.0",
+      "consumed": "15.3",
+      "finalStock": "60.2",
+      "location": "Trạm xăng Cầu Giấy, Hà Nội"
+    },
+    {
+      "plate": "29A-12345",
+      "date": "27/11/2025",
+      "time": "12:00:00",
+      "inTank": "100.0",
+      "initialStock": "60.2",
+      "added": "50.0",
+      "consumed": "10.2",
+      "finalStock": "100.0",
+      "location": "Trạm xăng Ngã Tư Sở, Hà Nội"
+    },
+    {
+      "plate": "29A-12345",
+      "date": "27/11/2025",
+      "time": "15:30:00",
+      "inTank": "85.5",
+      "initialStock": "100.0",
+      "added": "0.0",
+      "consumed": "14.5",
+      "finalStock": "85.5",
+      "location": "Trạm xăng Bến Xe Giáp Bát, Hà Nội"
+    },
+    {
+      "plate": "29B-67890",
+      "date": "27/11/2025",
+      "time": "08:15:00",
+      "inTank": "70.0",
+      "initialStock": "75.0",
+      "added": "0.0",
+      "consumed": "5.0",
+      "finalStock": "70.0",
+      "location": "Trạm xăng La Tiến, Hà Nội"
+    },
+    {
+      "plate": "29B-67890",
+      "date": "27/11/2025",
+      "time": "11:00:00",
+      "inTank": "55.5",
+      "initialStock": "70.0",
+      "added": "0.0",
+      "consumed": "14.5",
+      "finalStock": "55.5",
+      "location": "Trạm xăng Cầu Giấy, Hà Nội"
+    },
+    {
+      "plate": "29B-67890",
+      "date": "27/11/2025",
+      "time": "13:30:00",
+      "inTank": "95.0",
+      "initialStock": "55.5",
+      "added": "50.0",
+      "consumed": "10.5",
+      "finalStock": "95.0",
+      "location": "Trạm xăng Ngã Tư Sở, Hà Nội"
+    },
+    {
+      "plate": "29B-67890",
+      "date": "27/11/2025",
+      "time": "16:00:00",
+      "inTank": "80.2",
+      "initialStock": "95.0",
+      "added": "0.0",
+      "consumed": "14.8",
+      "finalStock": "80.2",
+      "location": "Trạm xăng Bến Xe Giáp Bát, Hà Nội"
+    },
+    {
+      "plate": "29C-11111",
+      "date": "27/11/2025",
+      "time": "09:00:00",
+      "inTank": "68.5",
+      "initialStock": "72.0",
+      "added": "0.0",
+      "consumed": "3.5",
+      "finalStock": "68.5",
+      "location": "Trạm xăng La Tiến, Hà Nội"
+    },
+    {
+      "plate": "29C-11111",
+      "date": "27/11/2025",
+      "time": "11:45:00",
+      "inTank": "50.0",
+      "initialStock": "68.5",
+      "added": "0.0",
+      "consumed": "18.5",
+      "finalStock": "50.0",
+      "location": "Trạm xăng Cầu Giấy, Hà Nội"
+    },
+    {
+      "plate": "29C-11111",
+      "date": "27/11/2025",
+      "time": "14:15:00",
+      "inTank": "90.0",
+      "initialStock": "50.0",
+      "added": "50.0",
+      "consumed": "10.0",
+      "finalStock": "90.0",
+      "location": "Trạm xăng Ngã Tư Sở, Hà Nội"
+    },
+    {
+      "plate": "29C-11111",
+      "date": "27/11/2025",
+      "time": "17:00:00",
+      "inTank": "75.5",
+      "initialStock": "90.0",
+      "added": "0.0",
+      "consumed": "14.5",
+      "finalStock": "75.5",
+      "location": "Trạm xăng Bến Xe Giáp Bát, Hà Nội"
+    }
+  ],
+  "events": [
+    {
+      "time": "27/11/2025 08:15:30",
+      "event": "Khởi động xe",
+      "notes": "Xe khởi động thành công",
+      "location": "123 Đường ABC, Quận XYZ, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 09:30:45",
+      "event": "Dừng đỗ",
+      "notes": "Dừng tại trạm xăng",
+      "location": "Trạm xăng Cầu Giấy, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 10:45:20",
+      "event": "Vượt tốc độ",
+      "notes": "Vượt quá tốc độ cho phép 5 km/h",
+      "location": "Đường Nguyễn Trãi, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 12:00:10",
+      "event": "Dừng đỗ",
+      "notes": "Dừng tại điểm đón khách",
+      "location": "Bến xe Giáp Bát, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 13:20:35",
+      "event": "Tắt máy",
+      "notes": "Tắt máy khi dừng lâu",
+      "location": "456 Đường DEF, Quận ABC, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 14:35:50",
+      "event": "Khởi động xe",
+      "notes": "Khởi động lại sau khi nghỉ",
+      "location": "456 Đường DEF, Quận ABC, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 15:50:15",
+      "event": "Cảnh báo nhiên liệu",
+      "notes": "Mức nhiên liệu thấp dưới 20%",
+      "location": "789 Đường GHI, Quận DEF, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 17:10:40",
+      "event": "Dừng đỗ",
+      "notes": "Dừng tại trạm bảo dưỡng",
+      "location": "Trạm bảo dưỡng XYZ, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 18:25:25",
+      "event": "Tắt máy",
+      "notes": "Kết thúc ca làm việc",
+      "location": "Bãi đỗ xe công ty, Hà Nội"
+    }
+  ],
+  "speedViolation": [
+    {
+      "plate": "36F-010.12",
+      "time": "27/11/2025 08:30:15",
+      "coordinate": "21.0285, 105.8542",
+      "speed": "75",
+      "speedLimit": "60",
+      "address": "Đường Nguyễn Trãi, Quận Thanh Xuân, Hà Nội"
+    },
+    {
+      "plate": "36F-010.12",
+      "time": "27/11/2025 10:15:30",
+      "coordinate": "21.0300, 105.8560",
+      "speed": "85",
+      "speedLimit": "50",
+      "address": "Đường Giải Phóng, Quận Hai Bà Trưng, Hà Nội"
+    },
+    {
+      "plate": "36F-010.12",
+      "time": "27/11/2025 12:45:20",
+      "coordinate": "21.0320, 105.8580",
+      "speed": "70",
+      "speedLimit": "60",
+      "address": "Đường Láng, Quận Đống Đa, Hà Nội"
+    },
+    {
+      "plate": "36F-010.12",
+      "time": "27/11/2025 14:20:45",
+      "coordinate": "21.0340, 105.8600",
+      "speed": "90",
+      "speedLimit": "60",
+      "address": "Đường Trường Chinh, Quận Thanh Xuân, Hà Nội"
+    },
+    {
+      "plate": "36F-010.12",
+      "time": "27/11/2025 16:10:10",
+      "coordinate": "21.0360, 105.8620",
+      "speed": "65",
+      "speedLimit": "50",
+      "address": "Đường Phạm Văn Đồng, Quận Cầu Giấy, Hà Nội"
+    },
+    {
+      "plate": "29A-12345",
+      "time": "27/11/2025 09:00:25",
+      "coordinate": "21.0287, 105.8545",
+      "speed": "80",
+      "speedLimit": "60",
+      "address": "Đường Nguyễn Trãi, Quận Thanh Xuân, Hà Nội"
+    },
+    {
+      "plate": "29A-12345",
+      "time": "27/11/2025 11:30:50",
+      "coordinate": "21.0305, 105.8565",
+      "speed": "72",
+      "speedLimit": "60",
+      "address": "Đường Giải Phóng, Quận Hai Bà Trưng, Hà Nội"
+    },
+    {
+      "plate": "29B-67890",
+      "time": "27/11/2025 08:45:15",
+      "coordinate": "21.0290, 105.8548",
+      "speed": "68",
+      "speedLimit": "50",
+      "address": "Đường Láng, Quận Đống Đa, Hà Nội"
+    },
+    {
+      "plate": "29B-67890",
+      "time": "27/11/2025 13:15:35",
+      "coordinate": "21.0330, 105.8590",
+      "speed": "78",
+      "speedLimit": "60",
+      "address": "Đường Trường Chinh, Quận Thanh Xuân, Hà Nội"
+    },
+    {
+      "plate": "29C-11111",
+      "time": "27/11/2025 10:00:40",
+      "coordinate": "21.0295, 105.8550",
+      "speed": "82",
+      "speedLimit": "60",
+      "address": "Đường Phạm Văn Đồng, Quận Cầu Giấy, Hà Nội"
+    }
+  ],
+  "summaryNew": [
+    {
+      "plate": "29A-12345",
+      "km": "245.5",
+      "runningTime": "510",
+      "idlingTime": "45",
+      "workingTimeBySensor": "480",
+      "stoppingTime": "120",
+      "numberOfStops": "8",
+      "numberOfOverspeeds": "3",
+      "maxSpeed": "85",
+      "fuelConsumed": "45.5",
+      "fuelAdded": "50.0",
+      "route": "La Tiến - Giáp Bát"
+    },
+    {
+      "plate": "29B-67890",
+      "km": "198.3",
+      "runningTime": "435",
+      "idlingTime": "30",
+      "workingTimeBySensor": "420",
+      "stoppingTime": "90",
+      "numberOfStops": "6",
+      "numberOfOverspeeds": "2",
+      "maxSpeed": "78",
+      "fuelConsumed": "38.2",
+      "fuelAdded": "40.0",
+      "route": "Mỹ Đình - Nam Thăng Long"
+    },
+    {
+      "plate": "29C-11111",
+      "km": "312.8",
+      "runningTime": "540",
+      "idlingTime": "60",
+      "workingTimeBySensor": "510",
+      "stoppingTime": "150",
+      "numberOfStops": "10",
+      "numberOfOverspeeds": "5",
+      "maxSpeed": "92",
+      "fuelConsumed": "58.5",
+      "fuelAdded": "60.0",
+      "route": "Nam Thăng Long - Mỹ Đình"
+    },
+    {
+      "plate": "36F-010.12",
+      "km": "267.4",
+      "runningTime": "525",
+      "idlingTime": "40",
+      "workingTimeBySensor": "495",
+      "stoppingTime": "135",
+      "numberOfStops": "9",
+      "numberOfOverspeeds": "4",
+      "maxSpeed": "88",
+      "fuelConsumed": "52.3",
+      "fuelAdded": "55.0",
+      "route": "La Tiến - Giáp Bát"
+    },
+    {
+      "plate": "29A-12345",
+      "km": "223.6",
+      "runningTime": "480",
+      "idlingTime": "35",
+      "workingTimeBySensor": "450",
+      "stoppingTime": "105",
+      "numberOfStops": "7",
+      "numberOfOverspeeds": "1",
+      "maxSpeed": "80",
+      "fuelConsumed": "42.8",
+      "fuelAdded": "45.0",
+      "route": "Mỹ Đình - Nam Thăng Long"
+    }
+  ],
+  "summary3d": [
+    {
+      "plate": "29A-12345",
+      "date": "27/11/20",
+      "km": "245.5",
+      "machine3dOn": "480",
+      "engineStop": "45",
+      "machineShutdown": "30",
+      "fuelConsumed": "45.5",
+      "fuelSupplied": "50.0"
+    },
+    {
+      "plate": "29A-12345",
+      "date": "28/11/20",
+      "km": "267.4",
+      "machine3dOn": "510",
+      "engineStop": "40",
+      "machineShutdown": "35",
+      "fuelConsumed": "52.3",
+      "fuelSupplied": "55.0"
+    },
+    {
+      "plate": "29B-67890",
+      "date": "27/11/20",
+      "km": "198.3",
+      "machine3dOn": "435",
+      "engineStop": "30",
+      "machineShutdown": "25",
+      "fuelConsumed": "38.2",
+      "fuelSupplied": "40.0"
+    },
+    {
+      "plate": "29B-67890",
+      "date": "28/11/20",
+      "km": "223.6",
+      "machine3dOn": "480",
+      "engineStop": "35",
+      "machineShutdown": "30",
+      "fuelConsumed": "42.8",
+      "fuelSupplied": "45.0"
+    },
+    {
+      "plate": "29C-11111",
+      "date": "27/11/20",
+      "km": "312.8",
+      "machine3dOn": "540",
+      "engineStop": "60",
+      "machineShutdown": "45",
+      "fuelConsumed": "58.5",
+      "fuelSupplied": "60.0"
+    },
+    {
+      "plate": "36F-010.12",
+      "date": "27/11/20",
+      "km": "267.4",
+      "machine3dOn": "525",
+      "engineStop": "40",
+      "machineShutdown": "35",
+      "fuelConsumed": "52.3",
+      "fuelSupplied": "55.0"
+    }
+  ],
+  "summarySci": [
+    {
+      "plate": "29A-12345",
+      "date": "27/11/20",
+      "kmTraveled": "245.5",
+      "engineRunningTime": "8.5",
+      "engineIdlingTime": "0.75",
+      "totalWorkingTime": "9.25",
+      "workingTimeBySensor": "480",
+      "stoppingTime": "120",
+      "overspeedCount": "3",
+      "maxSpeed": "85",
+      "fuelConsumption": "45.5",
+      "fuelSupplied": "50.0"
+    },
+    {
+      "plate": "29A-12345",
+      "date": "28/11/20",
+      "kmTraveled": "267.4",
+      "engineRunningTime": "8.75",
+      "engineIdlingTime": "0.67",
+      "totalWorkingTime": "9.42",
+      "workingTimeBySensor": "495",
+      "stoppingTime": "135",
+      "overspeedCount": "4",
+      "maxSpeed": "88",
+      "fuelConsumption": "52.3",
+      "fuelSupplied": "55.0"
+    },
+    {
+      "plate": "29B-67890",
+      "date": "27/11/20",
+      "kmTraveled": "198.3",
+      "engineRunningTime": "7.25",
+      "engineIdlingTime": "0.5",
+      "totalWorkingTime": "7.75",
+      "workingTimeBySensor": "420",
+      "stoppingTime": "90",
+      "overspeedCount": "2",
+      "maxSpeed": "78",
+      "fuelConsumption": "38.2",
+      "fuelSupplied": "40.0"
+    },
+    {
+      "plate": "29B-67890",
+      "date": "28/11/20",
+      "kmTraveled": "223.6",
+      "engineRunningTime": "8.0",
+      "engineIdlingTime": "0.58",
+      "totalWorkingTime": "8.58",
+      "workingTimeBySensor": "450",
+      "stoppingTime": "105",
+      "overspeedCount": "1",
+      "maxSpeed": "80",
+      "fuelConsumption": "42.8",
+      "fuelSupplied": "45.0"
+    },
+    {
+      "plate": "29C-11111",
+      "date": "27/11/20",
+      "kmTraveled": "312.8",
+      "engineRunningTime": "9.0",
+      "engineIdlingTime": "1.0",
+      "totalWorkingTime": "10.0",
+      "workingTimeBySensor": "510",
+      "stoppingTime": "150",
+      "overspeedCount": "5",
+      "maxSpeed": "92",
+      "fuelConsumption": "58.5",
+      "fuelSupplied": "60.0"
+    },
+    {
+      "plate": "36F-010.12",
+      "date": "27/11/20",
+      "kmTraveled": "267.4",
+      "engineRunningTime": "8.75",
+      "engineIdlingTime": "0.67",
+      "totalWorkingTime": "9.42",
+      "workingTimeBySensor": "525",
+      "stoppingTime": "135",
+      "overspeedCount": "4",
+      "maxSpeed": "88",
+      "fuelConsumption": "52.3",
+      "fuelSupplied": "55.0"
+    }
+  ],
+  "qcvn06Speed": [
+    {
+      "time": "27/11/2025 08:00:00",
+      "speeds": "45 km/h",
+      "notes": "Tốc độ bình thường"
+    },
+    {
+      "time": "27/11/2025 08:15:30",
+      "speeds": "52 km/h",
+      "notes": "Tăng tốc"
+    },
+    {
+      "time": "27/11/2025 08:30:45",
+      "speeds": "48 km/h",
+      "notes": "Tốc độ ổn định"
+    },
+    {
+      "time": "27/11/2025 08:45:20",
+      "speeds": "60 km/h",
+      "notes": "Tăng tốc trên đường cao tốc"
+    },
+    {
+      "time": "27/11/2025 09:00:10",
+      "speeds": "38 km/h",
+      "notes": "Giảm tốc trong khu vực đông dân cư"
+    },
+    {
+      "time": "27/11/2025 09:15:35",
+      "speeds": "55 km/h",
+      "notes": "Tốc độ trung bình"
+    },
+    {
+      "time": "27/11/2025 09:30:50",
+      "speeds": "42 km/h",
+      "notes": "Giảm tốc do giao thông"
+    },
+    {
+      "time": "27/11/2025 09:45:25",
+      "speeds": "50 km/h",
+      "notes": "Tốc độ ổn định"
+    },
+    {
+      "time": "27/11/2025 10:00:40",
+      "speeds": "47 km/h",
+      "notes": "Tốc độ bình thường"
+    },
+    {
+      "time": "27/11/2025 10:15:15",
+      "speeds": "43 km/h",
+      "notes": "Giảm tốc"
+    },
+    {
+      "time": "27/11/2025 10:30:30",
+      "speeds": "58 km/h",
+      "notes": "Tăng tốc"
+    },
+    {
+      "time": "27/11/2025 10:45:45",
+      "speeds": "40 km/h",
+      "notes": "Giảm tốc trong khu vực đông người"
+    },
+    {
+      "time": "27/11/2025 11:00:20",
+      "speeds": "53 km/h",
+      "notes": "Tốc độ trung bình"
+    },
+    {
+      "time": "27/11/2025 11:15:35",
+      "speeds": "45 km/h",
+      "notes": "Tốc độ ổn định"
+    },
+    {
+      "time": "27/11/2025 11:30:50",
+      "speeds": "49 km/h",
+      "notes": "Tốc độ bình thường"
+    }
+  ],
+  "qcvn06DrivingTime": [
+    {
+      "plate": "30A-12345",
+      "driverName": "Nguyễn Văn A",
+      "licenseNumber": "GPLX-001234",
+      "operationType": "Vận tải hành khách",
+      "startTime": "27/11/2025 08:00:00",
+      "startCoordinates": "21.0285, 105.8542",
+      "startLocation": "Số 123 Đường ABC, Quận XYZ, Hà Nội",
+      "endTime": "27/11/2025 12:15:00",
+      "endCoordinates": "21.0320, 105.8580",
+      "endLocation": "Số 456 Đường DEF, Quận XYZ, Hà Nội",
+      "drivingTimeMinutes": "255"
+    },
+    {
+      "plate": "30A-12345",
+      "driverName": "Nguyễn Văn A",
+      "licenseNumber": "GPLX-001234",
+      "operationType": "Vận tải hành khách",
+      "startTime": "27/11/2025 13:00:00",
+      "startCoordinates": "21.0320, 105.8580",
+      "startLocation": "Số 456 Đường DEF, Quận XYZ, Hà Nội",
+      "endTime": "27/11/2025 17:30:00",
+      "endCoordinates": "21.0350, 105.8600",
+      "endLocation": "Số 789 Đường GHI, Quận XYZ, Hà Nội",
+      "drivingTimeMinutes": "270"
+    },
+    {
+      "plate": "30B-67890",
+      "driverName": "Trần Thị B",
+      "licenseNumber": "GPLX-005678",
+      "operationType": "Vận tải hàng hóa",
+      "startTime": "27/11/2025 07:30:00",
+      "startCoordinates": "21.0290, 105.8548",
+      "startLocation": "Số 321 Đường JKL, Quận ABC, Hà Nội",
+      "endTime": "27/11/2025 11:45:00",
+      "endCoordinates": "21.0330, 105.8590",
+      "endLocation": "Số 654 Đường MNO, Quận ABC, Hà Nội",
+      "drivingTimeMinutes": "255"
+    },
+    {
+      "plate": "30B-67890",
+      "driverName": "Trần Thị B",
+      "licenseNumber": "GPLX-005678",
+      "operationType": "Vận tải hàng hóa",
+      "startTime": "27/11/2025 12:30:00",
+      "startCoordinates": "21.0330, 105.8590",
+      "startLocation": "Số 654 Đường MNO, Quận ABC, Hà Nội",
+      "endTime": "27/11/2025 16:20:00",
+      "endCoordinates": "21.0305, 105.8565",
+      "endLocation": "Số 987 Đường PQR, Quận ABC, Hà Nội",
+      "drivingTimeMinutes": "230"
+    },
+    {
+      "plate": "30C-11111",
+      "driverName": "Lê Văn C",
+      "licenseNumber": "GPLX-009012",
+      "operationType": "Vận tải hành khách",
+      "startTime": "27/11/2025 09:00:00",
+      "startCoordinates": "21.0295, 105.8550",
+      "startLocation": "Số 111 Đường STU, Quận DEF, Hà Nội",
+      "endTime": "27/11/2025 13:30:00",
+      "endCoordinates": "21.0340, 105.8600",
+      "endLocation": "Số 222 Đường VWX, Quận DEF, Hà Nội",
+      "drivingTimeMinutes": "270"
+    },
+    {
+      "plate": "30C-11111",
+      "driverName": "Lê Văn C",
+      "licenseNumber": "GPLX-009012",
+      "operationType": "Vận tải hành khách",
+      "startTime": "27/11/2025 14:00:00",
+      "startCoordinates": "21.0340, 105.8600",
+      "startLocation": "Số 222 Đường VWX, Quận DEF, Hà Nội",
+      "endTime": "27/11/2025 18:45:00",
+      "endCoordinates": "21.0315, 105.8575",
+      "endLocation": "Số 333 Đường YZA, Quận DEF, Hà Nội",
+      "drivingTimeMinutes": "285"
+    }
+  ],
+  "qcvn06Overspeed": [
+    {
+      "plate": "30A-12345",
+      "driverName": "Nguyễn Văn A",
+      "licenseNumber": "GPLX-001234",
+      "operationType": "Vận tải hành khách",
+      "time": "27/11/2025 08:30:15",
+      "averageOverspeed": "75 km/h",
+      "speedLimit": "60",
+      "coordinates": "21.0285, 105.8542",
+      "location": "Đường Nguyễn Trãi, Quận Thanh Xuân, Hà Nội"
+    },
+    {
+      "plate": "30A-12345",
+      "driverName": "Nguyễn Văn A",
+      "licenseNumber": "GPLX-001234",
+      "operationType": "Vận tải hành khách",
+      "time": "27/11/2025 10:15:30",
+      "averageOverspeed": "85 km/h",
+      "speedLimit": "50",
+      "coordinates": "21.0300, 105.8560",
+      "location": "Đường Giải Phóng, Quận Hai Bà Trưng, Hà Nội"
+    },
+    {
+      "plate": "30B-67890",
+      "driverName": "Trần Thị B",
+      "licenseNumber": "GPLX-005678",
+      "operationType": "Vận tải hàng hóa",
+      "time": "27/11/2025 09:00:25",
+      "averageOverspeed": "68 km/h",
+      "speedLimit": "50",
+      "coordinates": "21.0290, 105.8548",
+      "location": "Đường Láng, Quận Đống Đa, Hà Nội"
+    },
+    {
+      "plate": "30B-67890",
+      "driverName": "Trần Thị B",
+      "licenseNumber": "GPLX-005678",
+      "operationType": "Vận tải hàng hóa",
+      "time": "27/11/2025 13:15:35",
+      "averageOverspeed": "78 km/h",
+      "speedLimit": "60",
+      "coordinates": "21.0330, 105.8590",
+      "location": "Đường Trường Chinh, Quận Thanh Xuân, Hà Nội"
+    },
+    {
+      "plate": "30C-11111",
+      "driverName": "Lê Văn C",
+      "licenseNumber": "GPLX-009012",
+      "operationType": "Vận tải hành khách",
+      "time": "27/11/2025 10:00:40",
+      "averageOverspeed": "82 km/h",
+      "speedLimit": "60",
+      "coordinates": "21.0295, 105.8550",
+      "location": "Đường Phạm Văn Đồng, Quận Cầu Giấy, Hà Nội"
+    },
+    {
+      "plate": "30C-11111",
+      "driverName": "Lê Văn C",
+      "licenseNumber": "GPLX-009012",
+      "operationType": "Vận tải hành khách",
+      "time": "27/11/2025 14:20:15",
+      "averageOverspeed": "72 km/h",
+      "speedLimit": "60",
+      "coordinates": "21.0315, 105.8575",
+      "location": "Đường Nguyễn Trãi, Quận Thanh Xuân, Hà Nội"
+    },
+    {
+      "plate": "30A-12345",
+      "driverName": "Nguyễn Văn A",
+      "licenseNumber": "GPLX-001234",
+      "operationType": "Vận tải hành khách",
+      "time": "27/11/2025 15:45:20",
+      "averageOverspeed": "70 km/h",
+      "speedLimit": "60",
+      "coordinates": "21.0320, 105.8580",
+      "location": "Đường Láng, Quận Đống Đa, Hà Nội"
+    },
+    {
+      "plate": "30B-67890",
+      "driverName": "Trần Thị B",
+      "licenseNumber": "GPLX-005678",
+      "operationType": "Vận tải hàng hóa",
+      "time": "27/11/2025 16:30:45",
+      "averageOverspeed": "65 km/h",
+      "speedLimit": "50",
+      "coordinates": "21.0305, 105.8565",
+      "location": "Đường Giải Phóng, Quận Hai Bà Trưng, Hà Nội"
+    }
+  ],
+  "qcvn06Journey": [
+    {
+      "time": "27/11/2025 08:00:00",
+      "coordinates": "21.0285, 105.8542",
+      "location": "Số 123 Đường ABC, Quận XYZ, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 08:15:30",
+      "coordinates": "21.0287, 105.8545",
+      "location": "Số 125 Đường ABC, Quận XYZ, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 08:30:45",
+      "coordinates": "21.0290, 105.8548",
+      "location": "Số 127 Đường ABC, Quận XYZ, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 08:45:20",
+      "coordinates": "21.0293, 105.8551",
+      "location": "Số 129 Đường ABC, Quận XYZ, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 09:00:10",
+      "coordinates": "21.0296, 105.8554",
+      "location": "Số 131 Đường ABC, Quận XYZ, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 09:15:35",
+      "coordinates": "21.0299, 105.8557",
+      "location": "Số 133 Đường ABC, Quận XYZ, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 09:30:50",
+      "coordinates": "21.0302, 105.8560",
+      "location": "Số 135 Đường ABC, Quận XYZ, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 09:45:25",
+      "coordinates": "21.0305, 105.8563",
+      "location": "Số 137 Đường ABC, Quận XYZ, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 10:00:40",
+      "coordinates": "21.0308, 105.8566",
+      "location": "Số 139 Đường ABC, Quận XYZ, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 10:15:15",
+      "coordinates": "21.0311, 105.8569",
+      "location": "Số 141 Đường ABC, Quận XYZ, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 10:30:30",
+      "coordinates": "21.0314, 105.8572",
+      "location": "Số 143 Đường ABC, Quận XYZ, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 10:45:45",
+      "coordinates": "21.0317, 105.8575",
+      "location": "Số 145 Đường ABC, Quận XYZ, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 11:00:20",
+      "coordinates": "21.0320, 105.8578",
+      "location": "Số 147 Đường ABC, Quận XYZ, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 11:15:35",
+      "coordinates": "21.0323, 105.8581",
+      "location": "Số 149 Đường ABC, Quận XYZ, Hà Nội"
+    },
+    {
+      "time": "27/11/2025 11:30:50",
+      "coordinates": "21.0326, 105.8584",
+      "location": "Số 151 Đường ABC, Quận XYZ, Hà Nội"
+    }
+  ],
+  "qcvn06Stop": [
+    {
+      "plate": "30A-12345",
+      "driverName": "Nguyễn Văn A",
+      "licenseNumber": "GPLX-001234",
+      "operationType": "Vận tải hành khách",
+      "stopTime": "27/11/2025 10:30:00",
+      "stopDuration": "15 phút",
+      "coordinates": "21.0285, 105.8542",
+      "location": "Số 123 Đường ABC, Quận XYZ, Hà Nội"
+    },
+    {
+      "plate": "30A-12345",
+      "driverName": "Nguyễn Văn A",
+      "licenseNumber": "GPLX-001234",
+      "operationType": "Vận tải hành khách",
+      "stopTime": "27/11/2025 14:20:00",
+      "stopDuration": "25 phút",
+      "coordinates": "21.0295, 105.8552",
+      "location": "Số 456 Đường DEF, Quận XYZ, Hà Nội"
+    },
+    {
+      "plate": "30B-67890",
+      "driverName": "Trần Thị B",
+      "licenseNumber": "GPLX-005678",
+      "operationType": "Vận tải hàng hóa",
+      "stopTime": "27/11/2025 09:15:00",
+      "stopDuration": "30 phút",
+      "coordinates": "21.0305, 105.8562",
+      "location": "Số 789 Đường GHI, Quận XYZ, Hà Nội"
+    }
+  ],
+  "qcvn06Driver": [
+    {
+      "driverName": "Nguyễn Văn A",
+      "licenseNumber": "GPLX-001234",
+      "totalKm": 1250.5,
+      "overspeedRatio5to10": "2.5%",
+      "overspeedRatio10to20": "1.8%",
+      "overspeedRatio20to35": "0.9%",
+      "overspeedRatioAbove35": "0.2%",
+      "overspeedCount5to10": 15,
+      "overspeedCount10to20": 8,
+      "overspeedCount20to35": 3,
+      "overspeedCountAbove35": 1,
+      "continuousDrivingOver4h": 2,
+      "overspeedRatioPer1000km": "2.1"
+    },
+    {
+      "driverName": "Trần Thị B",
+      "licenseNumber": "GPLX-005678",
+      "totalKm": 980.3,
+      "overspeedRatio5to10": "1.9%",
+      "overspeedRatio10to20": "1.2%",
+      "overspeedRatio20to35": "0.5%",
+      "overspeedRatioAbove35": "0.1%",
+      "overspeedCount5to10": 10,
+      "overspeedCount10to20": 5,
+      "overspeedCount20to35": 2,
+      "overspeedCountAbove35": 0,
+      "continuousDrivingOver4h": 1,
+      "overspeedRatioPer1000km": "1.7"
+    },
+    {
+      "driverName": "Lê Văn C",
+      "licenseNumber": "GPLX-009012",
+      "totalKm": 1567.8,
+      "overspeedRatio5to10": "3.2%",
+      "overspeedRatio10to20": "2.1%",
+      "overspeedRatio20to35": "1.1%",
+      "overspeedRatioAbove35": "0.3%",
+      "overspeedCount5to10": 22,
+      "overspeedCount10to20": 12,
+      "overspeedCount20to35": 6,
+      "overspeedCountAbove35": 2,
+      "continuousDrivingOver4h": 3,
+      "overspeedRatioPer1000km": "2.7"
+    }
+  ],
+  "qcvn06Vehicle": [
+    {
+      "plate": "30A-12345",
+      "activityType": "Vận tải hành khách",
+      "totalKm": 2450.5,
+      "overspeedRatio5to10": "2.8%",
+      "overspeedRatio10to20": "2.0%",
+      "overspeedRatio20to35": "1.1%",
+      "overspeedRatioAbove35": "0.3%",
+      "overspeedCount5to10": 28,
+      "overspeedCount10to20": 18,
+      "overspeedCount20to35": 9,
+      "overspeedCountAbove35": 3,
+      "totalStops": 45,
+      "overspeedRatioPer1000km": "2.4",
+      "totalOverspeedCount": 58
+    },
+    {
+      "plate": "30B-67890",
+      "activityType": "Vận tải hàng hóa",
+      "totalKm": 1890.3,
+      "overspeedRatio5to10": "2.1%",
+      "overspeedRatio10to20": "1.5%",
+      "overspeedRatio20to35": "0.7%",
+      "overspeedRatioAbove35": "0.2%",
+      "overspeedCount5to10": 20,
+      "overspeedCount10to20": 12,
+      "overspeedCount20to35": 5,
+      "overspeedCountAbove35": 1,
+      "totalStops": 32,
+      "overspeedRatioPer1000km": "2.0",
+      "totalOverspeedCount": 38
+    },
+    {
+      "plate": "30C-11111",
+      "activityType": "Vận tải hành khách",
+      "totalKm": 3120.8,
+      "overspeedRatio5to10": "3.5%",
+      "overspeedRatio10to20": "2.5%",
+      "overspeedRatio20to35": "1.3%",
+      "overspeedRatioAbove35": "0.4%",
+      "overspeedCount5to10": 45,
+      "overspeedCount10to20": 28,
+      "overspeedCount20to35": 15,
+      "overspeedCountAbove35": 5,
+      "totalStops": 68,
+      "overspeedRatioPer1000km": "3.0",
+      "totalOverspeedCount": 93
+    }
+  ],
+  "reports": {
+    "water-pump": {
+      "title": "Báo cáo bơm nước (Chinfon)",
+      "icon": "fas fa-tint",
+      "description": "Báo cáo chi tiết về hoạt động bơm nước theo hệ thống Chinfon"
+    },
+    "vibration": {
+      "title": "Báo cáo bật rung",
+      "icon": "fas fa-bell",
+      "description": "Báo cáo về các sự kiện bật rung của phương tiện"
+    },
+    "ac": {
+      "title": "Báo cáo bật điều hòa",
+      "icon": "fas fa-snowflake",
+      "description": "Báo cáo chi tiết về việc sử dụng hệ thống điều hòa"
+    },
+    "tire-pressure": {
+      "title": "Báo cáo chi tiết cảm biến áp suất lốp",
+      "icon": "fas fa-circle",
+      "description": "Báo cáo về áp suất lốp từ cảm biến theo thời gian thực"
+    },
+    "customer-sensor": {
+      "title": "Báo cáo chi tiết khách theo cảm biến",
+      "icon": "fas fa-users",
+      "description": "Báo cáo số lượng khách hàng được ghi nhận qua cảm biến"
+    },
+    "temperature": {
+      "title": "Báo cáo chi tiết nhiệt độ",
+      "icon": "fas fa-thermometer-half",
+      "description": "Báo cáo nhiệt độ môi trường và nhiệt độ động cơ"
+    },
+    "stop-points": {
+      "title": "Báo cáo các điểm dừng",
+      "icon": "fas fa-map-marker-alt",
+      "description": "Báo cáo về các điểm dừng của phương tiện trong hành trình"
+    },
+    "journey-adco": {
+      "title": "Báo cáo hành trình (ADCO)",
+      "icon": "fas fa-route",
+      "description": "Báo cáo chi tiết hành trình theo hệ thống ADCO"
+    },
+    "vehicle-history": {
+      "title": "Báo cáo lịch sử xe chạy",
+      "icon": "fas fa-history",
+      "description": "Báo cáo lịch sử hoạt động của phương tiện theo thời gian"
+    },
+    "route-by-line": {
+      "title": "Báo cáo lộ trình theo tuyến",
+      "icon": "fas fa-route",
+      "description": "Báo cáo lộ trình được phân loại theo từng tuyến đường"
+    },
+    "route-by-station": {
+      "title": "Báo cáo lộ trình theo tuyến (theo trạm)",
+      "icon": "fas fa-map-marked-alt",
+      "description": "Báo cáo lộ trình chi tiết theo từng trạm trong tuyến"
+    },
+    "overspeed-new": {
+      "title": "Báo cáo quá tốc độ (mới)",
+      "icon": "fas fa-tachometer-alt",
+      "description": "Báo cáo các trường hợp vi phạm tốc độ với giao diện mới"
+    },
+    "fuel-usage": {
+      "title": "Báo cáo sử dụng nhiên liệu",
+      "icon": "fas fa-gas-pump",
+      "description": "Báo cáo chi tiết về việc sử dụng nhiên liệu của phương tiện"
+    },
+    "events": {
+      "title": "Báo cáo sự kiện",
+      "icon": "fas fa-calendar-alt",
+      "description": "Báo cáo tổng hợp các sự kiện quan trọng trong quá trình vận hành"
+    },
+    "speed-violation": {
+      "title": "Báo cáo thống kê vi phạm tốc độ",
+      "icon": "fas fa-exclamation-triangle",
+      "description": "Báo cáo thống kê chi tiết về các vi phạm tốc độ"
+    },
+    "3d-timing": {
+      "title": "Báo cáo tính giờ 3D trực tiếp (Tuyến Than)",
+      "icon": "fas fa-clock",
+      "description": "Báo cáo tính giờ theo định dạng 3D cho tuyến Than"
+    },
+    "summary-gtpt": {
+      "title": "Báo cáo tổng hợp (GTPT)",
+      "icon": "fas fa-chart-bar",
+      "description": "Báo cáo tổng hợp theo hệ thống GTPT"
+    },
+    "summary-new": {
+      "title": "Báo cáo tổng hợp (mới)",
+      "icon": "fas fa-chart-pie",
+      "description": "Báo cáo tổng hợp với giao diện và tính năng mới"
+    },
+    "summary-3d": {
+      "title": "Báo cáo tổng hợp làm việc theo 3D",
+      "icon": "fas fa-cube",
+      "description": "Báo cáo tổng hợp công việc được phân tích theo định dạng 3D"
+    },
+    "summary-sci": {
+      "title": "Báo cáo tổng hợp mới (SCI)",
+      "icon": "fas fa-file-alt",
+      "description": "Báo cáo tổng hợp theo hệ thống SCI"
+    },
+    "student-transport": {
+      "title": "Báo cáo tổng hợp đưa đón học sinh",
+      "icon": "fas fa-school",
+      "description": "Báo cáo chi tiết về hoạt động đưa đón học sinh"
+    },
+    "image-export": {
+      "title": "Kết xuất danh sách ảnh chụp",
+      "icon": "fas fa-images",
+      "description": "Xuất danh sách và quản lý các ảnh đã được chụp từ camera"
+    },
+    "qcvn-stop": {
+      "title": "QCVN31/2014 - Báo cáo dừng đỗ",
+      "icon": "fas fa-parking",
+      "description": "Báo cáo tuân thủ QCVN31/2014 về việc dừng đỗ phương tiện"
+    },
+    "qcvn-driver": {
+      "title": "QCVN31/2014 - Báo cáo tổng hợp theo lái xe",
+      "icon": "fas fa-user-tie",
+      "description": "Báo cáo tổng hợp theo từng lái xe theo QCVN31/2014"
+    },
+    "qcvn-vehicle": {
+      "title": "QCVN31/2014 - Báo cáo tổng hợp theo xe",
+      "icon": "fas fa-car",
+      "description": "Báo cáo tổng hợp theo từng phương tiện theo QCVN31/2014"
+    },
+    "qcvn-journey": {
+      "title": "QCVN31/2014 - Hành trình chạy xe",
+      "icon": "fas fa-route",
+      "description": "Báo cáo hành trình chạy xe tuân thủ QCVN31/2014"
+    },
+    "qcvn-overspeed": {
+      "title": "QCVN31/2014 - Quá tốc độ giới hạn",
+      "icon": "fas fa-tachometer-alt",
+      "description": "Báo cáo các trường hợp quá tốc độ giới hạn theo QCVN31/2014"
+    },
+    "qcvn-driving-time": {
+      "title": "QCVN31/2014 - Thời gian lái xe liên tục",
+      "icon": "fas fa-clock",
+      "description": "Báo cáo thời gian lái xe liên tục theo quy định QCVN31/2014"
+    },
+    "qcvn-speed": {
+      "title": "QCVN31/2014 - Tốc độ vận hành của xe",
+      "icon": "fas fa-speedometer",
+      "description": "Báo cáo tốc độ vận hành của phương tiện theo QCVN31/2014"
+    },
+    "qcvn-time-violation": {
+      "title": "QCVN31/2014 - Tổng hợp vi phạm thời gian",
+      "icon": "fas fa-ban",
+      "description": "Báo cáo tổng hợp các vi phạm về thời gian theo QCVN31/2014"
+    }
+  }
+}

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skysoft Go</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
+</head>
+
+
+<body>
+    <section id="sp-main-body">
+        <div class="container-fluid">
+            <div class="main-content report-screen">
+                <div class="row report-row">
+                    <!-- Sidebar bên trái -->
+                    <div class="col-12 col-sm-3 report-sidebar-col">
+                        <div class="report-sidebar">
+                            <div class="report-sidebar-header">
+                                <h3 class="report-sidebar-title">
+                                    <i class="fas fa-chart-line me-2"></i>
+                                    <span class="report-sidebar-title-text">Danh sách báo cáo</span>
+                                </h3>
+                                <button class="report-sidebar-toggle" type="button"
+                                    aria-label="Thu gọn danh sách báo cáo" aria-expanded="true">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                            </div>
+                            <div class="report-sidebar-content">
+                                <ul class="report-list" id="reportList">
+                                    <li class="report-item active" data-report="water-pump">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-tint"></i>
+                                            <span class="report-item-text">Báo cáo bơm nước (Chinfon)</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="vibration">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-bell"></i>
+                                            <span class="report-item-text">Báo cáo bật rung</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="ac">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-snowflake"></i>
+                                            <span class="report-item-text">Báo cáo bật điều hòa</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="tire-pressure">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-circle"></i>
+                                            <span class="report-item-text">Báo cáo chi tiết cảm biến áp suất lốp</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="customer-sensor">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-users"></i>
+                                            <span class="report-item-text">Báo cáo chi tiết khách theo cảm biến</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="temperature">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-thermometer-half"></i>
+                                            <span class="report-item-text">Báo cáo chi tiết nhiệt độ</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="stop-points">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-map-marker-alt"></i>
+                                            <span class="report-item-text">Báo cáo các điểm dừng</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="journey-adco">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-route"></i>
+                                            <span class="report-item-text">Báo cáo hành trình (ADCO)</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="vehicle-history">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-history"></i>
+                                            <span class="report-item-text">Báo cáo lịch sử xe chạy</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="route-by-line">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-route"></i>
+                                            <span class="report-item-text">Báo cáo lộ trình theo tuyến</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="route-by-station">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-map-marked-alt"></i>
+                                            <span class="report-item-text">Báo cáo lộ trình theo tuyến (theo
+                                                trạm)</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="overspeed-new">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-tachometer-alt"></i>
+                                            <span class="report-item-text">Báo cáo quá tốc độ (mới)</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="fuel-usage">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-gas-pump"></i>
+                                            <span class="report-item-text">Báo cáo sử dụng nhiên liệu</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="events">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-calendar-alt"></i>
+                                            <span class="report-item-text">Báo cáo sự kiện</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="speed-violation">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-exclamation-triangle"></i>
+                                            <span class="report-item-text">Báo cáo thống kê vi phạm tốc độ</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="3d-timing">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-clock"></i>
+                                            <span class="report-item-text">Báo cáo tính giờ 3D trực tiếp (Tuyến
+                                                Than)</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="summary-gtpt">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-chart-bar"></i>
+                                            <span class="report-item-text">Báo cáo tổng hợp (GTPT)</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="summary-new">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-chart-pie"></i>
+                                            <span class="report-item-text">Báo cáo tổng hợp (mới)</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="summary-3d">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-cube"></i>
+                                            <span class="report-item-text">Báo cáo tổng hợp làm việc theo 3D</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="summary-sci">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-file-alt"></i>
+                                            <span class="report-item-text">Báo cáo tổng hợp mới (SCI)</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="student-transport">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-school"></i>
+                                            <span class="report-item-text">Báo cáo tổng hợp đưa đón học sinh</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="image-export">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-images"></i>
+                                            <span class="report-item-text">Kết xuất danh sách ảnh chụp</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="qcvn-stop">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-parking"></i>
+                                            <span class="report-item-text">QCVN06 - Báo cáo dừng đỗ</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="qcvn-driver">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-user-tie"></i>
+                                            <span class="report-item-text">QCVN06 - Báo cáo tổng hợp theo lái
+                                                xe</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="qcvn-vehicle">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-car"></i>
+                                            <span class="report-item-text">QCVN06 - Báo cáo tổng hợp theo xe</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="qcvn-journey">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-route"></i>
+                                            <span class="report-item-text">QCVN06 - Hành trình chạy xe</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="qcvn-overspeed">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-tachometer-alt"></i>
+                                            <span class="report-item-text">QCVN06 - Quá tốc độ giới hạn</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="qcvn-driving-time">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-clock"></i>
+                                            <span class="report-item-text">QCVN06 - Thời gian lái xe liên
+                                                tục</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="qcvn-speed">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-speedometer"></i>
+                                            <span class="report-item-text">QCVN06 - Tốc độ vận hành của xe</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                    <li class="report-item" data-report="qcvn-time-violation">
+                                        <div class="report-item-content">
+                                            <i class="report-item-icon fas fa-ban"></i>
+                                            <span class="report-item-text">QCVN06 - Tổng hợp vi phạm thời
+                                                gian</span>
+                                        </div>
+                                        <i class="report-item-arrow fas fa-chevron-right"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nội dung bên phải -->
+                    <div class="col-12 col-sm-9 report-content-col">
+                        <div class="report-content-wrapper">
+                            <div class="report-content" id="reportContent">
+                                <!-- Nội dung sẽ được load động -->
+                                <div class="report-loading">
+                                    <div class="spinner-border text-warning" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/local-fetch.js"></script>
+    <script src="../js/auth-guard.js"></script>
+    <script src="../js/navbar-loader.js"></script>
+    <script src="../js/router.js"></script>
+    <script src="../js/home/navbar.js"></script>
+
+</body>
+
+</html>

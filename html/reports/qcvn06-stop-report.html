@@ -1,0 +1,98 @@
+<body>
+    <div class="report-page report-qcvn06-stop-page">
+        <div class="report-page-header">
+            <h2 class="report-page-title">
+                <i class="fas fa-parking me-2"></i>
+                QCVN06 - BÁO CÁO DỪNG ĐỖ
+            </h2>
+
+        </div>
+        <div class="report-page-body">
+            <div class="report-filter-card report-qcvn06-stop-filter">
+                <div class="report-filter-header">
+                    <h5 class="report-filter-title">
+                        <i class="fas fa-filter me-2"></i>
+                        Bộ lọc
+                    </h5>
+                </div>
+                <div class="report-filter-content">
+                    <div class="row g-3 align-items-end">
+                        <div class="col-md-3 col-sm-6">
+                            <label class="report-form-label">
+                                <i class="fas fa-car me-1"></i>
+                                Biển số
+                            </label>
+                            <input type="text" class="report-form-control" placeholder="Nhập biển số"
+                                id="qcvn06StopPlate">
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <label class="report-form-label">
+                                <i class="fas fa-calendar me-1"></i>
+                                Từ ngày
+                            </label>
+                            <div class="report-input-group">
+                                <input type="text" class="report-form-control" id="qcvn06StopDateFrom"
+                                    value="27/11/2025">
+                                <button type="button" class="report-calendar-btn">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <label class="report-form-label">
+                                <i class="fas fa-calendar me-1"></i>
+                                Đến ngày
+                            </label>
+                            <div class="report-input-group">
+                                <input type="text" class="report-form-control" id="qcvn06StopDateTo" value="27/11/2025">
+                                <button type="button" class="report-calendar-btn">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <label for=""></label>
+                            <button class="btn btn-primary report-submit-btn w-100" id="qcvn06StopSubmit">
+
+                                Xem báo cáo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="report-table-card report-qcvn06-stop-table">
+                <div class="report-table-header">
+                    <h5 class="report-table-title">
+                        <i class="fas fa-table me-2"></i>
+                        Dữ liệu báo cáo dừng đỗ
+                    </h5>
+                </div>
+                <div class="report-table-wrapper">
+                    <table class="table report-qcvn06-stop-table-content">
+                        <thead>
+                            <tr>
+                                <th>Biển số</th>
+                                <th>Họ tên lái xe</th>
+                                <th>Số GPLX</th>
+                                <th>Loại hình hoạt động</th>
+                                <th>Thời điểm dừng</th>
+                                <th>Thời gian dừng</th>
+                                <th>Tọa độ dừng đỗ</th>
+                                <th>Địa điểm dừng đỗ</th>
+                            </tr>
+                        </thead>
+                        <tbody id="qcvn06StopTableBody">
+                            <tr class="report-empty-row">
+                                <td colspan="8" class="text-center py-5">
+                                    <i class="fas fa-inbox fa-3x text-muted mb-3 d-block"></i>
+                                    <p class="text-muted">Chưa có dữ liệu. Vui lòng chọn bộ lọc và nhấn "Xem báo cáo"
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

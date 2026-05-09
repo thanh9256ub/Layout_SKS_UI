@@ -1,0 +1,24 @@
+/* ============================================
+   MAIN STYLESHEET - IMPORTS ALL MODULES
+   ============================================ */
+
+/* Base styles - Global, animations, camera screen */
+@import url('base.css');
+
+/* Navbar styles */
+@import url('navbar.css');
+
+/* Common components - Cards, dropdowns, forms, buttons */
+@import url('components.css');
+
+/* Home page styles */
+@import url('home.css');
+
+/* Tracking page styles */
+@import url('tracking.css');
+
+/* Report page styles */
+@import url('report.css');
+
+/* Responsive media queries */
+@import url('responsive.css');

@@ -1,0 +1,120 @@
+<body>
+    <div class="report-page report-speed-violation-page">
+        <div class="report-page-header">
+            <h2 class="report-page-title">
+                <i class="fas fa-exclamation-triangle me-2"></i>
+                BÁO CÁO THỐNG KÊ VI PHẠM TỐC ĐỘ
+            </h2>
+
+        </div>
+        <div class="report-page-body">
+            <div class="report-filter-card report-speed-violation-filter">
+                <div class="report-filter-header">
+                    <h5 class="report-filter-title">
+                        <i class="fas fa-filter me-2"></i>
+                        Bộ lọc
+                    </h5>
+                </div>
+                <div class="report-filter-content">
+                    <div class="row g-3 align-items-end">
+                        <div class="col-md-3 col-sm-6">
+                            <label class="report-form-label">
+                                <i class="fas fa-car me-1"></i>
+                                Biển số
+                            </label>
+                            <input type="text" class="report-form-control" placeholder="Nhập biển số"
+                                id="speedViolationPlate" value="36F-010.12">
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <label class="report-form-label">
+                                <i class="fas fa-calendar me-1"></i>
+                                Ngày
+                            </label>
+                            <div class="report-input-group">
+                                <input type="text" class="report-form-control" id="speedViolationDate" value="27/11">
+                                <button type="button" class="report-calendar-btn">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <label class="report-form-label">
+                                <i class="fas fa-clock me-1"></i>
+                                Từ giờ
+                            </label>
+                            <div class="report-input-group">
+                                <input type="text" class="report-form-control" placeholder="00:00:00"
+                                    id="speedViolationTimeFrom">
+                                <button type="button" class="report-time-btn">
+                                    <i class="fas fa-clock"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <label class="report-form-label">
+                                <i class="fas fa-clock me-1"></i>
+                                Đến giờ
+                            </label>
+                            <div class="report-input-group">
+                                <input type="text" class="report-form-control" placeholder="23:59:59"
+                                    id="speedViolationTimeTo">
+                                <button type="button" class="report-time-btn">
+                                    <i class="fas fa-clock"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+                            <div class="report-checkbox-wrapper">
+                                <input type="checkbox" id="speedViolationLocationCheck" class="report-checkbox">
+                                <label for="speedViolationLocationCheck" class="report-checkbox-label">
+                                    Nhận diện địa điểm
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3 mt-2">
+                        <div class="col-3">
+                            <label for=""></label>
+                            <button class="btn btn-primary report-submit-btn w-100" id="speedViolationSubmit">
+
+                                Xem báo cáo
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="report-table-card report-speed-violation-table">
+                <div class="report-table-header">
+                    <h5 class="report-table-title">
+                        <i class="fas fa-table me-2"></i>
+                        Dữ liệu báo cáo thống kê vi phạm tốc độ
+                    </h5>
+                </div>
+                <div class="report-table-wrapper">
+                    <table class="table report-speed-violation-table-content">
+                        <thead>
+                            <tr>
+                                <th>Biển số</th>
+                                <th>Thời điểm</th>
+                                <th>Tọa độ</th>
+                                <th>Tốc độ</th>
+                                <th>Tốc độ giới hạn</th>
+                                <th>Địa chỉ</th>
+                            </tr>
+                        </thead>
+                        <tbody id="speedViolationTableBody">
+                            <tr class="report-empty-row">
+                                <td colspan="6" class="text-center py-5">
+                                    <i class="fas fa-inbox fa-3x text-muted mb-3 d-block"></i>
+                                    <p class="text-muted">Chưa có dữ liệu. Vui lòng chọn bộ lọc và nhấn "Xem báo cáo"
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

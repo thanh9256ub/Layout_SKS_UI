@@ -1,0 +1,177 @@
+<body>
+    <div class="report-page report-arc-to-point-page">
+        <div class="report-page-header">
+            <h2 class="report-page-title">
+                <i class="fas fa-circle me-2"></i>
+                ĐẾM CHUYẾN THEO CUNG ĐỘ (ĐẾN ĐIỂM CHỌN)
+            </h2>
+
+        </div>
+        <div class="report-page-body">
+            <div class="report-filter-card report-arc-to-point-filter">
+                <div class="report-filter-header">
+                    <h5 class="report-filter-title">
+                        <i class="fas fa-filter me-2"></i>
+                        Đếm chuyến theo cung độ (Đến điểm chọn)
+                    </h5>
+                </div>
+                <div class="report-filter-content">
+                    <div class="row g-3">
+                        <div class="col-md-3 col-sm-6">
+                            <label class="report-form-label">
+                                <i class="fas fa-map-marker-alt me-1"></i>
+                                Đến điểm
+                            </label>
+                            <div class="report-input-group">
+                                <input type="text" class="report-form-control" placeholder="Nhập điểm cần đếm"
+                                    id="arcToPointLocation">
+                                <button type="button" class="report-input-btn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <label class="report-form-label">
+                                <i class="fas fa-users me-1"></i>
+                                Nhóm xe
+                            </label>
+                            <div class="report-input-group">
+                                <select class="report-form-control" id="arcToPointGroup">
+                                    <option value="all">Tất cả</option>
+                                    <option value="group1">Nhóm 1</option>
+                                    <option value="group2">Nhóm 2</option>
+                                    <option value="group3">Nhóm 3</option>
+                                </select>
+                                <i class="fas fa-chevron-down report-select-icon"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <label class="report-form-label">
+                                <i class="fas fa-car me-1"></i>
+                                Biển số
+                            </label>
+                            <input type="text" class="report-form-control" placeholder="Nhập biển số"
+                                id="arcToPointPlate">
+                        </div>
+                        <div class="col-auto">
+                            <label class="report-form-label">&nbsp;</label>
+                            <div class="report-checkbox-wrapper">
+                                <input type="checkbox" id="arcToPointHasStop" class="report-checkbox">
+                                <label for="arcToPointHasStop" class="report-checkbox-label">
+                                    Có dừng
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <label class="report-form-label">&nbsp;</label>
+                            <div class="report-checkbox-wrapper">
+                                <input type="checkbox" id="arcToPointHasLiftSide" class="report-checkbox">
+                                <label for="arcToPointHasLiftSide" class="report-checkbox-label">
+                                    Có nâng ben
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <label class="report-form-label">&nbsp;</label>
+                            <div class="report-checkbox-wrapper">
+                                <input type="checkbox" id="arcToPointFullEndpoints" class="report-checkbox">
+                                <label for="arcToPointFullEndpoints" class="report-checkbox-label">
+                                    Đủ 2 đầu mút
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3 mt-2">
+                        <div class="col-md-3 col-sm-6">
+                            <label class="report-form-label">
+                                <i class="fas fa-calendar me-1"></i>
+                                Từ ngày
+                            </label>
+                            <div class="report-input-group">
+                                <input type="text" class="report-form-control" id="arcToPointDateFrom"
+                                    value="27/11/2025">
+                                <button type="button" class="report-calendar-btn">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <label class="report-form-label">
+                                <i class="fas fa-calendar me-1"></i>
+                                Đến ngày
+                            </label>
+                            <div class="report-input-group">
+                                <input type="text" class="report-form-control" id="arcToPointDateTo" value="27/11/2025">
+                                <button type="button" class="report-calendar-btn">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            <label class="report-form-label">
+                                <i class="fas fa-clock me-1"></i>
+                                Từ giờ
+                            </label>
+                            <div class="report-input-group">
+                                <input type="text" class="report-form-control" placeholder="00:00"
+                                    id="arcToPointTimeFrom">
+                                <button type="button" class="report-time-btn">
+                                    <i class="fas fa-clock"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4">
+                            <label class="report-form-label">
+                                <i class="fas fa-clock me-1"></i>
+                                Đến giờ
+                            </label>
+                            <div class="report-input-group">
+                                <input type="text" class="report-form-control" placeholder="23:59"
+                                    id="arcToPointTimeTo">
+                                <button type="button" class="report-time-btn">
+                                    <i class="fas fa-clock"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+                            <label class="report-form-label">&nbsp;</label>
+                            <button class="btn btn-primary report-submit-btn w-100" id="arcToPointSubmit">
+                                Đếm chuyến
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="report-table-card report-arc-to-point-table">
+
+                <div class="report-table-wrapper">
+                    <table class="table report-arc-to-point-table-content">
+                        <thead>
+                            <tr>
+                                <th>Biển số</th>
+                                <th>Thời điểm xuất phát</th>
+                                <th>Từ điểm</th>
+                                <th>Ngày đến</th>
+                                <th>Thời điểm đến</th>
+                                <th>Ngày đi</th>
+                                <th>Thời điểm đi</th>
+                                <th>Km đi chuyển</th>
+                                <th>Cung độ</th>
+                                <th>Dừng</th>
+                                <th>Nâng ben</th>
+                            </tr>
+                        </thead>
+                        <tbody id="arcToPointTableBody">
+                            <tr class="report-empty-row">
+                                <td colspan="11" class="text-center py-5">
+                                    <i class="fas fa-inbox fa-3x text-muted mb-3 d-block"></i>
+                                    <p class="text-muted">Chưa có dữ liệu. Vui lòng chọn bộ lọc và nhấn "Đếm chuyến"</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

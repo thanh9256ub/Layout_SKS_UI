@@ -1,0 +1,2000 @@
+{
+    "color": [
+        {
+            "id": 1,
+            "name": "Black",
+            "hex": "#000000"
+        },
+        {
+            "id": 2,
+            "name": "Blue",
+            "hex": "#3b82f6"
+        },
+        {
+            "id": 3,
+            "name": "Red",
+            "hex": "#ef4444"
+        },
+        {
+            "id": 4,
+            "name": "Dark Gray",
+            "hex": "#4b5563"
+        },
+        {
+            "id": 5,
+            "name": "Dark Blue",
+            "hex": "#1e40af"
+        },
+        {
+            "id": 6,
+            "name": "Green",
+            "hex": "#10b981"
+        }
+    ],
+    "car": [
+        {
+            "id": 1,
+            "name": "BMW",
+            "detail": "Long Range Dual Motor AWD",
+            "price": 42,
+            "image": "images/car1.jpg",
+            "thumb": "images/car1.jpg",
+            "type": "Sedan",
+            "mode": "Auto",
+            "fuel": "Electric",
+            "seat": 5,
+            "available": 2,
+            "distance": {
+                "met": 620,
+                "time": 8
+            },
+            "vote": {
+                "oneStar": 0,
+                "twoStar": 0,
+                "threeStar": 0,
+                "fourStar": 1,
+                "fiveStar": 253
+            },
+            "listModel": [
+                {
+                    "id": 1,
+                    "name": "X5"
+                },
+                {
+                    "id": 2,
+                    "name": "X6"
+                },
+                {
+                    "id": 3,
+                    "name": "X7"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Audi",
+            "detail": "Long Range Dual Motor AWD",
+            "price": 42,
+            "image": "images/car2.jpg",
+            "thumb": "images/car2.jpg",
+            "type": "Sedan",
+            "mode": "Auto",
+            "fuel": "Electric",
+            "seat": 5,
+            "available": 2,
+            "distance": {
+                "met": 620,
+                "time": 8
+            },
+            "vote": {
+                "oneStar": 0,
+                "twoStar": 0,
+                "threeStar": 0,
+                "fourStar": 1,
+                "fiveStar": 253
+            },
+            "listModel": [
+                {
+                    "id": 1,
+                    "name": "Q5"
+                },
+                {
+                    "id": 2,
+                    "name": "Q7"
+                },
+                {
+                    "id": 3,
+                    "name": "Q8"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Peugot",
+            "detail": "Long Range Dual Motor AWD",
+            "price": 42,
+            "image": "images/car3.jpg",
+            "thumb": "images/car3.jpg",
+            "type": "Sedan",
+            "mode": "Auto",
+            "fuel": "Electric",
+            "seat": 5,
+            "available": 2,
+            "distance": {
+                "met": 620,
+                "time": 8
+            },
+            "vote": {
+                "oneStar": 0,
+                "twoStar": 0,
+                "threeStar": 0,
+                "fourStar": 1,
+                "fiveStar": 253
+            },
+            "listModel": [
+                {
+                    "id": 1,
+                    "name": "3008"
+                },
+                {
+                    "id": 2,
+                    "name": "5008"
+                },
+                {
+                    "id": 3,
+                    "name": "2008"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Vifast",
+            "detail": "Long Range Dual Motor AWD",
+            "price": 42,
+            "image": "images/car4.jpg",
+            "thumb": "images/car4.jpg",
+            "type": "Sedan",
+            "mode": "Auto",
+            "fuel": "Electric",
+            "seat": 5,
+            "available": 2,
+            "distance": {
+                "met": 620,
+                "time": 8
+            },
+            "vote": {
+                "oneStar": 0,
+                "twoStar": 0,
+                "threeStar": 0,
+                "fourStar": 1,
+                "fiveStar": 253
+            },
+            "listModel": [
+                {
+                    "id": 1,
+                    "name": "Lux A2.0"
+                },
+                {
+                    "id": 2,
+                    "name": "Lux SA2.0"
+                },
+                {
+                    "id": 3,
+                    "name": "Fadil"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Toyota",
+            "detail": "Long Range Dual Motor AWD",
+            "price": 42,
+            "image": "images/car5.jpg",
+            "thumb": "images/car5.jpg",
+            "type": "Sedan",
+            "mode": "Auto",
+            "fuel": "Electric",
+            "seat": 5,
+            "available": 2,
+            "distance": {
+                "met": 620,
+                "time": 8
+            },
+            "vote": {
+                "oneStar": 0,
+                "twoStar": 0,
+                "threeStar": 0,
+                "fourStar": 1,
+                "fiveStar": 253
+            },
+            "listModel": [
+                {
+                    "id": 1,
+                    "name": "Fortuner"
+                },
+                {
+                    "id": 2,
+                    "name": "Camry"
+                },
+                {
+                    "id": 3,
+                    "name": "Vios"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Huyndai",
+            "detail": "Long Range Dual Motor AWD",
+            "price": 42,
+            "image": "images/car6.jpg",
+            "thumb": "images/car6.jpg",
+            "type": "Sedan",
+            "mode": "Auto",
+            "fuel": "Electric",
+            "seat": 5,
+            "available": 2,
+            "distance": {
+                "met": 620,
+                "time": 8
+            },
+            "vote": {
+                "oneStar": 0,
+                "twoStar": 0,
+                "threeStar": 0,
+                "fourStar": 1,
+                "fiveStar": 253
+            },
+            "listModel": [
+                {
+                    "id": 1,
+                    "name": "SantaFe"
+                },
+                {
+                    "id": 2,
+                    "name": "Tucson"
+                },
+                {
+                    "id": 3,
+                    "name": "Porter"
+                }
+            ]
+        }
+    ],
+    "carType": [
+        {
+            "id": 1,
+            "name": "SUV",
+            "price": [
+                500,
+                1000,
+                1500
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Sport",
+            "price": [
+                2000,
+                3000,
+                4000
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Coupe",
+            "price": [
+                5000,
+                8000,
+                10000
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Hathback",
+            "price": [
+                10000,
+                15000,
+                20000
+            ]
+        },
+        {
+            "id": 5,
+            "name": "MVP",
+            "price": [
+                20000,
+                25000,
+                30000
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Sedon",
+            "price": [
+                30000,
+                35000,
+                40000
+            ]
+        }
+    ],
+    "vehicles": [
+        {
+            "id": 1,
+            "plate": "29A-12345",
+            "status": "online",
+            "group": "camera",
+            "speed": 45,
+            "engine": "on",
+            "fuel": 75,
+            "driver": "Nguyễn Văn A",
+            "carBrand": "BMW",
+            "model": "X5",
+            "deviceId": "CAM001",
+            "tag": "001",
+            "lat": 21.2055698,
+            "lng": 107.0399898
+        },
+        {
+            "id": 2,
+            "plate": "30B-67890",
+            "status": "offline",
+            "group": "taxi",
+            "speed": 0,
+            "engine": "off",
+            "fuel": 20,
+            "driver": "Trần Thị B",
+            "carBrand": "Toyota",
+            "model": "Vios",
+            "deviceId": "TAX001",
+            "tag": "002",
+            "lat": 10.7577628,
+            "lng": 106.6663940
+        },
+        {
+            "id": 3,
+            "plate": "51C-11111",
+            "status": "online",
+            "group": "bus",
+            "speed": 35,
+            "engine": "on",
+            "fuel": 60,
+            "driver": "Lê Văn C",
+            "carBrand": "Huyndai",
+            "model": "Solati",
+            "deviceId": "BUS001",
+            "tag": "003",
+            "lat": 14.2430869,
+            "lng": 107.863591
+        },
+        {
+            "id": 4,
+            "plate": "29D-22222",
+            "status": "online",
+            "group": "truck",
+            "speed": 55,
+            "engine": "on",
+            "fuel": 85,
+            "driver": "Phạm Văn D",
+            "carBrand": "Huyndai",
+            "model": "Porter",
+            "deviceId": "TRK001",
+            "tag": "004",
+            "lat": 16.4360851,
+            "lng": 107.5668820
+        },
+        {
+            "id": 5,
+            "plate": "30E-33333",
+            "status": "online",
+            "group": "camera",
+            "speed": 25,
+            "engine": "on",
+            "fuel": 40,
+            "driver": "Hoàng Thị E",
+            "carBrand": "Audi",
+            "model": "Q5",
+            "deviceId": "CAM002",
+            "tag": "005",
+            "lat": 17.1224395,
+            "lng": 106.8062939
+        },
+        {
+            "id": 6,
+            "plate": "51F-44444",
+            "status": "online",
+            "group": "taxi",
+            "speed": 60,
+            "engine": "on",
+            "fuel": 90,
+            "driver": "Võ Văn F",
+            "carBrand": "Toyota",
+            "model": "Camry",
+            "deviceId": "TAX002",
+            "tag": "006",
+            "lat": 18.9920118,
+            "lng": 105.3094570
+        },
+        {
+            "id": 7,
+            "plate": "29G-55555",
+            "status": "offline",
+            "group": "bus",
+            "speed": 0,
+            "engine": "off",
+            "fuel": 15,
+            "driver": "Đặng Thị G",
+            "carBrand": "Huyndai",
+            "model": "Universe",
+            "deviceId": "BUS002",
+            "tag": "007",
+            "lat": 20.9383545,
+            "lng": 105.7710457
+        },
+        {
+            "id": 8,
+            "plate": "30H-66666",
+            "status": "online",
+            "group": "truck",
+            "speed": 40,
+            "engine": "on",
+            "fuel": 70,
+            "driver": "Bùi Văn H",
+            "carBrand": "Vifast",
+            "model": "Truck",
+            "deviceId": "TRK002",
+            "tag": "008",
+            "lat": 20.9671302,
+            "lng": 105.8301835
+        }
+    ],
+    "locations": [
+        {
+            "id": 1,
+            "name": "Trụ sở công ty",
+            "address": "123 Đường Lê Lợi, Quận 1, TP.HCM",
+            "icon": "🏢",
+            "color": "#fbbf24",
+            "lat": 21.01794,
+            "lng": 105.84253,
+            "type": "office"
+        },
+        {
+            "id": 2,
+            "name": "Bến xe Miền Đông",
+            "address": "292 Đinh Bộ Lĩnh, Bình Thạnh, TP.HCM",
+            "icon": "🚌",
+            "color": "#10b981",
+            "lat": 21.03340,
+            "lng": 105.81686,
+            "type": "station"
+        },
+        {
+            "id": 3,
+            "name": "Sân bay Tân Sơn Nhất",
+            "address": "Trường Sơn, Phường 2, Tân Bình, TP.HCM",
+            "icon": "✈️",
+            "color": "#3b82f6",
+            "lat": 21.05395,
+            "lng": 105.86521,
+            "type": "airport"
+        },
+        {
+            "id": 4,
+            "name": "Cảng Sài Gòn",
+            "address": "Khu cảng Tân Thuận, Quận 4, TP.HCM",
+            "icon": "⚓",
+            "color": "#8b5cf6",
+            "lat": 21.02691,
+            "lng": 105.89739,
+            "type": "port"
+        },
+        {
+            "id": 5,
+            "name": "Trạm xăng Petrolimex",
+            "address": "456 Đường Xô Viết Nghệ Tĩnh, Bình Thạnh, TP.HCM",
+            "icon": "⛽",
+            "color": "#ef4444",
+            "lat": 21.01822,
+            "lng": 105.86021,
+            "type": "gas_station"
+        },
+        {
+            "id": 6,
+            "name": "Bệnh viện Chợ Rẫy",
+            "address": "201B Nguyễn Chí Thanh, Quận 5, TP.HCM",
+            "icon": "🏥",
+            "color": "#ec4899",
+            "lat": 21.05295,
+            "lng": 105.80850,
+            "type": "hospital"
+        },
+        {
+            "id": 7,
+            "name": "Siêu thị BigC",
+            "address": "92 Nguyễn Đình Chiểu, Quận 1, TP.HCM",
+            "icon": "🏬",
+            "color": "#06b6d4",
+            "lat": 21.04030,
+            "lng": 105.82580,
+            "type": "supermarket"
+        },
+        {
+            "id": 8,
+            "name": "Trung tâm bảo dưỡng",
+            "address": "345 Đường Điện Biên Phủ, Bình Thạnh, TP.HCM",
+            "icon": "🔧",
+            "color": "#f59e0b",
+            "lat": 20.99991,
+            "lng": 105.88546,
+            "type": "service"
+        }
+    ],
+    "history": [
+        {
+            "id": 1,
+            "vehicleId": 1,
+            "plate": "29A-12345",
+            "date": "2025-11-04",
+            "time": "14:30",
+            "location": "Trụ sở công ty",
+            "locationId": 1,
+            "speed": 45,
+            "distance": 12.5,
+            "duration": "1h 20m",
+            "startTime": "13:10",
+            "endTime": "14:30",
+            "maxSpeed": 65,
+            "avgSpeed": 42,
+            "fuelConsumed": 2.5
+        },
+        {
+            "id": 2,
+            "vehicleId": 3,
+            "plate": "51C-11111",
+            "date": "2025-11-04",
+            "time": "13:15",
+            "location": "Bến xe Miền Đông",
+            "locationId": 2,
+            "speed": 35,
+            "distance": 8.3,
+            "duration": "45m",
+            "startTime": "12:30",
+            "endTime": "13:15",
+            "maxSpeed": 50,
+            "avgSpeed": 35,
+            "fuelConsumed": 1.8
+        },
+        {
+            "id": 3,
+            "vehicleId": 4,
+            "plate": "29D-22222",
+            "date": "2025-11-03",
+            "time": "09:00",
+            "location": "Cảng Sài Gòn",
+            "locationId": 4,
+            "speed": 55,
+            "distance": 25.7,
+            "duration": "2h 15m",
+            "startTime": "06:45",
+            "endTime": "09:00",
+            "maxSpeed": 75,
+            "avgSpeed": 52,
+            "fuelConsumed": 5.2
+        },
+        {
+            "id": 4,
+            "vehicleId": 5,
+            "plate": "30E-33333",
+            "date": "2025-11-04",
+            "time": "10:45",
+            "location": "Sân bay Tân Sơn Nhất",
+            "locationId": 3,
+            "speed": 42,
+            "distance": 15.3,
+            "duration": "1h 05m",
+            "startTime": "09:40",
+            "endTime": "10:45",
+            "maxSpeed": 60,
+            "avgSpeed": 40,
+            "fuelConsumed": 3.1
+        },
+        {
+            "id": 5,
+            "vehicleId": 6,
+            "plate": "51F-44444",
+            "date": "2025-11-04",
+            "time": "16:20",
+            "location": "Trạm xăng Petrolimex",
+            "locationId": 5,
+            "speed": 30,
+            "distance": 5.8,
+            "duration": "25m",
+            "startTime": "15:55",
+            "endTime": "16:20",
+            "maxSpeed": 45,
+            "avgSpeed": 32,
+            "fuelConsumed": 1.2
+        },
+        {
+            "id": 6,
+            "vehicleId": 1,
+            "plate": "29A-12345",
+            "date": "2025-11-03",
+            "time": "11:30",
+            "location": "Siêu thị BigC",
+            "locationId": 7,
+            "speed": 38,
+            "distance": 9.2,
+            "duration": "50m",
+            "startTime": "10:40",
+            "endTime": "11:30",
+            "maxSpeed": 55,
+            "avgSpeed": 36,
+            "fuelConsumed": 2.0
+        },
+        {
+            "id": 7,
+            "vehicleId": 8,
+            "plate": "30H-66666",
+            "date": "2025-11-02",
+            "time": "15:00",
+            "location": "Trung tâm bảo dưỡng",
+            "locationId": 8,
+            "speed": 25,
+            "distance": 18.5,
+            "duration": "1h 45m",
+            "startTime": "13:15",
+            "endTime": "15:00",
+            "maxSpeed": 40,
+            "avgSpeed": 28,
+            "fuelConsumed": 4.5
+        },
+        {
+            "id": 8,
+            "vehicleId": 3,
+            "plate": "51C-11111",
+            "date": "2025-11-02",
+            "time": "08:20",
+            "location": "Bệnh viện Chợ Rẫy",
+            "locationId": 6,
+            "speed": 40,
+            "distance": 11.7,
+            "duration": "1h 10m",
+            "startTime": "07:10",
+            "endTime": "08:20",
+            "maxSpeed": 58,
+            "avgSpeed": 38,
+            "fuelConsumed": 2.8
+        }
+    ],
+    "vehicleGroups": [
+        {
+            "id": "camera",
+            "name": "Nhóm TB Cam quay",
+            "description": "Các phương tiện lắp đặt thiết bị camera giám sát",
+            "icon": "📹",
+            "color": "#fbbf24"
+        },
+        {
+            "id": "taxi",
+            "name": "Nhóm Taxi M8",
+            "description": "Đội xe taxi M8 phục vụ khách hàng",
+            "icon": "🚕",
+            "color": "#10b981"
+        },
+        {
+            "id": "bus",
+            "name": "Nhóm xe Bus - Camera",
+            "description": "Xe buýt có camera giám sát hành khách",
+            "icon": "🚌",
+            "color": "#3b82f6"
+        },
+        {
+            "id": "truck",
+            "name": "Nhóm xe tải hàng - Cảm biến dầu",
+            "description": "Xe tải vận chuyển hàng hóa có cảm biến dầu",
+            "icon": "🚚",
+            "color": "#8b5cf6"
+        }
+    ],
+    "cameraGallery": [
+        {
+            "plate": "30A-123.45",
+            "group": "camera",
+            "images": [
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-01 18:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-01 19:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-01 18:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-01 01:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-01 02:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-01 13:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-01 14:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-01 15:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-01 16:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-01 07:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-01 08:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-01 09:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-01 11:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-01 12:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi-1--Nang-Tre.jpg",
+                    "time": "2023-10-02 01:30",
+                    "camera": "Camera 1",
+                    "address": "123 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+                },
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-02 02:30",
+                    "camera": "Camera 2",
+                    "address": "404 Trần Phú, Hà Đông, Hà Nội"
+                }
+            ]
+        },
+        {
+            "plate": "29B-567.89",
+            "group": "taxi",
+            "images": [
+                {
+                    "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+                    "time": "2023-10-01 18:30",
+                    "camera": "Camera 1",
+                    "address": "456 Tây Sơn, Đống Đa, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-Nhi---Dem-Ngan-.jpg",
+                    "time": "2023-10-01 20:15",
+                    "camera": "Camera 3",
+                    "address": "505 Lê Văn Lương, Thanh Xuân, Hà Nội"
+                }
+            ]
+        },
+        {
+            "plate": "51C-987.65",
+            "group": "bus",
+            "images": [
+                {
+                    "url": "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1200",
+                    "time": "2023-10-01 18:30",
+                    "camera": "Camera 1",
+                    "address": "789 Giải Phóng, Hoàng Mai, Hà Nội"
+                },
+                {
+                    "url": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/26/1233821/Giai-3---Kham-Pha-Ha.jpg",
+                    "time": "2023-10-01 19:45",
+                    "camera": "Camera 2",
+                    "address": "606 Kim Mã, Ba Đình, Hà Nội"
+                }
+            ]
+        },
+        {
+            "plate": "14D-432.10",
+            "group": "truck",
+            "images": [
+                {
+                    "url": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=1200",
+                    "time": "2023-10-01 18:30",
+                    "camera": "Camera 1",
+                    "address": "101 Phạm Hùng, Nam Từ Liêm, Hà Nội"
+                },
+                {
+                    "url": "https://cdn-media.sforum.vn/storage/app/media/ctvseo_MH/%E1%BA%A3nh%20%C4%91%E1%BA%B9p%20b%C3%ACnh%20%C4%91%E1%BB%8Bnh/anh-dep-binh-dinh-1.jpg",
+                    "time": "2023-10-01 21:00",
+                    "camera": "Camera 3",
+                    "address": "707 Nguyễn Chí Thanh, Đống Đa, Hà Nội"
+                }
+            ]
+        },
+        {
+            "plate": "30E-111.22",
+            "group": "camera",
+            "images": [
+                {
+                    "url": "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=1200",
+                    "time": "2023-10-01 18:30",
+                    "camera": "Camera 1",
+                    "address": "202 Cầu Giấy, Cầu Giấy, Hà Nội"
+                },
+                {
+                    "url": "https://cdn-media.sforum.vn/storage/app/media/thanhhuyen/h%C3%ACnh%20%E1%BA%A3nh%20h%C3%A0n%20qu%E1%BB%91c/hinh-anh-han-quoc-thumbnail.jpg",
+                    "time": "2023-10-01 19:15",
+                    "camera": "Camera 2",
+                    "address": "808 Đội Cấn, Ba Đình, Hà Nội"
+                }
+            ]
+        },
+        {
+            "plate": "60F-333.44",
+            "group": "taxi",
+            "images": [
+                {
+                    "url": "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1200",
+                    "time": "2023-10-01 18:30",
+                    "camera": "Camera 1",
+                    "address": "303 Minh Khai, Hai Bà Trưng, Hà Nội"
+                },
+                {
+                    "url": "https://th.bing.com/th/id/R.a06540c84c354244a96450742a701b6f?rik=2NvE4t1PyzY%2fDg&riu=http%3a%2f%2fthuthuatphanmem.vn%2fuploads%2f2018%2f09%2f11%2fhinh-anh-dep-62_044135376.jpg&ehk=ybfSrFxYckpHrcejxmpSY9vzNC07Np4EBKUILpup0iU%3d&risl=1&pid=ImgRaw&r=0",
+                    "time": "2023-10-01 20:30",
+                    "camera": "Camera 3",
+                    "address": "909 Lạc Long Quân, Tây Hồ, Hà Nội"
+                }
+            ]
+        }
+    ],
+    "routes": {
+        "1": [
+            {
+                "lat": 21.0285,
+                "lng": 105.8542,
+                "time": "2025-12-26T08:00:00",
+                "speed": 0,
+                "distance": 0
+            },
+            {
+                "lat": 21.0287,
+                "lng": 105.8547,
+                "time": "2025-12-26T08:02:00",
+                "speed": 15,
+                "distance": 0.4
+            },
+            {
+                "lat": 21.0290,
+                "lng": 105.8555,
+                "time": "2025-12-26T08:04:00",
+                "speed": 25,
+                "distance": 1.0
+            },
+            {
+                "lat": 21.0295,
+                "lng": 105.8565,
+                "time": "2025-12-26T08:06:00",
+                "speed": 35,
+                "distance": 1.8
+            },
+            {
+                "lat": 21.0302,
+                "lng": 105.8580,
+                "time": "2025-12-26T08:08:00",
+                "speed": 42,
+                "distance": 3.0
+            },
+            {
+                "lat": 21.0310,
+                "lng": 105.8595,
+                "time": "2025-12-26T08:10:00",
+                "speed": 48,
+                "distance": 4.5
+            },
+            {
+                "lat": 21.0318,
+                "lng": 105.8612,
+                "time": "2025-12-26T08:12:00",
+                "speed": 50,
+                "distance": 6.2
+            },
+            {
+                "lat": 21.0328,
+                "lng": 105.8630,
+                "time": "2025-12-26T08:14:00",
+                "speed": 52,
+                "distance": 8.0
+            },
+            {
+                "lat": 21.0338,
+                "lng": 105.8650,
+                "time": "2025-12-26T08:16:00",
+                "speed": 50,
+                "distance": 10.0
+            },
+            {
+                "lat": 21.0345,
+                "lng": 105.8660,
+                "time": "2025-12-26T08:18:00",
+                "speed": 48,
+                "distance": 11.5
+            },
+            {
+                "lat": 21.0352,
+                "lng": 105.8672,
+                "time": "2025-12-26T08:20:00",
+                "speed": 45,
+                "distance": 13.2
+            },
+            {
+                "lat": 21.0358,
+                "lng": 105.8685,
+                "time": "2025-12-26T08:22:00",
+                "speed": 42,
+                "distance": 14.8
+            },
+            {
+                "lat": 21.0365,
+                "lng": 105.8698,
+                "time": "2025-12-26T08:24:00",
+                "speed": 40,
+                "distance": 16.5
+            },
+            {
+                "lat": 21.0370,
+                "lng": 105.8710,
+                "time": "2025-12-26T08:26:00",
+                "speed": 38,
+                "distance": 17.9
+            },
+            {
+                "lat": 21.0375,
+                "lng": 105.8722,
+                "time": "2025-12-26T08:28:00",
+                "speed": 35,
+                "distance": 19.3
+            },
+            {
+                "lat": 21.0380,
+                "lng": 105.8732,
+                "time": "2025-12-26T08:30:00",
+                "speed": 32,
+                "distance": 20.6
+            },
+            {
+                "lat": 21.0385,
+                "lng": 105.8742,
+                "time": "2025-12-26T08:32:00",
+                "speed": 30,
+                "distance": 21.9
+            },
+            {
+                "lat": 21.0390,
+                "lng": 105.8750,
+                "time": "2025-12-26T08:34:00",
+                "speed": 25,
+                "distance": 22.9
+            },
+            {
+                "lat": 21.0392,
+                "lng": 105.8755,
+                "time": "2025-12-26T08:36:00",
+                "speed": 20,
+                "distance": 23.5
+            },
+            {
+                "lat": 21.0393,
+                "lng": 105.8760,
+                "time": "2025-12-26T08:38:00",
+                "speed": 10,
+                "distance": 24.0
+            },
+            {
+                "lat": 21.0393,
+                "lng": 105.8760,
+                "time": "2025-12-26T08:40:00",
+                "speed": 0,
+                "distance": 24.0
+            }
+        ],
+        "2": [
+            {
+                "lat": 10.8017,
+                "lng": 106.6626,
+                "time": "2025-12-26T09:30:00",
+                "speed": 0,
+                "distance": 0
+            },
+            {
+                "lat": 10.8020,
+                "lng": 106.6632,
+                "time": "2025-12-26T09:32:00",
+                "speed": 18,
+                "distance": 0.7
+            },
+            {
+                "lat": 10.8025,
+                "lng": 106.6640,
+                "time": "2025-12-26T09:34:00",
+                "speed": 28,
+                "distance": 1.5
+            },
+            {
+                "lat": 10.8032,
+                "lng": 106.6652,
+                "time": "2025-12-26T09:36:00",
+                "speed": 35,
+                "distance": 2.8
+            },
+            {
+                "lat": 10.8038,
+                "lng": 106.6665,
+                "time": "2025-12-26T09:38:00",
+                "speed": 38,
+                "distance": 4.2
+            },
+            {
+                "lat": 10.8045,
+                "lng": 106.6678,
+                "time": "2025-12-26T09:40:00",
+                "speed": 40,
+                "distance": 5.8
+            },
+            {
+                "lat": 10.8052,
+                "lng": 106.6690,
+                "time": "2025-12-26T09:42:00",
+                "speed": 38,
+                "distance": 7.2
+            },
+            {
+                "lat": 10.8055,
+                "lng": 106.6695,
+                "time": "2025-12-26T09:44:00",
+                "speed": 35,
+                "distance": 8.0
+            },
+            {
+                "lat": 10.8058,
+                "lng": 106.6700,
+                "time": "2025-12-26T09:46:00",
+                "speed": 25,
+                "distance": 8.6
+            }
+        ],
+        "3": [
+            {
+                "lat": 10.3449,
+                "lng": 106.9234,
+                "time": "2025-12-26T06:00:00",
+                "speed": 0,
+                "distance": 0
+            },
+            {
+                "lat": 10.3460,
+                "lng": 106.9255,
+                "time": "2025-12-26T06:05:00",
+                "speed": 25,
+                "distance": 2.5
+            },
+            {
+                "lat": 10.3475,
+                "lng": 106.9280,
+                "time": "2025-12-26T06:10:00",
+                "speed": 35,
+                "distance": 5.2
+            },
+            {
+                "lat": 10.3492,
+                "lng": 106.9310,
+                "time": "2025-12-26T06:15:00",
+                "speed": 45,
+                "distance": 8.5
+            },
+            {
+                "lat": 10.3510,
+                "lng": 106.9340,
+                "time": "2025-12-26T06:20:00",
+                "speed": 55,
+                "distance": 11.5
+            },
+            {
+                "lat": 10.3530,
+                "lng": 106.9375,
+                "time": "2025-12-26T06:25:00",
+                "speed": 60,
+                "distance": 15.0
+            },
+            {
+                "lat": 10.3550,
+                "lng": 106.9405,
+                "time": "2025-12-26T06:30:00",
+                "speed": 62,
+                "distance": 18.5
+            },
+            {
+                "lat": 10.3560,
+                "lng": 106.9420,
+                "time": "2025-12-26T06:35:00",
+                "speed": 60,
+                "distance": 20.5
+            }
+        ],
+        "4": [
+            {
+                "lat": 10.7724,
+                "lng": 106.6537,
+                "time": "2025-12-26T07:15:00",
+                "speed": 0,
+                "distance": 0
+            },
+            {
+                "lat": 10.7732,
+                "lng": 106.6550,
+                "time": "2025-12-26T07:18:00",
+                "speed": 20,
+                "distance": 1.6
+            },
+            {
+                "lat": 10.7742,
+                "lng": 106.6568,
+                "time": "2025-12-26T07:21:00",
+                "speed": 32,
+                "distance": 3.8
+            },
+            {
+                "lat": 10.7750,
+                "lng": 106.6585,
+                "time": "2025-12-26T07:24:00",
+                "speed": 38,
+                "distance": 6.0
+            },
+            {
+                "lat": 10.7765,
+                "lng": 106.6612,
+                "time": "2025-12-26T07:27:00",
+                "speed": 45,
+                "distance": 8.8
+            },
+            {
+                "lat": 10.7780,
+                "lng": 106.6640,
+                "time": "2025-12-26T07:30:00",
+                "speed": 48,
+                "distance": 11.8
+            },
+            {
+                "lat": 10.7798,
+                "lng": 106.6672,
+                "time": "2025-12-26T07:33:00",
+                "speed": 48,
+                "distance": 15.2
+            },
+            {
+                "lat": 10.7820,
+                "lng": 106.6705,
+                "time": "2025-12-26T07:36:00",
+                "speed": 45,
+                "distance": 18.8
+            }
+        ],
+        "5": [
+            {
+                "lat": 10.8231,
+                "lng": 106.7349,
+                "time": "2025-12-26T11:00:00",
+                "speed": 0,
+                "distance": 0
+            },
+            {
+                "lat": 10.8236,
+                "lng": 106.7358,
+                "time": "2025-12-26T11:03:00",
+                "speed": 12,
+                "distance": 1.0
+            },
+            {
+                "lat": 10.8242,
+                "lng": 106.7368,
+                "time": "2025-12-26T11:06:00",
+                "speed": 20,
+                "distance": 2.1
+            },
+            {
+                "lat": 10.8250,
+                "lng": 106.7382,
+                "time": "2025-12-26T11:09:00",
+                "speed": 28,
+                "distance": 3.8
+            },
+            {
+                "lat": 10.8258,
+                "lng": 106.7395,
+                "time": "2025-12-26T11:12:00",
+                "speed": 32,
+                "distance": 5.3
+            },
+            {
+                "lat": 10.8265,
+                "lng": 106.7400,
+                "time": "2025-12-26T11:15:00",
+                "speed": 30,
+                "distance": 6.2
+            }
+        ],
+        "6": [
+            {
+                "lat": 10.7611,
+                "lng": 106.6834,
+                "time": "2025-12-26T10:00:00",
+                "speed": 0,
+                "distance": 0
+            },
+            {
+                "lat": 10.7620,
+                "lng": 106.6850,
+                "time": "2025-12-26T10:04:00",
+                "speed": 22,
+                "distance": 1.9
+            },
+            {
+                "lat": 10.7635,
+                "lng": 106.6880,
+                "time": "2025-12-26T10:08:00",
+                "speed": 38,
+                "distance": 5.6
+            },
+            {
+                "lat": 10.7650,
+                "lng": 106.6905,
+                "time": "2025-12-26T10:12:00",
+                "speed": 40,
+                "distance": 8.8
+            },
+            {
+                "lat": 10.7665,
+                "lng": 106.6930,
+                "time": "2025-12-26T10:16:00",
+                "speed": 42,
+                "distance": 9.2
+            }
+        ],
+        "7": [
+            {
+                "lat": 10.8345,
+                "lng": 106.7125,
+                "time": "2025-12-25T14:00:00",
+                "speed": 0,
+                "distance": 0
+            },
+            {
+                "lat": 10.8355,
+                "lng": 106.7145,
+                "time": "2025-12-25T14:06:00",
+                "speed": 18,
+                "distance": 2.4
+            },
+            {
+                "lat": 10.8370,
+                "lng": 106.7175,
+                "time": "2025-12-25T14:12:00",
+                "speed": 30,
+                "distance": 6.8
+            },
+            {
+                "lat": 10.8388,
+                "lng": 106.7208,
+                "time": "2025-12-25T14:18:00",
+                "speed": 35,
+                "distance": 11.3
+            },
+            {
+                "lat": 10.8400,
+                "lng": 106.7235,
+                "time": "2025-12-25T14:24:00",
+                "speed": 40,
+                "distance": 13.5
+            }
+        ],
+        "8": [
+            {
+                "lat": 10.7769,
+                "lng": 106.6956,
+                "time": "2025-12-25T08:30:00",
+                "speed": 0,
+                "distance": 0
+            },
+            {
+                "lat": 10.7776,
+                "lng": 106.6968,
+                "time": "2025-12-25T08:34:00",
+                "speed": 18,
+                "distance": 1.6
+            },
+            {
+                "lat": 10.7788,
+                "lng": 106.6990,
+                "time": "2025-12-25T08:38:00",
+                "speed": 32,
+                "distance": 4.1
+            },
+            {
+                "lat": 10.7802,
+                "lng": 106.7016,
+                "time": "2025-12-25T08:42:00",
+                "speed": 38,
+                "distance": 7.3
+            },
+            {
+                "lat": 10.7820,
+                "lng": 106.7050,
+                "time": "2025-12-25T08:47:00",
+                "speed": 42,
+                "distance": 11.0
+            },
+            {
+                "lat": 10.7838,
+                "lng": 106.7080,
+                "time": "2025-12-25T08:52:00",
+                "speed": 44,
+                "distance": 11.7
+            }
+        ]
+    }
+}

@@ -1,0 +1,364 @@
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container-fluid">
+            <button class="sidebar-toggle-btn" type="button" id="sidebarToggle" aria-label="Toggle sidebar">
+                <span class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+
+            <a class="navbar-brand" href="index.html">
+                <img src="images/skysoft_logo.png" alt="">
+            </a>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav bg-light p-2 me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="" data-name="home">
+                            <img src="images/icons8-home-48.png" alt="">
+                            <h5>Trang chủ</h5>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="" data-name="tracking">
+                            <img src="images/icons8-tracking-50.png" alt="">
+                            <h5>Giám sát</h5>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="" data-name="route">
+                            <img src="images/icons8-route-64.png" alt="">
+                            <h5>Lộ trình</h5>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="" data-name="camera">
+                            <img src="images/icons8-camera-48.png" alt="">
+                            <h5>Camera</h5>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="" data-name="stream">
+                            <img src="images/icons8-stream-50.png" alt="">
+                            <h5>Trực tiếp</h5>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="" data-name="oilChart">
+                            <img src="images/icons8-chart-48.png" alt="">
+                            <h5>Biểu đồ dầu</h5>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="" data-name="countTrip">
+                            <img src="images/icons8-count-32.png" alt="">
+                            <h5>Đếm chuyến</h5>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="" data-name="report">
+                            <img src="images/icons8-report-48.png" alt="">
+                            <h5>Báo cáo</h5>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="" data-name="support">
+                            <img src="images/icons8-support-64.png" alt="">
+                            <h5>Hỗ trợ</h5>
+                        </a>
+                    </li>
+                </ul>
+                <div class="nav-information ms-auto d-flex align-items-center">
+                    <div class="nav-information-content d-flex align-items-center">
+                        <form action="" class="form-group">
+                            <input type="text" placeholder="Tìm kiếm..." class="form-control">
+                        </form>
+                        <h2></h2>
+                        <div class="button-group">
+                            <button class="button-search btn btn-light">
+                                <img src="images/icons8-search-48.png" alt="">
+                            </button>
+                            <div class="settings-dropdown-wrapper">
+                                <button class="btn btn-light settings-button" id="settingsButton" type="button">
+                                    <img src="images/icons8-setting-48.png" alt="">
+                                </button>
+                                <div class="settings-dropdown-menu" id="settingsDropdown">
+                                    <div class="settings-header">
+                                        <h5 class="settings-title">
+                                            <i class="fas fa-cog"></i>
+                                            Quản lý hệ thống
+                                        </h5>
+                                    </div>
+                                    <div class="settings-content">
+                                        <a href="#" class="settings-item" data-section="users">
+                                            <div class="settings-item-icon">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                            <div class="settings-item-content">
+                                                <div class="settings-item-title">Quản lý người dùng</div>
+                                                <div class="settings-item-desc">Thêm, sửa, xóa người dùng</div>
+                                            </div>
+                                            <i class="fas fa-chevron-right settings-item-arrow"></i>
+                                        </a>
+                                        <a href="#" class="settings-item" data-section="vehicles">
+                                            <div class="settings-item-icon">
+                                                <i class="fas fa-car"></i>
+                                            </div>
+                                            <div class="settings-item-content">
+                                                <div class="settings-item-title">Quản lý phương tiện</div>
+                                                <div class="settings-item-desc">Quản lý thông tin xe</div>
+                                            </div>
+                                            <i class="fas fa-chevron-right settings-item-arrow"></i>
+                                        </a>
+                                        <a href="#" class="settings-item" data-section="devices">
+                                            <div class="settings-item-icon">
+                                                <i class="fas fa-microchip"></i>
+                                            </div>
+                                            <div class="settings-item-content">
+                                                <div class="settings-item-title">Quản lý thiết bị</div>
+                                                <div class="settings-item-desc">Cấu hình thiết bị GPS</div>
+                                            </div>
+                                            <i class="fas fa-chevron-right settings-item-arrow"></i>
+                                        </a>
+                                        <a href="#" class="settings-item" data-section="groups">
+                                            <div class="settings-item-icon">
+                                                <i class="fas fa-layer-group"></i>
+                                            </div>
+                                            <div class="settings-item-content">
+                                                <div class="settings-item-title">Quản lý nhóm</div>
+                                                <div class="settings-item-desc">Phân nhóm phương tiện</div>
+                                            </div>
+                                            <i class="fas fa-chevron-right settings-item-arrow"></i>
+                                        </a>
+                                        <a href="#" class="settings-item" data-section="alerts">
+                                            <div class="settings-item-icon">
+                                                <i class="fas fa-bell"></i>
+                                            </div>
+                                            <div class="settings-item-content">
+                                                <div class="settings-item-title">Cảnh báo</div>
+                                                <div class="settings-item-desc">Cấu hình cảnh báo hệ thống</div>
+                                            </div>
+                                            <i class="fas fa-chevron-right settings-item-arrow"></i>
+                                        </a>
+                                        <a href="#" class="settings-item" data-section="permissions">
+                                            <div class="settings-item-icon">
+                                                <i class="fas fa-shield-alt"></i>
+                                            </div>
+                                            <div class="settings-item-content">
+                                                <div class="settings-item-title">Phân quyền</div>
+                                                <div class="settings-item-desc">Quản lý quyền truy cập</div>
+                                            </div>
+                                            <i class="fas fa-chevron-right settings-item-arrow"></i>
+                                        </a>
+                                        <a href="#" class="settings-item" data-section="system">
+                                            <div class="settings-item-icon">
+                                                <i class="fas fa-server"></i>
+                                            </div>
+                                            <div class="settings-item-content">
+                                                <div class="settings-item-title">Cài đặt hệ thống</div>
+                                                <div class="settings-item-desc">Cấu hình chung</div>
+                                            </div>
+                                            <i class="fas fa-chevron-right settings-item-arrow"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button-notification">
+                                <button class="btn btn-light">
+                                    <img src="images/icons8-bell-48.png" alt="">
+                                </button>
+                                <span class="badge">2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 style="color:rgb(236, 236, 236) ;"> | </h2>
+                    <div class="user-avatar-dropdown" id="navbarAvatarDropdown">
+                        <div class="avatar-container">
+                            <img src="images/icons8-user-48.png" alt="User Avatar">
+                            <p class="username"></p>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </div>
+                        <div class="user-dropdown-menu" id="navbarUserDropdown">
+                            <div class="dropdown-header">
+                                <div class="user-info">
+                                    <div class="avatar-small">
+                                        <img src="images/icons8-user-48.png" alt="User Avatar">
+                                    </div>
+                                    <div class="user-details">
+                                        <p class="user-fullname" id="navbarUserFullname"></p>
+                                        <p class="user-email" id="navbarUserEmail"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item" id="navbarChangePassword">
+                                <i class="fas fa-key"></i>
+                                <span>Đổi mật khẩu</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item logout-item" id="navbarLogout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Đăng xuất</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Modal Dialog -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-overlay"></div>
+        <div class="search-modal-dialog">
+            <div class="search-modal-header">
+                <h5 class="search-modal-title">
+                    <i class="fas fa-search"></i>
+                    Tìm kiếm
+                </h5>
+                <button type="button" class="search-modal-close" id="searchModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-modal-body">
+                <form class="search-modal-form" id="searchModalForm">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search search-input-icon"></i>
+                        <input type="text" class="search-modal-input" id="searchModalInput"
+                            placeholder="Nhập từ khóa tìm kiếm..." autocomplete="off" />
+                        <button type="submit" class="search-submit-btn">
+                            <i class="fas fa-search"></i>
+                            Tìm kiếm
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="modern-sidebar" id="modernSidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <img src="images/skysoft_logo.png" alt="Skysoft Logo">
+            </div>
+            <button class="sidebar-close-btn" id="sidebarClose" aria-label="Close sidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="sidebar-content">
+            <nav class="sidebar-nav">
+                <a href="" class="sidebar-nav-item" data-name="home">
+                    <div class="sidebar-nav-icon">
+                        <img src="images/icons8-home-48.png" alt="">
+                    </div>
+                    <span class="sidebar-nav-text">Trang chủ</span>
+                    <i class="fas fa-chevron-right sidebar-nav-arrow"></i>
+                </a>
+
+                <a href="" class="sidebar-nav-item" data-name="tracking">
+                    <div class="sidebar-nav-icon">
+                        <img src="images/icons8-tracking-50.png" alt="">
+                    </div>
+                    <span class="sidebar-nav-text">Giám sát</span>
+                    <i class="fas fa-chevron-right sidebar-nav-arrow"></i>
+                </a>
+
+                <a href="" class="sidebar-nav-item" data-name="route">
+                    <div class="sidebar-nav-icon">
+                        <img src="images/icons8-route-64.png" alt="">
+                    </div>
+                    <span class="sidebar-nav-text">Lộ trình</span>
+                    <i class="fas fa-chevron-right sidebar-nav-arrow"></i>
+                </a>
+
+                <a href="" class="sidebar-nav-item" data-name="camera">
+                    <div class="sidebar-nav-icon">
+                        <img src="images/icons8-camera-48.png" alt="">
+                    </div>
+                    <span class="sidebar-nav-text">Camera</span>
+                    <i class="fas fa-chevron-right sidebar-nav-arrow"></i>
+                </a>
+
+                <a href="" class="sidebar-nav-item" data-name="stream">
+                    <div class="sidebar-nav-icon">
+                        <img src="images/icons8-stream-50.png" alt="">
+                    </div>
+                    <span class="sidebar-nav-text">Trực tiếp</span>
+                    <i class="fas fa-chevron-right sidebar-nav-arrow"></i>
+                </a>
+
+                <a href="" class="sidebar-nav-item" data-name="oilChart">
+                    <div class="sidebar-nav-icon">
+                        <img src="images/icons8-chart-48.png" alt="">
+                    </div>
+                    <span class="sidebar-nav-text">Biểu đồ dầu</span>
+                    <i class="fas fa-chevron-right sidebar-nav-arrow"></i>
+                </a>
+
+                <a href="" class="sidebar-nav-item" data-name="countTrip">
+                    <div class="sidebar-nav-icon">
+                        <img src="images/icons8-count-32.png" alt="">
+                    </div>
+                    <span class="sidebar-nav-text">Đếm chuyến</span>
+                    <i class="fas fa-chevron-right sidebar-nav-arrow"></i>
+                </a>
+
+                <a href="" class="sidebar-nav-item" data-name="report">
+                    <div class="sidebar-nav-icon">
+                        <img src="images/icons8-report-48.png" alt="">
+                    </div>
+                    <span class="sidebar-nav-text">Báo cáo</span>
+                    <i class="fas fa-chevron-right sidebar-nav-arrow"></i>
+                </a>
+
+                <a href="" class="sidebar-nav-item" data-name="support">
+                    <div class="sidebar-nav-icon">
+                        <img src="images/icons8-support-64.png" alt="">
+                    </div>
+                    <span class="sidebar-nav-text">Hỗ trợ</span>
+                    <i class="fas fa-chevron-right sidebar-nav-arrow"></i>
+                </a>
+            </nav>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="user-avatar-dropdown sidebar-user-dropdown" id="sidebarAvatarDropdown">
+                <div class="sidebar-user-info">
+                    <img src="images/icons8-user-48.png" alt="" class="sidebar-user-avatar">
+                    <div class="sidebar-user-details">
+                        <p class="sidebar-username"></p>
+                        <span class="sidebar-user-role">Quản trị viên</span>
+                    </div>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </div>
+                <div class="user-dropdown-menu sidebar-dropdown-menu" id="sidebarUserDropdown">
+                    <div class="dropdown-header">
+                        <div class="user-info">
+                            <div class="avatar-small">
+                                <img src="images/icons8-user-48.png" alt="User Avatar">
+                            </div>
+                            <div class="user-details">
+                                <p class="user-fullname" id="sidebarUserFullname"></p>
+                                <p class="user-email" id="sidebarUserEmail"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item" id="sidebarChangePassword">
+                        <i class="fas fa-key"></i>
+                        <span>Đổi mật khẩu</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item logout-item" id="sidebarLogout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Đăng xuất</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </aside>
+</body>

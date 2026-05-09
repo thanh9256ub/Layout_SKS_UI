@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skysoft Go</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
+</head>
+
+
+<body>
+    <section id="sp-main-body">
+        <div class="container-fluid">
+            <div class="main-content bg-white route-screen">
+                <div class="row route-row">
+                    <div class="col-12 col-sm-2" id="filter">
+                        <div class="filter-container">
+                            <div class="custom-tabs">
+                                <button class="custom-tab active" data-tab="vehicles">
+                                    <i class="fas fa-car"></i>
+                                    <span>Phương tiện</span>
+                                </button>
+                                <button class="custom-tab" data-tab="locations">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Điểm đánh dấu</span>
+                                </button>
+                                <!-- <button class="custom-tab" data-tab="history">
+                                    <i class="fas fa-history"></i>
+                                    <span>Lịch sử</span>
+                                </button> -->
+                            </div>
+
+                            <!-- Tab Content -->
+                            <div class="tab-content-wrapper">
+                                <!-- Vehicles Tab -->
+                                <div class="tab-pane-custom active" id="vehicles-tab">
+                                    <div class="custom-dropdown">
+                                        <select id="groupSelect" class="rounded">
+                                            <option value="all">Tất cả nhóm</option>
+                                            <option value="camera">Nhóm TB Cam quay</option>
+                                            <option value="taxi">Nhóm Taxi M8</option>
+                                            <option value="bus">Nhóm xe Bus - Camera</option>
+                                            <option value="truck">Nhóm xe tải hàng - Cảm biến dầu</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group rounded bg-white " style="position: relative;">
+                                        <i class="fas fa-search"></i>
+                                        <input type="text" class="rounded mb-2" id="vehicleSearch"
+                                            placeholder="Tìm biển số xe...">
+                                    </div>
+                                    <div class="form-check-tracking">
+                                        <div>
+                                            <input class="form-check-input" type="radio" name="vehicleStatus"
+                                                id="allStatus" value="all" checked>
+                                            <label class="form-check-label" for="allStatus">Tất cả</label>
+                                        </div>
+                                        <div>
+                                            <input class="form-check-input" type="radio" name="vehicleStatus"
+                                                id="active" value="active">
+                                            <label class="form-check-label" for="active">Hoạt động</label>
+                                        </div>
+                                        <div>
+                                            <input class="form-check-input" type="radio" name="vehicleStatus"
+                                                id="inactive" value="inactive">
+                                            <label class="form-check-label" for="inactive">Dừng</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div id="vehicleList"></div>
+                                </div>
+                                <!-- Locations Tab -->
+                                <div class="tab-pane-custom" id="locations-tab">
+                                    <div class="search-box">
+                                        <i class="fas fa-search"></i>
+                                        <input type="text" id="locationSearch" placeholder="Tìm kiếm địa điểm...">
+                                    </div>
+
+                                    <div id="locationList"></div>
+                                </div>
+                                <!-- History Tab -->
+                                <!-- <div class="tab-pane-custom" id="history-tab">
+                                    <div class="search-box">
+                                        <i class="fas fa-search"></i>
+                                        <input type="text" id="historySearch" placeholder="Tìm biển số xe...">
+                                    </div>
+                                    <div class="custom-dropdown">
+                                        <select id="historyDateFilter" class="rounded">
+                                            <option value="today">Hôm nay</option>
+                                            <option value="yesterday">Hôm qua</option>
+                                            <option value="week">7 ngày qua</option>
+                                            <option value="month">30 ngày qua</option>
+                                        </select>
+                                    </div>
+                                    <div id="historyList"></div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-10 route-map-col">
+                        <div id="map-container" class="route-map-container">
+                            <div id="map"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/local-fetch.js"></script>
+    <script src="../js/auth-guard.js"></script>
+    <script src="../js/navbar-loader.js"></script>
+    <script src="../js/router.js"></script>
+    <script src="../js/home/navbar.js"></script>
+</body>
+
+</html>
