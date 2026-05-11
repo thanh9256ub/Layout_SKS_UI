@@ -1,80 +1,105 @@
-// Hàm khởi tạo search button với modal
-function initSearchButton() {
-    const searchButton = document.querySelector(".button-search");
-    const searchModal = document.getElementById("searchModal");
-    const searchModalClose = document.getElementById("searchModalClose");
-    const searchModalOverlay = searchModal?.querySelector(".search-modal-overlay");
-    const searchModalInput = document.getElementById("searchModalInput");
-    const searchModalForm = document.getElementById("searchModalForm");
+function initNavbarSearchInput() {
+    const searchForm = document.getElementById("navbarSearchForm");
+    const searchInput = document.getElementById("navbarSearchInput");
 
-    if (!searchButton || !searchModal) {
+    if (!searchForm || !searchInput || searchForm.dataset.initialized === "true") {
         return;
     }
 
-    // Xóa event listeners cũ bằng cách clone button
-    const newSearchButton = searchButton.cloneNode(true);
-    searchButton.parentNode.replaceChild(newSearchButton, searchButton);
+    searchForm.dataset.initialized = "true";
 
-    // Mở modal khi click vào nút search
-    newSearchButton.addEventListener("click", (e) => {
+    searchForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        e.stopPropagation();
-        if (searchModal) {
-            searchModal.classList.add("active");
-            document.body.style.overflow = "hidden"; // Ngăn scroll khi modal mở
-            // Auto focus vào input khi mở
-            setTimeout(() => {
-                if (searchModalInput) {
-                    searchModalInput.focus();
-                }
-            }, 300);
+        const searchTerm = searchInput.value.trim();
+
+        if (!searchTerm) {
+            searchInput.focus();
+            return;
         }
+
+        console.log("Searching for:", searchTerm);
+        // TODO: Thêm logic tìm kiếm thực tế
+    });
+}
+
+function initChangePasswordModal() {
+    const changePasswordModal = document.getElementById("changePasswordModal");
+    const changePasswordModalClose = document.getElementById("changePasswordModalClose");
+    const changePasswordModalOverlay = changePasswordModal?.querySelector(".search-modal-overlay");
+    const changePasswordCancel = document.getElementById("changePasswordCancel");
+    const changePasswordForm = document.getElementById("changePasswordForm");
+    const currentPasswordInput = document.getElementById("currentPassword");
+    const newPasswordInput = document.getElementById("newPassword");
+    const confirmNewPasswordInput = document.getElementById("confirmNewPassword");
+    const changePasswordMessage = document.getElementById("changePasswordMessage");
+
+    if (!changePasswordModal || changePasswordModal.dataset.initialized === "true") {
+        return;
+    }
+
+    changePasswordModal.dataset.initialized = "true";
+
+    window.openChangePasswordModal = function () {
+        changePasswordModal.classList.add("active");
+        document.body.style.overflow = "hidden";
+        setTimeout(() => {
+            currentPasswordInput?.focus();
+        }, 300);
+    };
+
+    function closeChangePasswordModal() {
+        changePasswordModal.classList.remove("active");
+        document.body.style.overflow = "";
+        changePasswordForm?.reset();
+        if (changePasswordMessage) {
+            changePasswordMessage.textContent = "";
+            changePasswordMessage.className = "change-password-message";
+        }
+    }
+
+    changePasswordModalClose?.addEventListener("click", closeChangePasswordModal);
+    changePasswordModalOverlay?.addEventListener("click", closeChangePasswordModal);
+    changePasswordCancel?.addEventListener("click", closeChangePasswordModal);
+
+    document.addEventListener("click", (e) => {
+        const changePasswordButton = e.target.closest("#navbarChangePassword, #sidebarChangePassword");
+        if (!changePasswordButton) return;
+
+        e.preventDefault();
+        window.openChangePasswordModal();
     });
 
-    // Đóng modal khi click vào nút close
-    if (searchModalClose) {
-        searchModalClose.addEventListener("click", () => {
-            closeSearchModal();
-        });
-    }
-
-    // Đóng modal khi click vào overlay
-    if (searchModalOverlay) {
-        searchModalOverlay.addEventListener("click", () => {
-            closeSearchModal();
-        });
-    }
-
-    // Đóng modal khi nhấn ESC
     document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && searchModal?.classList.contains("active")) {
-            closeSearchModal();
+        if (e.key === "Escape" && changePasswordModal.classList.contains("active")) {
+            closeChangePasswordModal();
         }
     });
 
-    // Xử lý submit form
-    if (searchModalForm) {
-        searchModalForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const searchTerm = searchModalInput?.value.trim();
-            if (searchTerm) {
-                // Thực hiện tìm kiếm ở đây
-                console.log("Searching for:", searchTerm);
-                // TODO: Thêm logic tìm kiếm thực tế
-                closeSearchModal();
-            }
-        });
-    }
+    changePasswordForm?.addEventListener("submit", (e) => {
+        e.preventDefault();
 
-    // Hàm đóng modal
-    function closeSearchModal() {
-        if (searchModal) {
-            searchModal.classList.remove("active");
-            document.body.style.overflow = ""; // Khôi phục scroll
-            if (searchModalInput) {
-                searchModalInput.value = "";
-            }
+        const currentPassword = currentPasswordInput?.value.trim();
+        const newPassword = newPasswordInput?.value.trim();
+        const confirmNewPassword = confirmNewPasswordInput?.value.trim();
+
+        if (!currentPassword || !newPassword || !confirmNewPassword) {
+            showChangePasswordMessage("Vui lòng nhập đầy đủ thông tin.", "error");
+            return;
         }
+
+        if (newPassword !== confirmNewPassword) {
+            showChangePasswordMessage("Mật khẩu xác nhận không khớp.", "error");
+            return;
+        }
+
+        showChangePasswordMessage("Đổi mật khẩu thành công.", "success");
+        setTimeout(closeChangePasswordModal, 800);
+    });
+
+    function showChangePasswordMessage(message, type) {
+        if (!changePasswordMessage) return;
+        changePasswordMessage.textContent = message;
+        changePasswordMessage.className = `change-password-message ${type}`;
     }
 }
 
@@ -84,9 +109,6 @@ function initSearchButton() {
     const navLinkNames = document.querySelectorAll(".nav-link-name");
     const allNavLinks = [...navLinks, ...navLinkNames];
     const usernameElement = document.querySelector(".username");
-    const searchButton = document.querySelector(".button-search");
-    const searchInput = document.querySelector('.form-group .form-control');
-
     const username = localStorage.getItem("username") || "Khách";
     if (usernameElement) usernameElement.textContent = username;
 
@@ -172,8 +194,8 @@ function initSearchButton() {
     setTimeout(syncWithRouter, 500);
 
 
-    // Khởi tạo search button
-    initSearchButton();
+    initNavbarSearchInput();
+    initChangePasswordModal();
 
     // Xử lý toggle menu cho màn hình <= 1024px
     const navbarToggler = document.querySelector('.navbar-toggler');

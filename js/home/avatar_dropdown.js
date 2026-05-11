@@ -139,6 +139,10 @@
 
         closeAllDropdowns();
 
+        if (typeof window.openChangePasswordModal !== 'function' && typeof initChangePasswordModal === 'function') {
+            initChangePasswordModal();
+        }
+
         if (typeof window.openChangePasswordModal === 'function') {
             window.openChangePasswordModal();
         }

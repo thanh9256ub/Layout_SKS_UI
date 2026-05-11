@@ -70,8 +70,12 @@
                 initNavbar();
             }
 
-            if (typeof initSearchButton === 'function') {
-                setTimeout(initSearchButton, 100);
+            if (typeof initNavbarSearchInput === 'function') {
+                setTimeout(initNavbarSearchInput, 100);
+            }
+
+            if (typeof initChangePasswordModal === 'function') {
+                setTimeout(initChangePasswordModal, 100);
             }
 
             appendScriptOnce(`${APP_ROOT}js/settings/settings_menu.js`);

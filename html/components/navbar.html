@@ -78,14 +78,13 @@
                 </ul>
                 <div class="nav-information ms-auto d-flex align-items-center">
                     <div class="nav-information-content d-flex align-items-center">
-                        <form action="" class="form-group">
-                            <input type="text" placeholder="Tìm kiếm..." class="form-control">
+                        <form action="" class="navbar-search-form" id="navbarSearchForm">
+                            <i class="fas fa-search navbar-search-icon"></i>
+                            <input type="text" placeholder="Tìm kiếm..." class="navbar-search-input"
+                                id="navbarSearchInput" autocomplete="off">
                         </form>
                         <h2></h2>
                         <div class="button-group">
-                            <button class="button-search btn btn-light">
-                                <img src="images/icons8-search-48.png" alt="">
-                            </button>
                             <div class="settings-dropdown-wrapper">
                                 <button class="btn btn-light settings-button" id="settingsButton" type="button">
                                     <img src="images/icons8-setting-48.png" alt="">
@@ -215,28 +214,41 @@
         </div>
     </nav>
 
-    <!-- Change Password Modal Dialog -->
-    <div class="search-modal" id="searchModal">
+    <div class="search-modal" id="changePasswordModal">
         <div class="search-modal-overlay"></div>
         <div class="search-modal-dialog">
             <div class="search-modal-header">
                 <h5 class="search-modal-title">
-                    <i class="fas fa-search"></i>
-                    Tìm kiếm
+                    <i class="fas fa-key"></i>
+                    Đổi mật khẩu
                 </h5>
-                <button type="button" class="search-modal-close" id="searchModalClose">
+                <button type="button" class="search-modal-close" id="changePasswordModalClose">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
             <div class="search-modal-body">
-                <form class="search-modal-form" id="searchModalForm">
-                    <div class="search-input-wrapper">
-                        <i class="fas fa-search search-input-icon"></i>
-                        <input type="text" class="search-modal-input" id="searchModalInput"
-                            placeholder="Nhập từ khóa tìm kiếm..." autocomplete="off" />
+                <form class="search-modal-form" id="changePasswordForm">
+                    <label class="change-password-field">
+                        Mật khẩu hiện tại
+                        <input type="password" class="search-modal-input" id="currentPassword"
+                            placeholder="Nhập mật khẩu hiện tại" autocomplete="current-password" />
+                    </label>
+                    <label class="change-password-field">
+                        Mật khẩu mới
+                        <input type="password" class="search-modal-input" id="newPassword"
+                            placeholder="Nhập mật khẩu mới" autocomplete="new-password" />
+                    </label>
+                    <label class="change-password-field">
+                        Xác nhận mật khẩu mới
+                        <input type="password" class="search-modal-input" id="confirmNewPassword"
+                            placeholder="Nhập lại mật khẩu mới" autocomplete="new-password" />
+                    </label>
+                    <p class="change-password-message" id="changePasswordMessage"></p>
+                    <div class="change-password-actions">
+                        <button type="button" class="btn-cancel" id="changePasswordCancel">Hủy</button>
                         <button type="submit" class="search-submit-btn">
-                            <i class="fas fa-search"></i>
-                            Tìm kiếm
+                            <i class="fas fa-save"></i>
+                            Lưu thay đổi
                         </button>
                     </div>
                 </form>
