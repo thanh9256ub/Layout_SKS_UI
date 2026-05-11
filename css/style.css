@@ -11699,6 +11699,243 @@ td:last-child {
     order: 1;
 }
 
+/* Compact report filters */
+.report-screen .report-filter-card {
+    margin-bottom: 12px !important;
+    background: #fff !important;
+    border: 1px solid #dfe5ec !important;
+}
+
+.report-screen .report-filter-header {
+    padding: 8px 14px !important;
+    background: #f8fafc !important;
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+.report-screen .report-filter-title {
+    color: #0f172a !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+}
+
+.report-screen .report-filter-title i {
+    color: #0ea5e9 !important;
+}
+
+.report-screen .report-filter-content {
+    padding: 10px 12px !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.report-screen .report-filter-content>.row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    display: contents !important;
+    margin: 0 !important;
+}
+
+.report-screen .report-filter-content>.row+.row {
+    margin-top: 0 !important;
+}
+
+.report-screen .report-filter-content>.row>[class*="col-"] {
+    flex: 0 1 150px;
+    width: auto !important;
+    max-width: none !important;
+    padding: 0 !important;
+}
+
+.report-screen .report-filter-content>.row>[class*="col-"]:has(select) {
+    flex-basis: 178px;
+}
+
+.report-screen .report-filter-content>.row>[class*="col-"]:has(input[id*="Plate"]) {
+    flex-basis: 155px;
+}
+
+.report-screen .report-filter-content>.row>[class*="col-"]:has(input[id*="Date"]),
+.report-screen .report-filter-content>.row>[class*="col-"]:has(.report-calendar-btn) {
+    flex-basis: 118px;
+}
+
+.report-screen .report-filter-content>.row>[class*="col-"]:has(input[id*="Time"]),
+.report-screen .report-filter-content>.row>[class*="col-"]:has(.report-time-btn) {
+    flex-basis: 92px;
+}
+
+.report-screen .report-filter-content .col-sm-12:has(.report-submit-btn),
+.report-screen .report-filter-content .col-md-2:has(.report-submit-btn),
+.report-screen .report-filter-content .col-md-3:has(.report-submit-btn) {
+    flex: 0 0 auto;
+    min-width: 0;
+    order: 99;
+}
+
+.report-screen .report-filter-content>.row>[class*="col-"]:has(.report-checkbox-wrapper) {
+    flex: 0 1 auto;
+}
+
+.report-screen .report-form-label {
+    display: none !important;
+}
+
+.report-screen .report-filter-content label:not(.report-form-label):empty {
+    display: none !important;
+}
+
+.report-screen .report-form-control {
+    min-height: 34px !important;
+    padding: 7px 10px !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 7px !important;
+    color: #111827 !important;
+    font-size: 12px !important;
+    line-height: 18px !important;
+    box-shadow: none !important;
+}
+
+.report-screen .report-form-control:hover {
+    border-color: #94a3b8 !important;
+}
+
+.report-screen .report-form-control:focus {
+    border-color: #0ea5e9 !important;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.14) !important;
+    transform: none !important;
+}
+
+.report-screen .report-input-group .report-form-control,
+.report-screen .report-select {
+    padding-right: 34px !important;
+}
+
+.report-screen .report-input-icon,
+.report-screen .report-select-icon {
+    right: 10px !important;
+    color: #64748b !important;
+    font-size: 12px !important;
+}
+
+.report-screen .report-calendar-btn,
+.report-screen .report-time-btn {
+    right: 4px !important;
+    width: 26px !important;
+    height: 26px !important;
+    border-radius: 6px !important;
+    background: transparent !important;
+    color: #64748b !important;
+}
+
+.report-screen .report-calendar-btn:hover,
+.report-screen .report-time-btn:hover {
+    background: #e0f2fe !important;
+    color: #0284c7 !important;
+    transform: translateY(-50%) !important;
+}
+
+.report-screen .report-submit-btn {
+    width: auto !important;
+    min-width: 104px;
+    min-height: 30px !important;
+    padding: 5px 10px !important;
+    border: 1px solid #0284c7 !important;
+    border-radius: 7px !important;
+    background: #0ea5e9 !important;
+    color: #fff !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 18px !important;
+    box-shadow: none !important;
+    white-space: nowrap;
+}
+
+.report-screen .report-submit-btn:hover {
+    background: #0284c7 !important;
+    border-color: #0369a1 !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.report-screen .report-checkbox-wrapper {
+    width: fit-content;
+    max-width: 100%;
+    min-height: 28px;
+    padding: 3px 4px !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    background: transparent !important;
+    gap: 5px;
+}
+
+.report-screen .report-checkbox-wrapper:hover {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.report-screen .report-checkbox {
+    width: 14px !important;
+    height: 14px !important;
+    margin: 0 !important;
+    flex: 0 0 auto;
+}
+
+.report-screen .report-checkbox-label {
+    min-width: 0;
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.report-screen .report-checkbox-label i {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .report-screen .report-filter-content {
+        gap: 7px;
+    }
+
+    .report-screen .report-filter-header {
+        padding: 8px 12px !important;
+    }
+
+    .report-screen .report-filter-content {
+        padding: 9px 10px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .report-screen .report-filter-content {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .report-screen .report-submit-btn,
+    .report-screen .report-checkbox-label {
+        white-space: normal;
+    }
+
+    .report-screen .report-filter-content>.row>[class*="col-"],
+    .report-screen .report-filter-content .col-sm-12:has(.report-submit-btn),
+    .report-screen .report-filter-content .col-md-2:has(.report-submit-btn),
+    .report-screen .report-filter-content .col-md-3:has(.report-submit-btn) {
+        width: 100% !important;
+        min-width: 0;
+    }
+
+    .report-screen .report-submit-btn {
+        width: 100% !important;
+        min-width: 0;
+    }
+}
+
 .route-screen .filter-section .search-plate {
     order: 3;
 }
@@ -13757,8 +13994,7 @@ td:last-child {
    FORCE CLEAN LAYOUT
    ============================================ */
 
-.report-screen .report-table-card,
-.report-screen .report-filter-card {
+.report-screen .report-table-card {
     margin-bottom: 0 !important;
 }
 
