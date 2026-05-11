@@ -11,11 +11,11 @@
 .avatar-container {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
+    gap: 4px;
+    padding: 6px 10px;
     border-radius: 12px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    min-width: 120px;
+    min-width: 104px;
 }
 
 .avatar-container:hover {
@@ -24,8 +24,8 @@
 }
 
 .avatar-container img {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     border: 2px solid rgba(251, 191, 36, 0.3);
     transition: all 0.3s ease;
@@ -37,7 +37,7 @@
 }
 
 .avatar-container .username {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     color: #1f2937;
     margin: 0;
@@ -48,7 +48,7 @@
 }
 
 .dropdown-arrow {
-    font-size: 12px;
+    font-size: 10px;
     color: #6b7280;
     transition: transform 0.3s ease;
     margin-left: 4px;
@@ -1462,7 +1462,7 @@ body.is-page-fading {
     border-radius: 0;
     box-shadow: none;
     display: flex;
-    gap: 8px;
+    gap: 4px;
     flex-wrap: nowrap;
     align-items: center;
 }
@@ -1477,7 +1477,7 @@ body.is-page-fading {
     flex: 1;
     display: flex;
     justify-content: center;
-    margin: 0 4px;
+    margin: 0 2px;
 }
 
 .navbar-bottom .nav-link {
@@ -1491,12 +1491,12 @@ body.is-page-fading {
 }
 
 .navbar-bottom .nav-link img {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
 }
 
 .navbar-bottom .nav-link h5 {
-    font-size: 12px;
+    font-size: 9px;
 }
 
 .navbar-bottom .nav-link:hover {
@@ -1524,8 +1524,8 @@ body.is-page-fading {
 /* --- BUTTON --- */
 .settings-button {
     position: relative;
-    padding: 8px;
-    border-radius: 12px;
+    padding: 6px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1968,11 +1968,11 @@ body.is-page-fading {
 .logo-user {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
 }
 
 .navbar-nav {
-    gap: 20px;
+    gap: 10px;
     border-radius: 20px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
@@ -1996,7 +1996,7 @@ body.is-page-fading {
 .button-group {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 8px;
     padding: 5px;
     border-radius: 20px;
 }
@@ -2007,7 +2007,7 @@ body.is-page-fading {
     background-color: #f97316;
     border-radius: 50px;
     display: flex;
-    gap: 8px;
+    gap: 5px;
     align-items: center;
     justify-content: left;
     overflow: hidden;
@@ -2015,14 +2015,14 @@ body.is-page-fading {
 }
 
 .nav-link img {
-    width: 30px;
-    height: 30px;
+    width: 22px;
+    height: 22px;
 }
 
 .nav-information-content button img,
 .logo-user img {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
 }
 
 .logo-user p {
@@ -2363,7 +2363,7 @@ body.is-page-fading {
     opacity: 0;
     transform: translateX(50px);
     transition: all 1s ease 0;
-    font-size: 14px;
+    font-size: 11px;
     color: white;
     margin: 0;
     white-space: nowrap;
@@ -2382,11 +2382,11 @@ body.is-page-fading {
     right: -20%;
     background: red;
     color: white;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
-    padding: 3px 7px;
+    padding: 2px 5px;
     border-radius: 50%;
-    min-width: 18px;
+    min-width: 15px;
     text-align: center;
 }
 
@@ -4944,7 +4944,7 @@ td:last-child {
     }
 
     .navbar-nav {
-        gap: 14px;
+        gap: 8px;
         padding: 6px 10px;
     }
 
@@ -4959,17 +4959,17 @@ td:last-child {
     }
 
     .nav-link img {
-        width: 22px;
-        height: 22px;
+        width: 18px;
+        height: 18px;
     }
 
     .nav-link h5 {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .nav-information,
     .nav-information-content {
-        gap: 8px;
+        gap: 5px;
     }
 
     .navbar-top-left {
@@ -4995,13 +4995,13 @@ td:last-child {
     }
 
     .button-group {
-        gap: 14px;
+        gap: 6px;
     }
 
     .button-group button img,
     .logo-user img {
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
     }
 
     /* Main content */
@@ -5327,7 +5327,7 @@ td:last-child {
     }
 
     .navbar-nav {
-        gap: 8px;
+        gap: 4px;
         padding: 0;
         background: transparent;
         box-shadow: none;
@@ -5353,7 +5353,7 @@ td:last-child {
         align-items: center;
         justify-content: flex-start;
         padding-left: 12px;
-        gap: 10px;
+        gap: 5px;
         overflow: hidden;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: 0 2px 8px rgba(14, 165, 233, 0.2);
@@ -5385,8 +5385,8 @@ td:last-child {
     }
 
     .nav-link img {
-        width: 24px;
-        height: 24px;
+        width: 18px;
+        height: 18px;
         filter: brightness(0) invert(1);
         flex-shrink: 0;
         transition: transform 0.3s ease;
@@ -5400,7 +5400,7 @@ td:last-child {
     }
 
     .nav-link h5 {
-        font-size: 13px;
+        font-size: 10px;
         font-weight: 600;
         margin: 0;
         white-space: nowrap;
@@ -5902,7 +5902,7 @@ td:last-child {
     }
 
     .navbar-nav {
-        gap: 6px;
+        gap: 4px;
         padding: 5px 6px;
     }
 
@@ -5919,28 +5919,28 @@ td:last-child {
     }
 
     .nav-link img {
-        width: 22px;
-        height: 22px;
+        width: 16px;
+        height: 16px;
     }
 
     .nav-link h5 {
-        font-size: 10px;
+        font-size: 8px;
     }
 
     .nav-information,
     .nav-information-content {
-        gap: 6px;
+        gap: 4px;
     }
 
     .button-group {
-        gap: 6px;
+        gap: 4px;
         padding: 3px 5px;
     }
 
     .button-group button img,
     .logo-user img {
-        width: 20px;
-        height: 20px;
+        width: 15px;
+        height: 15px;
     }
 
     /* Input search responsive ở 768px */
@@ -6275,7 +6275,7 @@ td:last-child {
     }
 
     .navbar-nav {
-        gap: 5px;
+        gap: 3px;
         padding: 4px 5px;
     }
 
@@ -6292,18 +6292,18 @@ td:last-child {
     }
 
     .nav-link img {
-        width: 20px;
-        height: 20px;
+        width: 15px;
+        height: 15px;
     }
 
     .nav-link h5 {
-        font-size: 9px;
+        font-size: 8px;
     }
 
     .button-group button img,
     .logo-user img {
-        width: 18px;
-        height: 18px;
+        width: 14px;
+        height: 14px;
     }
 
     .logo-user p {
@@ -6572,7 +6572,7 @@ td:last-child {
     }
 
     .navbar-nav {
-        gap: 4px;
+        gap: 3px;
         padding: 3px 4px;
     }
 
@@ -6589,8 +6589,8 @@ td:last-child {
     }
 
     .nav-link img {
-        width: 18px;
-        height: 18px;
+        width: 15px;
+        height: 15px;
     }
 
     .nav-link h5 {
@@ -6600,11 +6600,11 @@ td:last-child {
     .nav-information,
     .nav-information-content,
     .logo-user {
-        gap: 8px;
+        gap: 4px;
     }
 
     .button-group {
-        gap: 4px;
+        gap: 3px;
         padding: 2px 4px;
     }
 
@@ -6623,13 +6623,13 @@ td:last-child {
     }
 
     .button-group button img {
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
     }
 
     .logo-user img {
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
     }
 
     .logo-user p {
@@ -11311,13 +11311,13 @@ td:last-child {
     .nav-information {
         display: flex !important;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
     }
 
     .nav-information-content {
         display: flex !important;
         align-items: center;
-        gap: 8px;
+        gap: 4px;
     }
 
     .navbar-search-form {
@@ -11331,7 +11331,7 @@ td:last-child {
     .button-group {
         display: flex !important;
         align-items: center;
-        gap: 12px;
+        gap: 5px;
     }
 
     /* Ẩn dấu gạch phân cách và icon user ở 1024px trở xuống */
