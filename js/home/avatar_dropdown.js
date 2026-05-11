@@ -139,10 +139,9 @@
 
         closeAllDropdowns();
 
-        alert('Tính năng đổi mật khẩu đang được phát triển. Vui lòng liên hệ quản trị viên.');
-
-        // You can replace this with actual change password modal/page
-        // Example: window.location.href = 'html/change-password.html';
+        if (typeof window.openChangePasswordModal === 'function') {
+            window.openChangePasswordModal();
+        }
     }
 
     function handleLogout(e) {

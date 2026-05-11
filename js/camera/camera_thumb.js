@@ -12,6 +12,13 @@
   const $$ = sel => document.querySelectorAll(sel);
   const getAllImages = () => vehicles.flatMap(v => v.images.map(img => ({ ...img, plate: v.plate, group: v.group, _uId: img._uId }))).sort((a, b) => b.time.localeCompare(a.time));
   const getTime = (timeStr) => timeStr ? timeStr.split(' ').pop() : '';
+  const getShortDateTime = (timeStr) => {
+    if (!timeStr) return '';
+    const parts = timeStr.split(' ');
+    const time = (parts.pop() || '').slice(0, 5);
+    const date = (parts.pop() || '').slice(0, 5);
+    return date ? `${date} ${time}` : time;
+  };
 
   // Utility: Toggle element visibility
   const setElementVisibility = (selector, visible) => {
@@ -121,7 +128,7 @@
         </div>
         <div class="item-info">
           <span class="info-camera">📷 ${img.camera}</span>
-          <span class="info-time">🕒 ${img.time}</span>
+          <span class="info-time" title="${img.time}">🕒 ${getShortDateTime(img.time)}</span>
         </div>`;
       gallery?.appendChild(item);
 
@@ -171,6 +178,7 @@
       if (lightbox) {
         setElementVisibility('#list-image .container', false);
         setElementVisibility($('filter-camera'), false);
+        document.body.classList.add('camera-detail-open');
         lightbox.classList.add('active');
         setBodyScroll(true);
 
@@ -202,6 +210,7 @@
     }
 
     setBodyScroll(false);
+    document.body.classList.remove('camera-detail-open');
     $$('.thumbnail-item').forEach(t => t.classList.remove('active'));
   }
 
@@ -227,6 +236,17 @@
           <span class="info-item">🕒 ${getTime(img.time)}</span>
         </div>
         <span class="info-item" style="align-items: center">📍 ${img.address}</span>`;
+    }
+
+    const imageContainer = document.querySelector('.lightbox-image-container');
+    if (imageContainer) {
+      let addressOverlay = imageContainer.querySelector('.lightbox-address-overlay');
+      if (!addressOverlay) {
+        addressOverlay = document.createElement('div');
+        addressOverlay.className = 'lightbox-address-overlay';
+        imageContainer.appendChild(addressOverlay);
+      }
+      addressOverlay.innerHTML = `<i class="fas fa-map-marker-alt"></i><span>${img.address || ''}</span>`;
     }
 
     $$('.thumbnail-item').forEach((t, i) => t.classList.toggle('active', i === index));

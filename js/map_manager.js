@@ -259,8 +259,8 @@ if (!window.MapManager) {
                 }
 
                 if (!map._tileLayerAdded) {
-                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        attribution: '&copy; OpenStreetMap',
+                    const streetLayer = L.tileLayer('https://maps.skysoft.vn/web_tile.jsp?c={x}&r={y}&z={z}', {
+                        attribution: '&copy; Skysoft',
                         maxZoom: 19,
                         updateWhenZooming: false,
                         updateWhenIdle: true,
@@ -271,6 +271,19 @@ if (!window.MapManager) {
                         reuseTiles: true,
                         updateInterval: 200
                     }).addTo(map);
+                    const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                        attribution: '&copy; Esri',
+                        maxZoom: 19
+                    });
+                    const topoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; OpenTopoMap',
+                        maxZoom: 17
+                    });
+                    L.control.layers({
+                        'Ban do duong': streetLayer,
+                        'Ve tinh': satelliteLayer,
+                        'Dia hinh': topoLayer
+                    }, null, { position: 'topright', collapsed: true }).addTo(map);
                     map._tileLayerAdded = true;
                 }
 

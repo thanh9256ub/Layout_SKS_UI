@@ -13,11 +13,171 @@
                 'js/home/home_schedule.js', 'js/home/home_preview.js', 'js/home/home_search_vehicle.js', 'js/home/home_list.js']
         },
         tracking: { html: 'html/tracking.html', scripts: ['js/tracking/tracking_filter.js', 'js/map_manager.js', 'js/tracking/tracking_map.js'] },
-        route: { html: 'html/route.html', scripts: ['js/route/route_filter.js', 'js/map_manager.js', 'js/route/route_map.js'] },
+        route: {
+            html: 'html/route.html',
+            scripts: ['js/route/route_filter.js', 'js/map_manager.js', 'js/route/route_map.js'],
+            htmlContent: `<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Skysoft Go</title></head>
+<body>
+    <section id="sp-main-body">
+        <div class="container-fluid">
+            <div class="main-content bg-white route-screen">
+                <div class="row route-row">
+                    <div class="col-12 col-sm-2" id="filter">
+                        <div class="main-container">
+                            <div class="filter-section">
+                                <div class="custom-dropdown mb-2">
+                                    <select id="groupFilterSelectTime" class="rounded">
+                                        <option value="1" selected>1 giờ gần đây</option>
+                                        <option value="2">4 giờ gần đây</option>
+                                        <option value="3">6 giờ gần đây</option>
+                                        <option value="4">12 giờ gần đây</option>
+                                        <option value="5">24 giờ gần đây</option>
+                                        <option value="6">Ngày hôm nay</option>
+                                        <option value="7">Ngày hôm qua</option>
+                                        <option value="8">Điều kiện khác</option>
+                                    </select>
+                                </div>
+                                <div class="route-custom-time" id="routeCustomTime" style="display:none">
+                                    <div class="mb-2">
+                                        <label for="routeDateFrom" class="form-label-search"><i class="fas fa-calendar-day me-2"></i>Từ ngày</label>
+                                        <input type="date" id="routeDateFrom" class="form-control-search">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="routeDateTo" class="form-label-search"><i class="fas fa-calendar-check me-2"></i>Đến ngày</label>
+                                        <input type="date" id="routeDateTo" class="form-control-search">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="routeTimeFrom" class="form-label-search"><i class="fas fa-clock me-2"></i>Từ giờ</label>
+                                        <input type="time" id="routeTimeFrom" class="form-control-search">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="routeTimeTo" class="form-label-search"><i class="fas fa-clock me-2"></i>Đến giờ</label>
+                                        <input type="time" id="routeTimeTo" class="form-control-search">
+                                    </div>
+                                </div>
+                                <div class="search-plate mb-2">
+                                    <div class="autocomplete-container route-plate-search">
+                                        <input type="text" class="form-control-search" id="vehicleSearchInput" placeholder="Tìm biển số xe...">
+                                        <button type="button" class="route-inline-search-btn" id="routeInlineSearchBtn" title="Tìm kiếm">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                        <div class="autocomplete-results" id="autocompleteResults"></div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-primary-custom w-100 mb-2" id="searchRoutesBtn">
+                                    <i class="fas fa-search me-2"></i>Tìm kiếm
+                                </button>
+                            </div>
+                            <div class="table-container">
+                                <div id="emptyState" class="empty-state">
+                                    <i class="fas fa-search-location"></i>
+                                    <h4>Chưa có kết quả tìm kiếm</h4>
+                                    <p>Hãy nhập biển số xe bạn muốn tìm kiếm để xem lộ trình</p>
+                                </div>
+                                <div id="loadingIndicator" class="loading-spinner" style="display: none;">
+                                    <div class="spinner"></div>
+                                </div>
+                                <div id="resultsTable" style="display: none;">
+                                    <div class="table-responsive">
+                                        <table class="table-filter table-hover mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Thời điểm</th>
+                                                    <th>VT</th>
+                                                    <th>Km</th>
+                                                    <th>Máy</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="vehicleTableBody"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="route-progress-container" id="routeProgressContainer" style="display: none;">
+                                    <div class="route-progress-bar">
+                                        <div class="route-progress-fill" id="routeProgressFill"></div>
+                                    </div>
+                                </div>
+                                <div class="table-controls" id="tableControls" style="display: none;">
+                                    <button class="btn-control" id="prevBtn" title="Điểm trước"><i class="fas fa-chevron-left"></i></button>
+                                    <button class="btn-control" id="toggleRouteBtn" title="Ẩn/Hiện lộ trình"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-control" id="playBtn" title="Phát"><i class="fas fa-play"></i></button>
+                                    <button class="btn-control" id="pauseBtn" title="Tạm dừng"><i class="fas fa-pause"></i></button>
+                                    <button class="btn-control" id="nextBtn" title="Điểm tiếp"><i class="fas fa-chevron-right"></i></button>
+                                    <div style="display: flex; align-items: center; gap: 4px; margin-left: auto;">
+                                        <button class="btn-control" id="speedDownBtn" title="Giảm tốc độ"><i class="fas fa-minus"></i></button>
+                                        <div style="min-width: 30px; text-align: center; font-weight: 600; font-size: 13px; color: #1f2937;" id="speedDisplay">x1</div>
+                                        <button class="btn-control" id="speedUpBtn" title="Tăng tốc độ"><i class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+                                <div id="noResults" class="no-results" style="display: none;">
+                                    <i class="fas fa-search"></i>
+                                    <h4>Không tìm thấy lộ trình</h4>
+                                    <p>Xe này không có lộ trình trong khoảng thời gian được chọn</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-10 route-map-col">
+                        <div id="map-container" class="route-map-container">
+                            <div id="map"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>`
+        },
         camera: { html: 'html/camera.html', scripts: ['js/camera/camera_filter.js', 'js/camera/camera_thumb.js'] },
         stream: {
             html: 'html/stream.html', scripts: ['js/stream/stream.js', 'js/map_manager.js', 'js/stream/stream_map.js'],
             externalScripts: ['https://cdn.jsdelivr.net/npm/hls.js@latest']
+        },
+        videoPlayback: {
+            html: 'html/video_playback.html', scripts: ['js/video_playback/video_playback.js'],
+            htmlContent: `<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Skysoft Go</title></head>
+<body>
+    <section id="sp-main-body">
+        <div class="container-fluid">
+            <div class="main-content video-playback-screen">
+                <div class="video-playback-layout">
+                    <aside class="video-playback-sidebar">
+                        <form class="video-playback-filter" id="videoPlaybackFilter" autocomplete="off">
+                            <label class="video-filter-field">
+                                <span><i class="fas fa-calendar-day"></i> Ngày</span>
+                                <input type="date" id="videoPlaybackDate">
+                            </label>
+                            <label class="video-filter-field video-plate-field">
+                                <span><i class="fas fa-car-side"></i> Bi&#7875;n s&#7889;</span>
+                                <div class="video-plate-search-row">
+                                    <input type="text" id="videoPlaybackPlate" list="videoPlaybackPlates" placeholder="Nhap bien so..." autocomplete="off">
+                                    <datalist id="videoPlaybackPlates"></datalist>
+                                    <button type="submit" title="T&#236;m"><i class="fas fa-magnifying-glass"></i></button>
+                                </div>
+                            </label>
+                        </form>
+                        <div class="video-file-list" id="videoPlaybackList"></div>
+                    </aside>
+                    <main class="video-player-panel">
+                        <div class="video-player-frame">
+                            <video id="videoPlaybackPlayer" controls playsinline></video>
+                            <div class="video-player-empty" id="videoPlaybackEmpty">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Ch&#7885;n file video &#273;&#7875; ph&#225;t</span>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>`
         },
         oilChart: { html: 'html/oil_chart.html', scripts: ['js/oil_chart/oil_chart.js'] },
         countTrip: {
@@ -36,7 +196,7 @@
         support: { html: 'html/support.html', scripts: ['js/support/support.js'] }
     };
 
-    const PAGE_SCRIPTS_PATHS = ['js/home/', 'js/tracking/', 'js/route/', 'js/camera/', 'js/stream/', 'js/oil_chart/', 'js/count_trip/', 'js/report/', 'js/support/'];
+    const PAGE_SCRIPTS_PATHS = ['js/home/', 'js/tracking/', 'js/route/', 'js/camera/', 'js/stream/', 'js/video_playback/', 'js/oil_chart/', 'js/count_trip/', 'js/report/', 'js/support/'];
     Object.values(PAGES).forEach(config => {
         config.html = `${APP_ROOT}${config.html}`;
         config.scripts = config.scripts.map(src => `${APP_ROOT}${src}`);
@@ -256,6 +416,7 @@
         if ($('#cards')) return 'home';
         if ($('.camera-screen')) return 'camera';
         if ($('.stream-screen')) return 'stream';
+        if ($('.video-playback-screen')) return 'videoPlayback';
         if ($('.oil-chart-screen')) return 'oilChart';
         if ($('.support-screen')) return 'support';
         if ($('.route-screen')) return $('#vehicleList') ? 'tracking' : 'route';
@@ -301,8 +462,11 @@
 
             if (!pageCache.has(pageName)) {
                 isNewPage = true;
-                const response = await fetch(config.html);
-                const html = await response.text();
+                let html = config.htmlContent;
+                if (!html) {
+                    const response = await fetch(config.html);
+                    html = await response.text();
+                }
                 pageContainer = await createPageContainer(pageName, html);
                 if (!pageContainer) return;
                 await loadPageScripts(config);

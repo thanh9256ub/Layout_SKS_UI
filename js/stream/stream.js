@@ -4,7 +4,7 @@
     'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8'
   ];
 
-  const makeStreams = (n = 32) => Array.from({ length: n }, (_, i) => ({
+  const makeStreams = (n = 36) => Array.from({ length: n }, (_, i) => ({
     name: `Camera ${i + 1}`,
     src: SAMPLE_URLS[i % SAMPLE_URLS.length]
   }));

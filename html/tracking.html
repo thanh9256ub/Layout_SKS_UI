@@ -73,8 +73,24 @@
                                             <label class="form-check-label" for="inactive">Dừng</label>
                                         </div>
                                     </div>
-                                    <hr>
                                     <div id="vehicleList"></div>
+                                    <div class="tracking-status-footer" aria-label="Loc trang thai phuong tien">
+                                        <label class="status-color-filter status-all">
+                                            <input type="radio" name="vehicleStatus" value="all" checked>
+                                            <span class="status-dot"></span>
+                                            <span>T&#7845;t c&#7843;</span>
+                                        </label>
+                                        <label class="status-color-filter status-online-filter">
+                                            <input type="radio" name="vehicleStatus" value="active">
+                                            <span class="status-dot"></span>
+                                            <span>Ho&#7841;t &#273;&#7897;ng</span>
+                                        </label>
+                                        <label class="status-color-filter status-offline-filter">
+                                            <input type="radio" name="vehicleStatus" value="inactive">
+                                            <span class="status-dot"></span>
+                                            <span>Dừng</span>
+                                        </label>
+                                    </div>
                                 </div>
                                 <!-- Locations Tab -->
                                 <div class="tab-pane-custom" id="locations-tab">

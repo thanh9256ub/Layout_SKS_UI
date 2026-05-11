@@ -38,12 +38,35 @@ function initMap() {
   // Khởi tạo bản đồ
   const map = L.map('map').setView([21.0285, 105.8542], 13);
 
-  // Thêm tile layer
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    maxZoom: 19
+  // Thêm các lớp bản đồ
+  const streetLayer = L.tileLayer('https://maps.skysoft.vn/web_tile.jsp?c={x}&r={y}&z={z}', {
+    attribution: '&copy; Skysoft',
+    maxZoom: 19,
+    updateWhenZooming: false,
+    updateWhenIdle: true,
+    keepBuffer: 2,
+    maxNativeZoom: 19,
+    tileSize: 256,
+    zoomOffset: 0,
+    reuseTiles: true,
+    updateInterval: 200
   }).addTo(map);
 
+  const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: '&copy; Esri',
+    maxZoom: 19
+  });
+
+  const topoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenTopoMap',
+    maxZoom: 17
+  });
+
+  L.control.layers({
+    'Bản đồ đường': streetLayer,
+    'Vệ tinh': satelliteLayer,
+    'Địa hình': topoLayer
+  }, null, { position: 'topright', collapsed: true }).addTo(map);
   const marker = L.marker([21.0285, 105.8542]).addTo(map);
   marker.bindPopup('<b>Hà Nội</b><br>Vị trí hiện tại').openPopup();
 
@@ -136,7 +159,7 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
 // Lắng nghe event pageLoaded và pageShown để khởi tạo lại map khi quay về trang home
 function reinitMap(e) {
   const container = e?.detail?.container;
-  
+
   // Đợi một chút để đảm bảo container đã được hiển thị và DOM đã sẵn sàng
   setTimeout(() => {
     // Tìm map element trong container của trang home
@@ -150,12 +173,12 @@ function reinitMap(e) {
         mapElement = homeContainer.querySelector('#map');
       }
     }
-    
+
     if (mapElement) {
       // Kiểm tra xem map element có được hiển thị không
       const pageContainer = mapElement.closest('[data-page]');
       const isVisible = !pageContainer || pageContainer.style.display !== 'none';
-      
+
       if (isVisible) {
         // Force reflow
         void mapElement.offsetHeight;
@@ -176,6 +199,5 @@ window.addEventListener('pageShown', (e) => {
     reinitMap(e);
   }
 });
-
 
 

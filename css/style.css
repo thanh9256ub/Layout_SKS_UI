@@ -2200,6 +2200,24 @@ body.is-page-fading {
     width: 100%;
 }
 
+.change-password-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.change-password-field .search-modal-input {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    padding: 10px 12px;
+}
+
 .search-input-wrapper {
     display: flex;
     align-items: center;
@@ -3336,7 +3354,7 @@ td:last-child {
 
 .divider-preview {
     width: 1px;
-    margin: 1rem 0;
+    margin: 0rem 0;
     height: auto;
     align-self: stretch;
     background: linear-gradient(to bottom, transparent, #e9ecef, transparent);
@@ -3528,8 +3546,13 @@ td:last-child {
 .filter-container {
     max-width: 100%;
     background: #fff;
-    border-radius: 24px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    height: 100%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
 }
 
@@ -3537,7 +3560,6 @@ td:last-child {
     position: relative;
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
 }
 
 .input-group i {
@@ -3579,11 +3601,16 @@ td:last-child {
 
 .custom-tab {
     flex: 1;
-    padding: 16px 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 6px;
+    min-height: 36px;
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     color: #6c757d;
     border: none;
@@ -3612,19 +3639,27 @@ td:last-child {
 }
 
 .custom-tab i {
-    display: block;
-    font-size: 20px;
-    margin-bottom: 4px;
+    display: inline-flex;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+.custom-tab span {
+    line-height: 1;
+    white-space: nowrap;
 }
 
 .tab-content-wrapper {
     padding: 5px;
-    max-height: calc(100vh - 145px);
+    padding-bottom: 0;
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
     overflow: hidden;
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: auto;
 }
 
 .tab-pane-custom {
@@ -4648,14 +4683,6 @@ td:last-child {
         width: 80%;
     }
 
-    /* Stabilize filter-container for tracking page */
-    .route-screen #filter .filter-container {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-    }
-
     /* Stabilize main-container for route page */
     .route-screen #filter .main-container {
         height: 100%;
@@ -4678,28 +4705,6 @@ td:last-child {
         overflow-x: auto;
         min-height: 200px;
         max-height: 100%;
-    }
-
-    /* Fix tab-content-wrapper for tracking page */
-    .route-screen #filter .tab-content-wrapper {
-        flex: 1 1 auto;
-        overflow: visible;
-        min-height: 0;
-        display: flex;
-        flex-direction: column;
-    }
-
-    /* Each tab-pane has its own scroll */
-    .route-screen #filter .tab-pane-custom {
-        flex: 1;
-        overflow-y: auto;
-        overflow-x: hidden;
-        min-height: 0;
-    }
-
-    /* Ensure custom-tabs don't shrink */
-    .route-screen #filter .custom-tabs {
-        flex-shrink: 0;
     }
 
     /* Prevent route-row from breaking layout */
@@ -10183,7 +10188,6 @@ td:last-child {
 #sp-main-body .oil-chart-screen {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     height: calc(100vh - 100px);
-    padding: 20px;
     position: relative;
     overflow: hidden;
     background: #f5f5f5;
@@ -10227,7 +10231,6 @@ td:last-child {
 .oil-chart-container {
     background: #fff;
     border-radius: 16px;
-    padding: 15px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     border: 1px solid #e5e7eb;
     /* animation: fadeInUp 0.6s ease-out; */
@@ -10378,7 +10381,7 @@ td:last-child {
 @media (max-width: 768px) {
     #sp-main-body .oil-chart-screen {
         padding: 15px;
-        height: calc(100vh - 100px);
+        height: calc(100vh - 75px);
     }
 
     .oil-chart-container {
@@ -10419,7 +10422,7 @@ td:last-child {
 @media (max-width: 480px) {
     #sp-main-body .oil-chart-screen {
         padding: 10px;
-        height: calc(100vh - 100px);
+        height: calc(100vh - 75px);
     }
 
     .oil-chart-container {
@@ -11514,6 +11517,746 @@ td:last-child {
 }
 
 /* ==========================================
+   Requested UI Updates
+   ========================================== */
+.route-screen #filter .filter-container hr {
+    margin: 0rem !important;
+}
+
+.route-screen #locations-tab .location-card {
+    padding: 8px 10px;
+    margin-bottom: 0;
+    gap: 10px;
+    border: 0;
+    border-bottom: 1px solid #e5e7eb;
+    border-radius: 0;
+}
+
+.route-screen #locations-tab .location-card:hover {
+    transform: none;
+}
+
+.route-screen #locations-tab .location-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.route-screen #locations-tab .location-name {
+    margin-bottom: 2px;
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+.route-screen #locations-tab .location-address {
+    font-size: 11px;
+    line-height: 1.25;
+}
+
+.route-screen #locations-tab.active {
+    display: flex !important;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.route-screen #locations-tab .search-box {
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
+
+.route-screen #locationList {
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 0;
+}
+
+.report-screen .report-sidebar-col,
+.report-screen .report-content-col {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.report-screen .report-sidebar-col {
+    padding-right: 0 !important;
+}
+
+.report-screen .report-content-col {
+    padding-left: 0 !important;
+}
+
+.report-screen .report-row {
+    gap: 0 !important;
+}
+
+.report-screen .report-sidebar,
+.report-screen .report-content-wrapper,
+.report-screen .report-filter-card,
+.report-screen .report-table-card,
+.report-screen .report-table-wrapper,
+.report-screen .report-table-header,
+.report-screen .report-sidebar-header {
+    border-radius: 0 !important;
+}
+
+.report-screen .report-sidebar,
+.report-screen .report-content-wrapper {
+    border: 1px solid #e5e7eb !important;
+}
+
+.report-screen .report-content-wrapper {
+    border-left: 0 !important;
+}
+
+.report-screen .report-content .report-page-header {
+    display: none !important;
+}
+
+.report-screen .report-page {
+    padding-top: 12px !important;
+}
+
+.report-screen .report-filter-card,
+.report-screen .report-filter-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    border-color: #e5e7eb !important;
+}
+
+.report-screen .report-filter-card * {
+    transition: none !important;
+}
+
+.route-screen #filter .tab-pane-custom#vehicles-tab.active {
+    display: flex !important;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.route-screen #filter .tab-pane-custom#vehicles-tab>.custom-dropdown,
+.route-screen #filter .tab-pane-custom#vehicles-tab>.input-group {
+    flex-shrink: 0;
+}
+
+.route-screen #vehicleList {
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 4px;
+}
+
+.route-screen #vehicles-tab .form-check-tracking {
+    display: none;
+}
+
+.tracking-status-footer {
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    border-top: 1px solid #e5e7eb;
+    background: #fff;
+    flex-shrink: 0;
+}
+
+.status-color-filter {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 0;
+    padding: 8px 6px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #f9fafb;
+    color: #374151;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.status-color-filter input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.status-color-filter:has(input:checked) {
+    border-color: #0ea5e9;
+    background: #eff6ff;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #64748b;
+    flex-shrink: 0;
+}
+
+.status-online-filter .status-dot {
+    background: #10b981;
+}
+
+.status-offline-filter .status-dot {
+    background: #ef4444;
+}
+
+.leaflet-control-layers {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.18);
+}
+
+.route-screen .custom-dropdown:has(#groupFilterSelectType) {
+    display: none;
+}
+
+.route-screen .filter-section .custom-dropdown:has(#groupFilterSelectTime) {
+    order: 1;
+}
+
+.route-screen .filter-section .search-plate {
+    order: 3;
+}
+
+.route-screen .filter-section .route-custom-time {
+    order: 2;
+}
+
+.route-screen .filter-section #searchRoutesBtn {
+    display: none !important;
+}
+
+.route-screen .filter-section label[for="vehicleSearchInput"],
+.route-screen .filter-section label[for="groupFilterSelectTime"],
+.route-screen .route-custom-time .form-label-search {
+    display: none !important;
+}
+
+.route-plate-search {
+    display: grid;
+    grid-template-columns: 1fr 42px;
+    gap: 6px;
+    position: relative;
+}
+
+.route-plate-search .form-control-search {
+    min-width: 0;
+}
+
+.route-inline-search-btn {
+    height: 52px;
+    border: 0;
+    border-radius: 10px;
+    background: #0ea5e9;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.route-inline-search-btn:hover {
+    background: #0284c7;
+}
+
+.route-plate-search .autocomplete-results {
+    grid-column: 1 / 2;
+}
+
+.route-screen #filter .filter-section,
+.route-screen #filter .table-container {
+    border-radius: 0 !important;
+}
+
+.route-screen #filter .filter-section {
+    margin-bottom: 0 !important;
+    box-shadow: none !important;
+}
+
+.route-screen #filter .table-container {
+    border-top: 0 !important;
+}
+
+.route-custom-time {
+    display: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.route-custom-time.active {
+    display: grid !important;
+}
+
+.route-screen .filter-section:has(#groupFilterSelectTime option[value="8"]:checked) .route-custom-time {
+    display: grid !important;
+}
+
+.route-screen .table-controls {
+    margin-top: auto;
+}
+
+.route-screen.camera-screen .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 180px));
+    justify-content: start;
+    align-items: start;
+}
+
+.route-screen.camera-screen .gallery-item {
+    width: 180px;
+}
+
+.route-screen.camera-screen .gallery-item-image {
+    width: 180px;
+    height: 120px;
+    aspect-ratio: auto;
+}
+
+.route-screen.camera-screen .info-plate-badge {
+    top: 6px;
+    right: 6px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    line-height: 1.2;
+    max-width: calc(100% - 12px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.route-screen.camera-screen .item-info {
+    width: 180px;
+    padding: 6px 7px;
+    gap: 6px;
+    font-size: 10px;
+    line-height: 1.2;
+    border-radius: 0;
+    align-items: flex-start;
+}
+
+.route-screen.camera-screen .item-info .info-camera,
+.route-screen.camera-screen .item-info .info-time {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.route-screen.camera-screen .item-info .info-camera {
+    flex: 1 1 auto;
+}
+
+.route-screen.camera-screen .item-info .info-time {
+    flex: 0 1 auto;
+    max-width: 78px;
+}
+
+.camera-detail-open #sp-header {
+    display: none !important;
+}
+
+.camera-detail-open #sp-main-body {
+    padding-top: 0 !important;
+}
+
+.camera-detail-open .route-screen.camera-screen .lightbox {
+    height: 100vh;
+    margin-top: 0;
+}
+
+.route-screen.camera-screen .lightbox-image-container {
+    position: relative;
+}
+
+.lightbox-address-overlay {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: max-content;
+    padding: 9px 12px;
+    border-radius: 8px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.72);
+    font-size: 13px;
+    font-weight: 600;
+    z-index: 20;
+}
+
+.oil-chart-header {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+}
+
+.oil-chart-title {
+    display: none !important;
+}
+
+.change-password-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 20000;
+}
+
+.change-password-modal.active {
+    display: flex;
+}
+
+.change-password-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.48);
+}
+
+.change-password-dialog {
+    position: relative;
+    width: min(440px, calc(100vw - 32px));
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.28);
+    overflow: hidden;
+}
+
+.change-password-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.change-password-header h5 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.change-password-close {
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 8px;
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.change-password-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+}
+
+.change-password-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.change-password-form input {
+    height: 42px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 0 12px;
+}
+
+.change-password-message {
+    min-height: 18px;
+    margin: 0;
+    font-size: 13px;
+}
+
+.change-password-message.error {
+    color: #dc2626;
+}
+
+.change-password-message.success {
+    color: #059669;
+}
+
+.change-password-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.change-password-actions button {
+    height: 38px;
+    border: 0;
+    border-radius: 8px;
+    padding: 0 16px;
+    font-weight: 700;
+}
+
+.change-password-actions .btn-cancel {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.change-password-actions .btn-save {
+    background: #0ea5e9;
+    color: #fff;
+}
+
+.video-playback-screen {
+    height: calc(100vh - 80px);
+    overflow: hidden;
+    background: #f3f4f6;
+}
+
+.video-playback-layout {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 12px;
+    height: 100%;
+}
+
+.video-playback-sidebar,
+.video-player-panel {
+    min-height: 0;
+    background: #fff;
+}
+
+.video-playback-sidebar {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #e5e7eb;
+}
+
+.video-playback-filter {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.video-filter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.video-filter-field input {
+    height: 40px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 0 10px;
+}
+
+.video-plate-search-row {
+    display: grid;
+    grid-template-columns: 1fr 42px;
+    gap: 8px;
+}
+
+.video-plate-search-row button,
+.video-action-btn {
+    border: 0;
+    border-radius: 8px;
+    background: #0ea5e9;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.video-file-list {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.video-file-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.video-file-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.video-file-meta strong {
+    color: #111827;
+}
+
+.video-file-meta span,
+.video-file-meta small {
+    color: #6b7280;
+}
+
+.video-file-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.video-action-btn {
+    width: 36px;
+    height: 36px;
+}
+
+.video-action-btn.download {
+    background: #10b981;
+}
+
+.video-player-panel {
+    padding: 12px;
+}
+
+.video-player-frame {
+    position: relative;
+    height: 100%;
+    background: #020617;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.video-player-frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.video-player-empty,
+.video-file-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #9ca3af;
+}
+
+.video-player-empty {
+    position: absolute;
+    inset: 0;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+.video-player-empty i {
+    font-size: 42px;
+}
+
+.video-player-empty.hidden {
+    display: none;
+}
+
+.video-file-empty {
+    height: 180px;
+    flex-direction: column;
+}
+
+@media (max-width: 1200px) {
+    .route-screen.camera-screen .gallery-grid {
+        grid-template-columns: repeat(auto-fill, 180px);
+        gap: 10px;
+        justify-content: start;
+    }
+
+    .video-playback-layout {
+        grid-template-columns: 340px 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-playback-screen {
+        height: auto;
+        overflow: visible;
+    }
+
+    .video-playback-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .video-player-frame {
+        min-height: 360px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .route-screen #filter,
+    .route-screen #filter .filter-container,
+    .route-screen #filter .tab-content-wrapper,
+    .route-screen #filter .tab-pane-custom.active {
+        min-height: 0 !important;
+        overflow: hidden !important;
+    }
+
+    .route-screen #filter,
+    .route-screen #filter .filter-container,
+    .route-screen #filter .tab-content-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .route-screen #filter,
+    .route-screen #filter .filter-container {
+        height: 100% !important;
+    }
+
+    .route-screen #filter .filter-container,
+    .route-screen #filter .tab-content-wrapper,
+    .route-screen #filter .tab-pane-custom.active {
+        flex: 1 1 auto !important;
+    }
+
+    .route-screen #filter .tab-content-wrapper {
+        max-height: none !important;
+        height: auto !important;
+    }
+
+    .route-screen #vehicles-tab.active,
+    .route-screen #locations-tab.active {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .route-screen #vehicleList,
+    .route-screen #locationList {
+        flex: 1 1 auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+}
+
+/* ==========================================
    Support Page Styles
    ========================================== */
 .support-screen {
@@ -12383,7 +13126,8 @@ td:last-child {
     }
 
     .stream-camera-container.grid-16,
-    .stream-camera-container.grid-32 {
+    .stream-camera-container.grid-32,
+    .stream-camera-container.grid-36 {
         grid-template-columns: repeat(3, 1fr);
     }
 }
@@ -12394,7 +13138,8 @@ td:last-child {
     .stream-camera-container.grid-8,
     .stream-camera-container.grid-9,
     .stream-camera-container.grid-16,
-    .stream-camera-container.grid-32 {
+    .stream-camera-container.grid-32,
+    .stream-camera-container.grid-36 {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
     }
@@ -12447,7 +13192,8 @@ td:last-child {
     .stream-camera-container.grid-8,
     .stream-camera-container.grid-9,
     .stream-camera-container.grid-16,
-    .stream-camera-container.grid-32 {
+    .stream-camera-container.grid-32,
+    .stream-camera-container.grid-36 {
         grid-template-columns: 1fr;
     }
 
@@ -12675,7 +13421,6 @@ td:last-child {
     color: #374151;
     cursor: pointer;
     border-bottom: 1px solid #f3f4f6;
-    border-bottom: 1px solid #f3f4f6;
     transition: background 0.15s ease;
 }
 
@@ -12826,7 +13571,7 @@ td:last-child {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    padding: 20px 20px 0 20px;
+    padding: 20px 20px 0 0px;
 }
 
 /* Page Header - Fixed */

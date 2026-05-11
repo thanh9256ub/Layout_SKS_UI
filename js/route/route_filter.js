@@ -120,14 +120,12 @@
             }
 
             const timeCondition = dom.get('groupFilterSelectTime')?.value || '1';
-            const groupFilter = dom.get('groupFilterSelectType')?.value || 'all';
             dom.showFlex('loadingIndicator', true); dom.show('emptyState', false); dom.show('resultsTable', false); dom.show('noResults', false);
 
             let history = state.data.history?.filter(h => h.vehicleId === state.selectedVehicle.id) || [];
             history = this.filterByTime(history, timeCondition);
-            if (groupFilter !== 'all' && state.selectedVehicle.group !== groupFilter) history = [];
 
-            state.routeData = state.data.routes?.[state.selectedVehicle.id.toString()] || null;
+            state.routeData = this.filterRoutePointsByTime(state.data.routes?.[state.selectedVehicle.id.toString()] || null, timeCondition);
             const hasRoute = state.routeData?.length > 0;
             if (hasRoute && !state.isRestoringState) { state.currentRouteIndex = 0; playbackControls.updateSeekbar(); }
 
@@ -152,9 +150,49 @@
                 '7': (item) => { const yesterday = new Date(now); yesterday.setDate(yesterday.getDate() - 1); return new Date(item.date + ' ' + item.time).toDateString() === yesterday.toDateString(); }
             };
             const check = conditions[condition];
+            if (condition === '8') return this.filterByCustomTime(history);
             if (typeof check === 'function') return history.filter(check);
             if (typeof check === 'number') return history.filter(item => (now - new Date(item.date + ' ' + item.time)) / 3600000 <= check);
             return history;
+        },
+
+        filterByCustomTime(history) {
+            const dateFrom = dom.get('routeDateFrom')?.value;
+            const dateTo = dom.get('routeDateTo')?.value;
+            const timeFrom = dom.get('routeTimeFrom')?.value;
+            const timeTo = dom.get('routeTimeTo')?.value;
+
+            return history.filter(item => {
+                const itemDate = item.date || '';
+                const itemTime = (item.time || '').slice(0, 5);
+                if (dateFrom && itemDate < dateFrom) return false;
+                if (dateTo && itemDate > dateTo) return false;
+                if (timeFrom && itemTime < timeFrom) return false;
+                if (timeTo && itemTime > timeTo) return false;
+                return true;
+            });
+        },
+
+        filterRoutePointsByTime(routePoints, condition) {
+            if (!routePoints?.length) return routePoints;
+            if (condition !== '8') return routePoints;
+
+            const dateFrom = dom.get('routeDateFrom')?.value;
+            const dateTo = dom.get('routeDateTo')?.value;
+            const timeFrom = dom.get('routeTimeFrom')?.value;
+            const timeTo = dom.get('routeTimeTo')?.value;
+
+            return routePoints.filter(point => {
+                if (!point.time) return true;
+                const date = new Date(point.time);
+                const itemDate = date.toISOString().slice(0, 10);
+                const itemTime = date.toTimeString().slice(0, 5);
+                if (dateFrom && itemDate < dateFrom) return false;
+                if (dateTo && itemDate > dateTo) return false;
+                if (timeFrom && itemTime < timeFrom) return false;
+                if (timeTo && itemTime > timeTo) return false;
+                return true;
+            });
         },
 
         renderTable(records) {
@@ -457,6 +495,9 @@
 
     // ============ Event Handlers ============
     function setupEventHandlers() {
+        if (document.body.dataset.routeFilterHandlersAttached === 'true') return;
+        document.body.dataset.routeFilterHandlersAttached = 'true';
+
         const input = dom.get('vehicleSearchInput');
         if (input) {
             input.addEventListener('input', (e) => { if (state.selectedVehicle && e.target.value !== state.selectedVehicle.plate) state.selectedVehicle = null; vehicleSearch.showAutocomplete(e.target.value); });
@@ -468,8 +509,10 @@
 
         const controls = {
             searchRoutesBtn: () => routeDisplay.search(),
+            routeInlineSearchBtn: () => routeDisplay.search(),
             prevBtn: () => playbackControls.prev(),
             playBtn: () => playbackControls.togglePlay(),
+            pauseBtn: () => playbackControls.stop(),
             nextBtn: () => playbackControls.next(),
             speedUpBtn: () => playbackControls.speedUp(),
             speedDownBtn: () => playbackControls.speedDown(),
@@ -478,9 +521,29 @@
         };
         Object.entries(controls).forEach(([id, handler]) => { dom.get(id)?.addEventListener('click', handler); });
 
-        ['groupFilterSelectTime', 'groupFilterSelectType'].forEach(id => { dom.get(id)?.addEventListener('change', () => routeDisplay.search()); });
+        const timeSelect = dom.get('groupFilterSelectTime');
+        const updateCustomTimeVisibility = () => {
+            const customTime = dom.get('routeCustomTime');
+            const isCustom = timeSelect?.value === '8';
+            customTime?.classList.toggle('active', isCustom);
+            if (customTime) customTime.style.display = isCustom ? 'grid' : 'none';
+        };
+        updateCustomTimeVisibility();
+
+        ['groupFilterSelectTime', 'routeDateFrom', 'routeDateTo', 'routeTimeFrom', 'routeTimeTo'].forEach(id => {
+            dom.get(id)?.addEventListener('change', () => routeDisplay.search());
+        });
+        timeSelect?.addEventListener('change', updateCustomTimeVisibility);
         playbackControls.setupSeekbar();
     }
+
+    document.addEventListener('change', (event) => {
+        if (event.target?.id !== 'groupFilterSelectTime') return;
+        const customTime = dom.get('routeCustomTime');
+        const isCustom = event.target.value === '8';
+        customTime?.classList.toggle('active', isCustom);
+        if (customTime) customTime.style.display = isCustom ? 'grid' : 'none';
+    });
 
     // ============ Initialization ============
     async function init() {

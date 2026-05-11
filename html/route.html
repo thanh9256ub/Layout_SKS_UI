@@ -28,9 +28,13 @@
                                     <label for="vehicleSearchInput" class="form-label-search"><i
                                             class="fas fa-search me-2"></i>Tìm kiếm
                                         xe</label>
-                                    <div class="autocomplete-container">
+                                    <div class="autocomplete-container route-plate-search">
                                         <input type="text" class="form-control-search" id="vehicleSearchInput"
                                             placeholder="Tìm biển số xe...">
+                                        <button type="button" class="route-inline-search-btn" id="routeInlineSearchBtn"
+                                            title="Tìm kiếm">
+                                            <i class="fas fa-search"></i>
+                                        </button>
                                         <div class="autocomplete-results" id="autocompleteResults"></div>
                                     </div>
                                 </div>
@@ -53,12 +57,34 @@
                                     <label for="groupFilterSelectType" class="form-label-search"><i
                                             class="fas fa-filter me-2"></i>Nhóm xe</label>
                                     <select id="groupFilterSelectType" class="rounded">
-                                            <option value="all">Tất cả nhóm</option>
+                                        <option value="all">Tất cả nhóm</option>
                                         <option value="camera">Nhóm TB Cam quay</option>
                                         <option value="taxi">Nhóm Taxi M8</option>
                                         <option value="bus">Nhóm xe Bus - Camera</option>
-                                            <option value="truck">Nhóm xe tải hàng - Cảm biến dầu</option>
+                                        <option value="truck">Nhóm xe tải hàng - Cảm biến dầu</option>
                                     </select>
+                                </div>
+                                <div class="route-custom-time" id="routeCustomTime">
+                                    <div class="mb-2">
+                                        <label for="routeDateFrom" class="form-label-search"><i
+                                                class="fas fa-calendar-day me-2"></i>Từ ngày</label>
+                                        <input type="date" id="routeDateFrom" class="form-control-search">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="routeDateTo" class="form-label-search"><i
+                                                class="fas fa-calendar-check me-2"></i>Đến ngày</label>
+                                        <input type="date" id="routeDateTo" class="form-control-search">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="routeTimeFrom" class="form-label-search"><i
+                                                class="fas fa-clock me-2"></i>Từ giờ</label>
+                                        <input type="time" id="routeTimeFrom" class="form-control-search">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="routeTimeTo" class="form-label-search"><i
+                                                class="fas fa-clock me-2"></i>Đến giờ</label>
+                                        <input type="time" id="routeTimeTo" class="form-control-search">
+                                    </div>
                                 </div>
                                 <button type="button" class="btn btn-primary-custom w-100 mb-2" id="searchRoutesBtn">
                                     <i class="fas fa-search me-2"></i>Tìm kiếm
@@ -117,6 +143,9 @@
                                     </button>
                                     <button class="btn-control" id="playBtn" title="Phát">
                                         <i class="fas fa-play"></i>
+                                    </button>
+                                    <button class="btn-control" id="pauseBtn" title="T&#7841;m dừng">
+                                        <i class="fas fa-pause"></i>
                                     </button>
                                     <!-- <button class="btn-control" id="fastBtn" title="Đến cuối">
                                         <i class="fas fa-forward"></i>
