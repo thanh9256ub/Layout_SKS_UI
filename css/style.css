@@ -654,7 +654,7 @@ body.is-page-fading {
     z-index: 10;
     margin-top: 10px;
     border-top: 1px solid #e5e7eb;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .route-screen.camera-screen .lightbox.active {
@@ -681,13 +681,13 @@ body.is-page-fading {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 73%;
-    /* flex: 1; */
+    flex: 1 1 auto;
+    min-height: 0;
     position: relative;
     /* padding: 20px; */
     background: #1a1a1a;
     overflow: hidden !important;
-    z-index: 100;
+    z-index: 1;
 }
 
 
@@ -1170,7 +1170,9 @@ body.is-page-fading {
     align-items: center;
     flex-wrap: wrap;
     gap: 15px;
-    z-index: 110;
+    position: relative;
+    flex: 0 0 auto;
+    z-index: 300;
 }
 
 .suggestions-list {
@@ -1201,30 +1203,6 @@ body.is-page-fading {
 
 .suggestions-list li:hover {
     background-color: #f5f5f5;
-}
-
-.lightbox-info-bar {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: transparent;
-    padding: 8px 16px;
-    font-size: 14px;
-    color: #fff !important;
-    z-index: 102;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    white-space: nowrap;
-}
-
-.lightbox-info-bar .info-item {
-    margin-right: 15px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: #fff !important;
 }
 
 .lightbox-filter-container .camera-filter {
@@ -11685,10 +11663,374 @@ td:last-child {
     background: #ef4444;
 }
 
+.tracking-color-footer {
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    border-top: 1px solid #e5e7eb;
+    background: #fff;
+    flex-shrink: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.vehicle-color-filter {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 54px;
+    min-height: 34px;
+    padding: 7px 9px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #f9fafb;
+    color: #374151;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.vehicle-color-filter.active {
+    border-color: #0ea5e9;
+    background: #eff6ff;
+    color: #075985;
+}
+
+.vehicle-color-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+.all-colors-dot {
+    background: conic-gradient(#fbbf24, #10b981, #3b82f6, #8b5cf6, #fbbf24);
+}
+
+.vehicle-color-count {
+    min-width: 20px;
+    padding: 2px 6px;
+    border-radius: 999px;
+    background: #e5e7eb;
+    color: #111827;
+    font-size: 11px;
+    line-height: 16px;
+    text-align: center;
+}
+
+.vehicle-color-filter.active .vehicle-color-count {
+    background: #0ea5e9;
+    color: #fff;
+}
+
 .leaflet-control-layers {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 16px rgba(15, 23, 42, 0.18);
+}
+
+.tracking-marker-control {
+    margin-top: 10px !important;
+}
+
+.tracking-marker-control-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    color: #0284c7;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.18), inset 0 0 0 1px rgba(148, 163, 184, 0.25);
+    cursor: pointer;
+    transition: transform 0.16s ease, box-shadow 0.16s ease, color 0.16s ease;
+}
+
+.tracking-marker-control-btn:hover {
+    color: #0f766e;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.24), inset 0 0 0 1px rgba(14, 165, 233, 0.35);
+}
+
+.tracking-marker-control-btn i {
+    font-size: 16px;
+}
+
+.tracking-marker-panel {
+    position: absolute;
+    top: 54px;
+    right: 54px;
+    width: min(314px, calc(100vw - 24px));
+    background: #fff;
+    border: 1px solid rgba(148, 163, 184, 0.45);
+    border-radius: 10px;
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.22);
+    z-index: 1200;
+    font-size: 13px;
+    color: #334155;
+    overflow: hidden;
+}
+
+.tracking-marker-panel-header {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    border-bottom: 1px solid #e2e8f0;
+    background: linear-gradient(180deg, #f8fafc 0%, #eef6fb 100%);
+    color: #0369a1;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.tracking-marker-panel-header i {
+    margin-right: 6px;
+    color: #0ea5e9;
+}
+
+.tracking-marker-close {
+    width: 28px;
+    height: 28px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: #94a3b8;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.16s ease, color 0.16s ease;
+}
+
+.tracking-marker-close:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.tracking-marker-panel-body {
+    padding: 14px 14px 12px;
+}
+
+.tracking-marker-panel label {
+    display: grid;
+    grid-template-columns: 76px 1fr;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.tracking-marker-panel input[type="text"],
+.tracking-marker-panel input[type="number"] {
+    width: 100%;
+    height: 31px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 5px 9px;
+    color: #0f172a;
+    background: #fff;
+    transition: border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.tracking-marker-panel input[type="text"]:focus,
+.tracking-marker-panel input[type="number"]:focus {
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.14);
+    outline: none;
+}
+
+.tracking-marker-panel input::placeholder {
+    color: #a8b1bd;
+}
+
+.tracking-marker-color-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+}
+
+.tracking-marker-color {
+    width: 19px;
+    height: 19px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #cbd5e1;
+    cursor: pointer;
+}
+
+.tracking-marker-color.active {
+    box-shadow: 0 0 0 2px #0ea5e9, 0 3px 8px rgba(15, 23, 42, 0.18);
+}
+
+.tracking-marker-follow {
+    display: inline-flex !important;
+    grid-template-columns: none !important;
+    align-items: center !important;
+    gap: 4px !important;
+    margin: 0 0 0 auto !important;
+    white-space: nowrap;
+    color: #475569;
+    font-weight: 500 !important;
+}
+
+.tracking-marker-follow input {
+    width: 16px;
+    height: 16px;
+    accent-color: #0ea5e9;
+}
+
+.tracking-marker-icon-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    padding: 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #f8fafc;
+}
+
+.tracking-marker-icon {
+    height: 31px;
+    border: 1px solid #d7dee8;
+    border-radius: 7px;
+    background: #fff;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.14s ease, border-color 0.14s ease, background 0.14s ease, box-shadow 0.14s ease;
+}
+
+.tracking-marker-icon:hover {
+    border-color: #93c5fd;
+    background: #eff6ff;
+    transform: translateY(-1px);
+}
+
+.tracking-marker-icon.active {
+    border-color: #22c55e;
+    background: #dcfce7;
+    box-shadow: inset 0 0 0 1px rgba(34, 197, 94, 0.32);
+}
+
+.tracking-marker-coords {
+    margin-top: 9px;
+    color: #64748b;
+    font-size: 12px;
+    text-align: right;
+}
+
+.tracking-marker-panel-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 11px 14px 14px;
+    border-top: 1px solid #e5e7eb;
+    background: #f8fafc;
+}
+
+.tracking-marker-panel-actions button {
+    height: 34px;
+    min-width: 88px;
+    border: 0;
+    border-radius: 7px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.16s ease, filter 0.16s ease, box-shadow 0.16s ease;
+}
+
+.tracking-marker-panel-actions button:hover {
+    filter: brightness(1.03);
+    transform: translateY(-1px);
+}
+
+.tracking-marker-save {
+    background: #0ea5e9;
+    box-shadow: 0 7px 16px rgba(14, 165, 233, 0.28);
+}
+
+.tracking-marker-cancel {
+    background: #94a3b8;
+    box-shadow: 0 7px 16px rgba(100, 116, 139, 0.2);
+}
+
+.tracking-draft-location-marker {
+    cursor: grab;
+}
+
+.tracking-draft-location-marker:active {
+    cursor: grabbing;
+}
+
+.tracking-draft-crosshair {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    filter: drop-shadow(0 3px 8px rgba(15, 23, 42, 0.35));
+}
+
+.tracking-draft-crosshair-ring {
+    position: absolute;
+    inset: 7px;
+    border: 2px solid var(--marker-color);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.tracking-draft-crosshair-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--marker-color);
+    transform: translate(-50%, -50%);
+}
+
+.tracking-draft-crosshair-line {
+    position: absolute;
+    background: var(--marker-color);
+    border-radius: 999px;
+}
+
+.tracking-draft-crosshair-line-top,
+.tracking-draft-crosshair-line-bottom {
+    left: 50%;
+    width: 2px;
+    height: 8px;
+    transform: translateX(-50%);
+}
+
+.tracking-draft-crosshair-line-top {
+    top: 0;
+}
+
+.tracking-draft-crosshair-line-bottom {
+    bottom: 0;
+}
+
+.tracking-draft-crosshair-line-left,
+.tracking-draft-crosshair-line-right {
+    top: 50%;
+    width: 8px;
+    height: 2px;
+    transform: translateY(-50%);
+}
+
+.tracking-draft-crosshair-line-left {
+    left: 0;
+}
+
+.tracking-draft-crosshair-line-right {
+    right: 0;
 }
 
 .route-screen .custom-dropdown:has(#groupFilterSelectType) {
@@ -12082,8 +12424,14 @@ td:last-child {
 }
 
 .camera-detail-open .route-screen.camera-screen .lightbox {
-    height: 100vh;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    min-height: 100vh;
     margin-top: 0;
+    border-top: 0;
+    z-index: 2000;
 }
 
 .route-screen.camera-screen .lightbox-image-container {

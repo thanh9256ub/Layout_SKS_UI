@@ -10,6 +10,8 @@
         LOCATIONS: 'locations',
     };
 
+    const ALL_COLORS = 'all';
+
     const SCROLL_KEYS = {
         [TABS.VEHICLES]: 'vehicleListScroll',
         [TABS.LOCATIONS]: 'locationListScroll',
@@ -54,7 +56,7 @@
         const state = getSavedState() || {};
         state.groupSelect = document.getElementById('groupSelect')?.value || 'all';
         state.vehicleSearch = document.getElementById('vehicleSearch')?.value || '';
-        state.vehicleStatus = document.querySelector('input[name="vehicleStatus"]:checked')?.value || 'all';
+        state.vehicleColor = state.vehicleColor || ALL_COLORS;
         state.activeTab = document.querySelector('.custom-tab.active')?.getAttribute('data-tab') || 'vehicles';
         state.locationSearch = document.getElementById('locationSearch')?.value || '';
 
@@ -79,11 +81,9 @@
             if (el && value) el.value = value;
         });
 
-        // Restore radio button
-        if (savedState.vehicleStatus) {
-            const radio = document.querySelector(`input[name="vehicleStatus"][value="${savedState.vehicleStatus}"]`);
-            if (radio) radio.checked = true;
-        }
+        const state = getSavedState() || {};
+        state.vehicleColor = savedState.vehicleColor || ALL_COLORS;
+        window.trackingFilterState = state;
 
         // Restore active tab
         if (savedState.activeTab) {
@@ -140,6 +140,105 @@
         }
     }
 
+    function getVehicleColorMeta(vehicle) {
+        const colors = jsonData?.color || [];
+        if (vehicle.color) {
+            return {
+                id: vehicle.color,
+                name: vehicle.colorName || vehicle.color,
+                hex: vehicle.color
+            };
+        }
+
+        if (vehicle.colorId) {
+            const matched = colors.find(color => String(color.id) === String(vehicle.colorId));
+            if (matched) return matched;
+        }
+
+        if (colors.length > 0) {
+            return colors[(vehicle.id - 1) % colors.length];
+        }
+
+        return { id: 'default', name: 'Color', hex: '#64748b' };
+    }
+
+    function withVehicleColor(vehicle) {
+        const color = getVehicleColorMeta(vehicle);
+        return {
+            ...vehicle,
+            vehicleColorId: String(color.id),
+            vehicleColorName: color.name,
+            vehicleColorHex: color.hex,
+            color: color.hex
+        };
+    }
+
+    function getSelectedVehicleColor() {
+        return getSavedState()?.vehicleColor || ALL_COLORS;
+    }
+
+    function setSelectedVehicleColor(colorId) {
+        const state = getSavedState() || {};
+        state.vehicleColor = colorId || ALL_COLORS;
+        window.trackingFilterState = state;
+    }
+
+    function getBaseFilteredVehicles(filter = 'all') {
+        let filtered = filter === 'all'
+            ? jsonData.vehicles
+            : jsonData.vehicles.filter(v => v.group === filter);
+
+        const searchTerm = document.getElementById('vehicleSearch')?.value.trim().toLowerCase();
+        if (searchTerm) {
+            filtered = filtered.filter(v =>
+                v.plate.toLowerCase().includes(searchTerm) ||
+                v.driver?.toLowerCase().includes(searchTerm) ||
+                v.tag?.toLowerCase().includes(searchTerm)
+            );
+        }
+
+        return filtered.map(withVehicleColor);
+    }
+
+    function renderVehicleColorFilters(baseVehicles, selectedColor) {
+        const container = document.getElementById('vehicleColorFilter');
+        if (!container) return;
+
+        const counts = baseVehicles.reduce((acc, vehicle) => {
+            acc[vehicle.vehicleColorId] = (acc[vehicle.vehicleColorId] || 0) + 1;
+            return acc;
+        }, {});
+
+        const colors = (jsonData.color || [])
+            .filter(color => counts[String(color.id)])
+            .map(color => ({ ...color, count: counts[String(color.id)] }));
+
+        container.innerHTML = `
+            <button type="button" class="vehicle-color-filter ${selectedColor === ALL_COLORS ? 'active' : ''}"
+                data-color-id="${ALL_COLORS}" title="Tat ca">
+                <span class="vehicle-color-dot all-colors-dot"></span>
+                <span class="vehicle-color-count">${baseVehicles.length}</span>
+            </button>
+            ${colors.map(color => `
+                <button type="button" class="vehicle-color-filter ${selectedColor === String(color.id) ? 'active' : ''}"
+                    data-color-id="${color.id}" title="${color.name}">
+                    <span class="vehicle-color-dot" style="background:${color.hex}"></span>
+                    <span class="vehicle-color-count">${color.count}</span>
+                </button>
+            `).join('')}
+        `;
+
+        container.querySelectorAll('.vehicle-color-filter').forEach(button => {
+            button.addEventListener('click', () => {
+                if (isRestoringState) return;
+                saveScrollPositions();
+                setSelectedVehicleColor(button.dataset.colorId || ALL_COLORS);
+                renderVehicles(document.getElementById('groupSelect')?.value || 'all');
+                saveFilterState();
+            });
+        });
+    }
+
     function renderVehicles(filter = 'all', shouldFitBounds = null) {
         const vehicleList = document.getElementById('vehicleList');
         if (!vehicleList || !jsonData?.vehicles) return;
@@ -148,33 +247,23 @@
         if (vehiclesTab && !vehiclesTab.classList.contains('active')) return;
 
         preserveScroll('vehicleList', () => {
-            let filtered = filter === 'all'
-                ? jsonData.vehicles
-                : jsonData.vehicles.filter(v => v.group === filter);
-
-            // Apply status filter
-            const statusFilter = document.querySelector('input[name="vehicleStatus"]:checked')?.value;
-            if (statusFilter && statusFilter !== 'all') {
-                filtered = filtered.filter(v =>
-                    statusFilter === 'active' ? v.status === 'online' : v.status === 'offline'
-                );
+            const baseFiltered = getBaseFilteredVehicles(filter);
+            let selectedColor = getSelectedVehicleColor();
+            if (selectedColor !== ALL_COLORS && !baseFiltered.some(v => v.vehicleColorId === selectedColor)) {
+                selectedColor = ALL_COLORS;
+                setSelectedVehicleColor(ALL_COLORS);
             }
+            const filtered = selectedColor === ALL_COLORS
+                ? baseFiltered
+                : baseFiltered.filter(v => v.vehicleColorId === selectedColor);
 
-            // Apply search filter
-            const searchTerm = document.getElementById('vehicleSearch')?.value.trim().toLowerCase();
-            if (searchTerm) {
-                filtered = filtered.filter(v =>
-                    v.plate.toLowerCase().includes(searchTerm) ||
-                    v.driver?.toLowerCase().includes(searchTerm) ||
-                    v.tag?.toLowerCase().includes(searchTerm)
-                );
-            }
+            renderVehicleColorFilters(baseFiltered, selectedColor);
 
             if (filtered.length === 0) {
                 vehicleList.innerHTML = `
                     <div class="empty-state">
                         <i class="fas fa-car"></i>
-                        <p>Không có phương tiện nào trong nhóm này</p>
+                        <p>Không có phương tiện phù hợp</p>
                     </div>`;
                 return;
             }
@@ -229,7 +318,11 @@
                 setTimeout(displayOnMap, 100);
                 return;
             }
-            const filtered = jsonData.vehicles.filter(v => filter === 'all' || v.group === filter);
+            const baseFiltered = getBaseFilteredVehicles(filter);
+            const selectedColor = getSelectedVehicleColor();
+            const filtered = selectedColor === ALL_COLORS
+                ? baseFiltered
+                : baseFiltered.filter(v => v.vehicleColorId === selectedColor);
             window.MapManager?.displayVehicles?.(filtered, shouldFitBounds);
 
             // Display locations on map
@@ -344,17 +437,6 @@
             }
         });
 
-        document.querySelectorAll('input[name="vehicleStatus"]').forEach(radio => {
-            const newRadio = radio.cloneNode(true);
-            radio.parentNode.replaceChild(newRadio, radio);
-            newRadio.addEventListener('change', () => {
-                if (!isRestoringState) {
-                    saveScrollPositions();
-                    renderVehicles(document.getElementById('groupSelect').value);
-                    saveFilterState();
-                }
-            });
-        });
     }
 
     function initLocationTracking(shouldRestoreState = true) {
@@ -498,7 +580,7 @@
                 return getSavedState() || {
                     groupSelect: 'all',
                     vehicleSearch: '',
-                    vehicleStatus: 'all',
+                    vehicleColor: ALL_COLORS,
                     activeTab: 'vehicles',
                     locationSearch: '',
                     ...SCROLL_KEYS

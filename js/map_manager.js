@@ -39,7 +39,7 @@ if (!window.MapManager) {
 
     // ========== POPUP CREATORS ==========
     const createVehiclePopup = (vehicle) => {
-        const statusColor = vehicle.status === 'online' ? '#10b981' : '#6b7280';
+        const statusColor = vehicle.color || vehicle.groupColor || (vehicle.status === 'online' ? '#10b981' : '#6b7280');
         const info = [
             ['fas fa-user', 'Tài xế', vehicle.driver || 'N/A'],
             ['fas fa-tachometer-alt', 'Tốc độ', `${vehicle.speed} km/h`],
@@ -68,7 +68,7 @@ if (!window.MapManager) {
 
     // ========== ICON CREATORS ==========
     const createCarIcon = (vehicle) => {
-        const statusColor = vehicle.status === 'online' ? '#10b981' : '#6b7280';
+        const statusColor = vehicle.color || vehicle.groupColor || (vehicle.status === 'online' ? '#10b981' : '#6b7280');
         const absCenter = 'position: absolute; transform: translate(-50%, -50%); top: 50%; left: 50%;';
         const rotation = vehicle.heading !== undefined ? `transform: rotate(${vehicle.heading}deg);` : '';
 
@@ -97,6 +97,34 @@ if (!window.MapManager) {
         });
     };
 
+    const createDraftLocationIcon = (location) => {
+        return L.divIcon({
+            className: 'location-marker tracking-draft-location-marker',
+            html: `<div class="tracking-draft-crosshair" style="--marker-color:#dc2626;">
+        <span class="tracking-draft-crosshair-ring"></span>
+        <span class="tracking-draft-crosshair-dot"></span>
+        <span class="tracking-draft-crosshair-line tracking-draft-crosshair-line-top"></span>
+        <span class="tracking-draft-crosshair-line tracking-draft-crosshair-line-right"></span>
+        <span class="tracking-draft-crosshair-line tracking-draft-crosshair-line-bottom"></span>
+        <span class="tracking-draft-crosshair-line tracking-draft-crosshair-line-left"></span>
+      </div>`,
+            iconSize: [34, 34],
+            iconAnchor: [17, 17],
+            popupAnchor: [0, -17]
+        });
+    };
+
+    const MARKER_ICONS = ['📌', '🚧', '⚓', '🎥', '🏥', '📍', '🚌', '⛽', '✉️', '🏠', '☕', '🧳', '✈️', '🛥️', '🛩️', '📥', '🌳', '🛣️', '🏗️', '🌲', '👥', '🌴', '🚛', '🚒'];
+    const MARKER_COLORS = ['#8bc34a', '#0ea5e9', '#ef4444', '#f59e0b', '#8b5cf6', '#10b981'];
+
+    const escapeHtml = (value) => String(value ?? '').replace(/[&<>"']/g, char => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+    }[char]));
+
     // ========== MAP MANAGER ==========
     window.MapManager = {
         map: null,
@@ -108,6 +136,11 @@ if (!window.MapManager) {
         isInitializing: false,
         vehicleMarkers: {},
         locationMarkers: {},
+        userLocationMarkers: {},
+        userLocations: [],
+        markControl: null,
+        markerPanel: null,
+        draftLocationMarker: null,
         mapContainer: null,
         mapContainers: {},
         currentPage: null,
@@ -143,6 +176,11 @@ if (!window.MapManager) {
             this.centerLabel = null;
             this.mapContainer = null;
             this.vehicleMarkers = {};
+            this.userLocationMarkers = {};
+            this.userLocations = [];
+            this.markControl = null;
+            this.markerPanel = null;
+            this.draftLocationMarker = null;
             this.isInitializing = false;
         },
 
@@ -284,6 +322,9 @@ if (!window.MapManager) {
                         'Ve tinh': satelliteLayer,
                         'Dia hinh': topoLayer
                     }, null, { position: 'topright', collapsed: true }).addTo(map);
+                    if (detectedPageName === 'tracking') {
+                        this.addMarkerControl(map);
+                    }
                     map._tileLayerAdded = true;
                 }
 
@@ -464,6 +505,7 @@ if (!window.MapManager) {
                     marker.bindPopup(createVehiclePopup(vehicle));
                     this.vehicleMarkers[vehicle.id] = marker;
                 } else {
+                    this.vehicleMarkers[vehicle.id].setIcon(createCarIcon(vehicle));
                     const currentPos = this.vehicleMarkers[vehicle.id].getLatLng();
                     if (Math.abs(currentPos.lat - vehicle.lat) > 0.0001 || Math.abs(currentPos.lng - vehicle.lng) > 0.0001) {
                         this.vehicleMarkers[vehicle.id].setLatLng([vehicle.lat, vehicle.lng]);
@@ -538,6 +580,209 @@ if (!window.MapManager) {
                 try { map.removeLayer(marker); } catch (e) { }
             });
             this.locationMarkers = {};
+        },
+
+        addMarkerControl(map) {
+            if (!map || map._markerControlAdded) return;
+
+            const manager = this;
+            const MarkerControl = L.Control.extend({
+                options: { position: 'topright' },
+                onAdd() {
+                    const container = L.DomUtil.create('div', 'leaflet-control tracking-marker-control');
+                    const button = L.DomUtil.create('button', 'tracking-marker-control-btn', container);
+                    button.type = 'button';
+                    button.title = 'Thêm điểm đánh dấu';
+                    button.setAttribute('aria-label', 'Thêm điểm đánh dấu');
+                    button.innerHTML = '<i class="fas fa-map-marker-alt"></i>';
+                    L.DomEvent.disableClickPropagation(container);
+                    L.DomEvent.disableScrollPropagation(container);
+                    L.DomEvent.on(button, 'click', (event) => {
+                        L.DomEvent.stop(event);
+                        manager.toggleMarkerPanel();
+                    });
+                    return container;
+                }
+            });
+
+            this.markControl = new MarkerControl().addTo(map);
+            map._markerControlAdded = true;
+        },
+
+        toggleMarkerPanel() {
+            if (this.markerPanel?.isConnected) {
+                this.closeMarkerPanel();
+                return;
+            }
+            this.openMarkerPanel();
+        },
+
+        openMarkerPanel() {
+            const map = this.getCurrentMap();
+            const container = this.mapContainer || findMapContainer();
+            if (!map || !container || this.currentPage !== 'tracking') return;
+
+            this.closeMarkerPanel();
+
+            const center = map.getCenter();
+            const selectedIcon = MARKER_ICONS[0];
+            const selectedColor = MARKER_COLORS[0];
+            const panel = document.createElement('form');
+            panel.className = 'tracking-marker-panel';
+            panel.innerHTML = `
+                <div class="tracking-marker-panel-header">
+                    <div><i class="fas fa-map-marker-alt"></i> Điểm đánh dấu</div>
+                    <button type="button" class="tracking-marker-close" aria-label="Đóng">×</button>
+                </div>
+                <div class="tracking-marker-panel-body">
+                    <label><span>Tên điểm</span><input name="name" type="text" placeholder="Tên điểm" required></label>
+                    <label><span>Màu sắc</span>
+                        <div class="tracking-marker-color-row">
+                            ${MARKER_COLORS.map((color, index) => `<button type="button" class="tracking-marker-color ${index === 0 ? 'active' : ''}" data-color="${color}" style="background:${color}"></button>`).join('')}
+                            <label class="tracking-marker-follow"><input name="follow" type="checkbox"> Điểm theo dõi</label>
+                        </div>
+                    </label>
+                    <label><span>Tên đầy đủ</span><input name="fullName" type="text" placeholder="Tên không viết tắt"></label>
+                    <label><span>Ghi chú</span><input name="note" type="text" placeholder="Ghi chú về điểm"></label>
+                    <label><span>BK nhận diện</span><input name="radius" type="number" min="0" step="1" value="150"></label>
+                    <div class="tracking-marker-icon-grid">
+                        ${MARKER_ICONS.map((icon, index) => `<button type="button" class="tracking-marker-icon ${index === 0 ? 'active' : ''}" data-icon="${escapeHtml(icon)}">${icon}</button>`).join('')}
+                    </div>
+                    <div class="tracking-marker-coords">${center.lat.toFixed(5)}, ${center.lng.toFixed(5)}</div>
+                </div>
+                <div class="tracking-marker-panel-actions">
+                    <button type="submit" class="tracking-marker-save"><i class="fas fa-check"></i> Lưu</button>
+                    <button type="button" class="tracking-marker-cancel"><i class="fas fa-times"></i> Bỏ qua</button>
+                </div>
+            `;
+
+            panel.dataset.icon = selectedIcon;
+            panel.dataset.color = selectedColor;
+
+            L.DomEvent.disableClickPropagation(panel);
+            L.DomEvent.disableScrollPropagation(panel);
+            container.appendChild(panel);
+            this.markerPanel = panel;
+            this.createDraftLocationMarker(center);
+
+            panel.querySelector('.tracking-marker-close')?.addEventListener('click', () => this.closeMarkerPanel());
+            panel.querySelector('.tracking-marker-cancel')?.addEventListener('click', () => this.closeMarkerPanel());
+            panel.querySelectorAll('.tracking-marker-color').forEach(button => {
+                button.addEventListener('click', () => {
+                    panel.querySelectorAll('.tracking-marker-color').forEach(item => item.classList.remove('active'));
+                    button.classList.add('active');
+                    panel.dataset.color = button.dataset.color;
+                    this.updateDraftLocationIcon();
+                });
+            });
+            panel.querySelectorAll('.tracking-marker-icon').forEach(button => {
+                button.addEventListener('click', () => {
+                    panel.querySelectorAll('.tracking-marker-icon').forEach(item => item.classList.remove('active'));
+                    button.classList.add('active');
+                    panel.dataset.icon = button.dataset.icon;
+                    this.updateDraftLocationIcon();
+                });
+            });
+            panel.addEventListener('submit', (event) => {
+                event.preventDefault();
+                this.saveUserLocation(new FormData(panel));
+            });
+
+            panel.querySelector('input[name="name"]')?.focus();
+        },
+
+        closeMarkerPanel() {
+            this.removeDraftLocationMarker();
+            this.markerPanel?.remove();
+            this.markerPanel = null;
+        },
+
+        createDraftLocationMarker(latLng) {
+            const map = this.getCurrentMap();
+            if (!map || !this.markerPanel) return;
+
+            this.removeDraftLocationMarker();
+            this.draftLocationMarker = L.marker(latLng, {
+                icon: createDraftLocationIcon(this.getDraftLocationStyle()),
+                draggable: true,
+                zIndexOffset: 1000
+            }).addTo(map);
+
+            this.draftLocationMarker.on('drag dragend', () => this.updateDraftLocationCoords());
+            this.updateDraftLocationCoords();
+        },
+
+        removeDraftLocationMarker() {
+            const map = this.getCurrentMap();
+            if (this.draftLocationMarker && map) {
+                try { map.removeLayer(this.draftLocationMarker); } catch (e) { }
+            }
+            this.draftLocationMarker = null;
+        },
+
+        getDraftLocationStyle() {
+            return {
+                color: this.markerPanel?.dataset.color || MARKER_COLORS[0],
+                icon: this.markerPanel?.dataset.icon || MARKER_ICONS[0]
+            };
+        },
+
+        updateDraftLocationIcon() {
+            if (!this.draftLocationMarker) return;
+            this.draftLocationMarker.setIcon(createDraftLocationIcon(this.getDraftLocationStyle()));
+        },
+
+        updateDraftLocationCoords() {
+            if (!this.markerPanel || !this.draftLocationMarker) return;
+            const coords = this.draftLocationMarker.getLatLng();
+            const coordsEl = this.markerPanel.querySelector('.tracking-marker-coords');
+            if (coordsEl) coordsEl.textContent = `${coords.lat.toFixed(5)}, ${coords.lng.toFixed(5)}`;
+        },
+
+        saveUserLocation(formData) {
+            const map = this.getCurrentMap();
+            if (!map || !this.markerPanel) return;
+
+            const selectedPoint = this.draftLocationMarker?.getLatLng() || map.getCenter();
+            const name = String(formData.get('name') || '').trim();
+            if (!name) return;
+
+            const location = {
+                id: `user-${Date.now()}`,
+                name,
+                fullName: String(formData.get('fullName') || '').trim(),
+                note: String(formData.get('note') || '').trim(),
+                radius: Number(formData.get('radius')) || 0,
+                follow: formData.get('follow') === 'on',
+                color: this.markerPanel.dataset.color || MARKER_COLORS[0],
+                icon: this.markerPanel.dataset.icon || MARKER_ICONS[0],
+                lat: selectedPoint.lat,
+                lng: selectedPoint.lng
+            };
+
+            this.userLocations.push(location);
+            this.addUserLocationMarker(location);
+            this.closeMarkerPanel();
+        },
+
+        addUserLocationMarker(location) {
+            const map = this.getCurrentMap();
+            if (!map || !location?.lat || !location?.lng) return;
+
+            const marker = L.marker([location.lat, location.lng], { icon: createLocationIcon(location) }).addTo(map);
+            marker.bindPopup(`<div style="min-width: 200px;">
+                <div style="font-weight: 700; font-size: 14px; margin-bottom: 8px; color: #1f2937; border-bottom: 2px solid ${location.color}; padding-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 18px;">${escapeHtml(location.icon)}</span><span>${escapeHtml(location.name)}</span>
+                </div>
+                <div style="font-size: 12px; line-height: 1.8; color: #4b5563;">
+                    ${location.fullName ? `<div><strong>Tên đầy đủ:</strong> ${escapeHtml(location.fullName)}</div>` : ''}
+                    ${location.note ? `<div><strong>Ghi chú:</strong> ${escapeHtml(location.note)}</div>` : ''}
+                    <div><strong>BK nhận diện:</strong> ${location.radius} m</div>
+                    <div><strong>Tọa độ:</strong> ${location.lat.toFixed(5)}, ${location.lng.toFixed(5)}</div>
+                </div>
+            </div>`);
+            this.userLocationMarkers[location.id] = marker;
+            marker.openPopup();
         },
 
         // ========== STREAM PAGE ==========

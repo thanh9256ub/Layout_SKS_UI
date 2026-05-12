@@ -221,21 +221,11 @@
     currentImageIndex = index;
     const img = displayedImages[index];
     const lightboxImage = $('lightboxImage');
-    const lightboxInfoBar = $('lightboxInfoBar');
 
     if (lightboxImage) {
       scale = 1; posX = 0; posY = 0; lastPosX = 0; lastPosY = 0; dragDeltaX = 0; isDragging = false;
       lightboxImage.style.cssText = 'transition: all 0.3s ease; transform: none; opacity: 1; animation: none;';
       setTimeout(() => { const img2 = $('lightboxImage'); if (img2) { img2.src = img.url; updateImageTransform(); } }, 10);
-    }
-
-    if (lightboxInfoBar) {
-      lightboxInfoBar.innerHTML = `
-        <div style="gap:10px">
-          <span class="info-item">📷 ${img.camera}</span>
-          <span class="info-item">🕒 ${getTime(img.time)}</span>
-        </div>
-        <span class="info-item" style="align-items: center">📍 ${img.address}</span>`;
     }
 
     const imageContainer = document.querySelector('.lightbox-image-container');
