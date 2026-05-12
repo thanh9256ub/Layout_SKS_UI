@@ -13,6 +13,12 @@
   const $$ = sel => document.querySelectorAll(sel);
   const getAllImages = () => vehicles.flatMap(v => v.images.map(img => ({ ...img, plate: v.plate, group: v.group, _uId: img._uId }))).sort((a, b) => b.time.localeCompare(a.time));
   const getTime = (timeStr) => timeStr ? timeStr.split(' ').pop() : '';
+  const getDate = (timeStr) => {
+    if (!timeStr) return '';
+    const date = timeStr.split(' ')[0] || '';
+    const match = date.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    return match ? `${match[3]}/${match[2]}/${match[1]}` : date;
+  };
   const getShortDateTime = (timeStr) => {
     if (!timeStr) return '';
     const parts = timeStr.split(' ');
@@ -164,6 +170,18 @@
           <span class="info-camera">📷 ${img.camera}</span>
           <span class="info-time" title="${img.time}">🕒 ${getShortDateTime(img.time)}</span>
         </div>`;
+      const itemInfo = item.querySelector('.item-info');
+      if (itemInfo) {
+        itemInfo.innerHTML = `
+          <div class="info-row info-row-top">
+            <span class="info-camera"><i class="fas fa-video"></i> ${img.camera}</span>
+            <span class="info-plate">${img.plate}</span>
+          </div>
+          <div class="info-row info-row-bottom" title="${img.time}">
+            <span class="info-date"><i class="fas fa-calendar-day"></i> ${getDate(img.time)}</span>
+            <span class="info-time"><i class="fas fa-clock"></i> ${getTime(img.time)}</span>
+          </div>`;
+      }
       gallery?.appendChild(item);
 
       // Thumbnail item
