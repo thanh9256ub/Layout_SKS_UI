@@ -11,6 +11,14 @@
     };
 
     const ALL_COLORS = 'all';
+    const getReadableTextColor = (hex) => {
+        const value = String(hex || '').replace('#', '');
+        if (value.length !== 6) return '#111827';
+        const r = parseInt(value.slice(0, 2), 16);
+        const g = parseInt(value.slice(2, 4), 16);
+        const b = parseInt(value.slice(4, 6), 16);
+        return ((r * 299 + g * 587 + b * 114) / 1000) < 128 ? '#ffffff' : '#111827';
+    };
 
     const SCROLL_KEYS = {
         [TABS.VEHICLES]: 'vehicleListScroll',
@@ -215,14 +223,12 @@
 
         container.innerHTML = `
             <button type="button" class="vehicle-color-filter ${selectedColor === ALL_COLORS ? 'active' : ''}"
-                data-color-id="${ALL_COLORS}" title="Tat ca">
-                <span class="vehicle-color-dot all-colors-dot"></span>
+                data-color-id="${ALL_COLORS}" title="Tat ca" style="--vehicle-filter-color:#e5e7eb; --vehicle-filter-text:#111827;">
                 <span class="vehicle-color-count">${baseVehicles.length}</span>
             </button>
             ${colors.map(color => `
                 <button type="button" class="vehicle-color-filter ${selectedColor === String(color.id) ? 'active' : ''}"
-                    data-color-id="${color.id}" title="${color.name}">
-                    <span class="vehicle-color-dot" style="background:${color.hex}"></span>
+                    data-color-id="${color.id}" title="${color.name}" style="--vehicle-filter-color:${color.hex}; --vehicle-filter-text:${getReadableTextColor(color.hex)};">
                     <span class="vehicle-color-count">${color.count}</span>
                 </button>
             `).join('')}
@@ -233,13 +239,13 @@
                 if (isRestoringState) return;
                 saveScrollPositions();
                 setSelectedVehicleColor(button.dataset.colorId || ALL_COLORS);
-                renderVehicles(document.getElementById('groupSelect')?.value || 'all');
+                renderVehicles(document.getElementById('groupSelect')?.value || 'all', false, false);
                 saveFilterState();
             });
         });
     }
 
-    function renderVehicles(filter = 'all', shouldFitBounds = null) {
+    function renderVehicles(filter = 'all', shouldFitBounds = null, shouldUpdateMap = true) {
         const vehicleList = document.getElementById('vehicleList');
         if (!vehicleList || !jsonData?.vehicles) return;
 
@@ -302,6 +308,8 @@
 
 
         });
+
+        if (!shouldUpdateMap) return;
 
         // Display on map
         if (shouldFitBounds === null) {
