@@ -2,6 +2,7 @@
   let vehicles = [], displayedImages = [], currentImageIndex = 0;
   let lastGridFilterState = { plate: '', date: '', camera: '', timeFrom: '', timeTo: '', group: 'all' };
   let savedGridFilterState = null, savedSelectedPlate = null, savedSelectedTime = null;
+  let savedGridViewState = null;
   let scale = 1, posX = 0, posY = 0, lastPosX = 0, lastPosY = 0;
   let isDragging = false, wasDragging = false, dragStartX = 0, dragStartY = 0, dragDeltaX = 0;
   let isProgressDragging = false, wasProgressDragging = false;
@@ -18,6 +19,38 @@
     const time = (parts.pop() || '').slice(0, 5);
     const date = (parts.pop() || '').slice(0, 5);
     return date ? `${date} ${time}` : time;
+  };
+
+  const getListImageElement = () => $('list-image');
+
+  const captureGridViewState = (selectedImage = null) => {
+    const listImage = getListImageElement();
+    return {
+      filterState: { ...lastGridFilterState },
+      selectedImageUId: selectedImage?._uId || displayedImages[currentImageIndex]?._uId || null,
+      listScrollTop: listImage?.scrollTop || 0,
+      listScrollLeft: listImage?.scrollLeft || 0,
+      windowScrollY: window.scrollY || 0
+    };
+  };
+
+  const restoreGridViewState = (state) => {
+    if (!state) return;
+
+    requestAnimationFrame(() => {
+      const listImage = getListImageElement();
+      if (listImage) {
+        listImage.scrollTop = state.listScrollTop || 0;
+        listImage.scrollLeft = state.listScrollLeft || 0;
+      }
+
+      window.scrollTo(0, state.windowScrollY || 0);
+
+      if (state.selectedImageUId && !state.listScrollTop && !state.windowScrollY) {
+        const selectedItem = document.querySelector(`[data-image-uid="${state.selectedImageUId}"]`);
+        selectedItem?.scrollIntoView({ block: 'center', inline: 'nearest' });
+      }
+    });
   };
 
   // Utility: Toggle element visibility
@@ -120,6 +153,7 @@
       item.className = 'gallery-item';
       item.dataset.plate = img.plate;
       item.dataset.time = img.time;
+      item.dataset.imageUid = img._uId;
       item.onclick = () => openLightbox(i);
       item.innerHTML = `
         <div class="gallery-item-image">
@@ -155,6 +189,7 @@
     if (!img) return;
 
     savedGridFilterState = { ...lastGridFilterState };
+    savedGridViewState = captureGridViewState(img);
     savedSelectedPlate = img.plate;
     savedSelectedTime = img.time;
 
@@ -195,6 +230,7 @@
   // Lightbox close
   function closeLightbox() {
     const lightbox = $('lightbox');
+    const gridViewState = savedGridViewState || captureGridViewState();
     if (lightbox) {
       lightbox.classList.remove('active');
       setElementVisibility('#list-image .container', true);
@@ -205,7 +241,9 @@
 
       setTimeout(() => {
         window.searchCameraImages(savedGridFilterState || lastGridFilterState, false);
+        restoreGridViewState(gridViewState);
         savedGridFilterState = null;
+        savedGridViewState = null;
       }, 0);
     }
 
@@ -487,7 +525,14 @@
   // State management for page navigation
   const saveLightboxState = () => {
     const lightbox = $('lightbox');
-    if (!lightbox?.classList.contains('active')) return null;
+    const gridViewState = savedGridViewState || captureGridViewState();
+
+    if (!lightbox?.classList.contains('active')) {
+      return {
+        isLightboxActive: false,
+        gridViewState
+      };
+    }
 
     return {
       isLightboxActive: true,
@@ -502,6 +547,7 @@
         group: $('groupSelect')?.value || 'all'
       },
       savedGridFilterState,
+      savedGridViewState: gridViewState,
       savedSelectedPlate,
       savedSelectedTime,
       thumbnailScrollLeft: document.querySelector('.lightbox-thumbnails')?.scrollLeft || 0
@@ -510,6 +556,7 @@
 
   const restoreSavedVars = (state) => {
     if (state.savedGridFilterState) savedGridFilterState = state.savedGridFilterState;
+    if (state.savedGridViewState) savedGridViewState = state.savedGridViewState;
     if (state.savedSelectedPlate) savedSelectedPlate = state.savedSelectedPlate;
     if (state.savedSelectedTime) savedSelectedTime = state.savedSelectedTime;
   };
@@ -536,7 +583,16 @@
   window.pageStateHandlers.camera = {
     save: saveLightboxState,
     restore: (container, state) => {
-      if (!state?.isLightboxActive || !state.filterState?.plate) return;
+      if (!state?.isLightboxActive) {
+        if (state?.gridViewState?.filterState) {
+          lastGridFilterState = { ...state.gridViewState.filterState };
+          window.searchCameraImages(lastGridFilterState, true, true);
+          restoreGridViewState(state.gridViewState);
+        }
+        return;
+      }
+
+      if (!state.filterState?.plate) return;
 
       restoreSavedVars(state);
       window.searchCameraImages(state.filterState, true, true);

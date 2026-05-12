@@ -8,8 +8,30 @@ function initNavbarSearchInput() {
 
     searchForm.dataset.initialized = "true";
 
+    const isCompactSearch = () => window.matchMedia("(max-width: 1024px)").matches;
+    const openCompactSearch = () => {
+        searchForm.classList.add("search-open");
+        setTimeout(() => searchInput.focus(), 50);
+    };
+    const closeCompactSearch = () => {
+        if (!searchInput.value.trim()) {
+            searchForm.classList.remove("search-open");
+        }
+    };
+
+    searchForm.addEventListener("click", (e) => {
+        if (!isCompactSearch() || searchForm.classList.contains("search-open")) return;
+        e.preventDefault();
+        openCompactSearch();
+    });
+
     searchForm.addEventListener("submit", (e) => {
         e.preventDefault();
+        if (isCompactSearch() && !searchForm.classList.contains("search-open")) {
+            openCompactSearch();
+            return;
+        }
+
         const searchTerm = searchInput.value.trim();
 
         if (!searchTerm) {
@@ -19,6 +41,24 @@ function initNavbarSearchInput() {
 
         console.log("Searching for:", searchTerm);
         // TODO: Thêm logic tìm kiếm thực tế
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!isCompactSearch() || searchForm.contains(e.target)) return;
+        closeCompactSearch();
+    });
+
+    searchInput.addEventListener("keydown", (e) => {
+        if (e.key !== "Escape" || !isCompactSearch()) return;
+        searchInput.value = "";
+        searchForm.classList.remove("search-open");
+        searchInput.blur();
+    });
+
+    window.addEventListener("resize", () => {
+        if (!isCompactSearch()) {
+            searchForm.classList.remove("search-open");
+        }
     });
 }
 
