@@ -72,6 +72,8 @@ function initChangePasswordModal() {
     const newPasswordInput = document.getElementById("newPassword");
     const confirmNewPasswordInput = document.getElementById("confirmNewPassword");
     const changePasswordMessage = document.getElementById("changePasswordMessage");
+    const passwordInputs = [currentPasswordInput, newPasswordInput, confirmNewPasswordInput].filter(Boolean);
+    let changePasswordVisible = false;
 
     if (!changePasswordModal || changePasswordModal.dataset.initialized === "true") {
         return;
@@ -79,8 +81,53 @@ function initChangePasswordModal() {
 
     changePasswordModal.dataset.initialized = "true";
 
+    function setChangePasswordVisibility(visible) {
+        changePasswordVisible = visible;
+        passwordInputs.forEach((input) => {
+            input.type = visible ? "text" : "password";
+        });
+
+        changePasswordModal.querySelectorAll(".change-password-toggle").forEach((button) => {
+            const icon = button.querySelector("i");
+            button.setAttribute("aria-label", visible ? "Ẩn mật khẩu" : "Hiện mật khẩu");
+            button.setAttribute("title", visible ? "Ẩn mật khẩu" : "Hiện mật khẩu");
+            icon?.classList.toggle("fa-eye", !visible);
+            icon?.classList.toggle("fa-eye-slash", visible);
+        });
+    }
+
+    function initPasswordVisibilityToggles() {
+        passwordInputs.forEach((input) => {
+            if (input.dataset.visibilityToggleReady === "true") return;
+            input.dataset.visibilityToggleReady = "true";
+
+            const wrapper = document.createElement("div");
+            wrapper.className = "change-password-input-wrap";
+            input.parentNode.insertBefore(wrapper, input);
+            wrapper.appendChild(input);
+
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "change-password-toggle";
+            button.setAttribute("aria-label", "Hiện mật khẩu");
+            button.setAttribute("title", "Hiện mật khẩu");
+            button.innerHTML = '<i class="fas fa-eye"></i>';
+
+            button.addEventListener("mousedown", (e) => e.preventDefault());
+            button.addEventListener("click", (e) => {
+                e.preventDefault();
+                setChangePasswordVisibility(!changePasswordVisible);
+            });
+
+            wrapper.appendChild(button);
+        });
+    }
+
+    initPasswordVisibilityToggles();
+
     window.openChangePasswordModal = function () {
         changePasswordModal.classList.add("active");
+        setChangePasswordVisibility(false);
         document.body.style.overflow = "hidden";
         setTimeout(() => {
             currentPasswordInput?.focus();
@@ -91,6 +138,7 @@ function initChangePasswordModal() {
         changePasswordModal.classList.remove("active");
         document.body.style.overflow = "";
         changePasswordForm?.reset();
+        setChangePasswordVisibility(false);
         if (changePasswordMessage) {
             changePasswordMessage.textContent = "";
             changePasswordMessage.className = "change-password-message";
