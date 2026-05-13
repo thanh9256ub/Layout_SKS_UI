@@ -2,48 +2,376 @@
 (function () {
     'use strict';
 
+    const APP_ROOT = window.location.pathname.toLowerCase().includes('/html/') ? '../' : '';
+
     window.CountTripModules = window.CountTripModules || {};
 
     let singlePointData = [];
 
-    // async function loadData() {
-    //     try {
-    //         const response = await fetch('json/count_trip_data.json');
-    //         if (!response.ok) throw new Error('Failed to load data');
-    //         const data = await response.json();
-    //         singlePointData = data.singlePoint || [];
-    //         return singlePointData;
-    //     } catch (error) {
-    //         console.error('Error loading single point data:', error);
-    //         // Dữ liệu mẫu
-    //         return [
-    //             {
-    //                 plate: '29A-12345',
-    //                 arrivalDate: '06/11/2025',
-    //                 arrivalTime: '08:30:15',
-    //                 departureDate: '06/11/2025',
-    //                 departureTime: '09:45:20',
-    //                 stayDuration: '01:15:05',
-    //                 timeSincePrevious: '02:30:10',
-    //                 distance: '15.5',
-    //                 stopped: 'Có',
-    //                 lifted: 'Không'
-    //             },
-    //             {
-    //                 plate: '29B-67890',
-    //                 arrivalDate: '06/11/2025',
-    //                 arrivalTime: '10:15:30',
-    //                 departureDate: '06/11/2025',
-    //                 departureTime: '11:20:45',
-    //                 stayDuration: '01:05:15',
-    //                 timeSincePrevious: '00:30:10',
-    //                 distance: '12.3',
-    //                 stopped: 'Có',
-    //                 lifted: 'Có'
-    //             }
-    //         ];
-    //     }
-    // }
+    const fallbackSinglePointData = [
+        {
+            plate: '29A-12345',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '08:30:15',
+            departureDate: '27/11/2025',
+            departureTime: '09:45:20',
+            stayDuration: '01:15:05',
+            timeSincePrevious: '02:30:10',
+            distance: '15.5',
+            stopped: true,
+            lifted: false
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            arrivalTime: '10:15:30',
+            departureDate: '27/11/2025',
+            departureTime: '11:20:45',
+            stayDuration: '01:05:15',
+            timeSincePrevious: '00:30:10',
+            distance: '12.3',
+            stopped: true,
+            lifted: true
+        }
+    ];
+    function isYes(value) {
+        return value === true || ['yes', 'y', 'true', '1', 'co', 'có', 'cÃ³'].includes(String(value).trim().toLowerCase());
+    }
+
+    function renderStatusText(value) {
+        return isYes(value) ? 'Co' : 'Khong';
+    }
+
+    async function loadData() {
+        if (window.location.protocol === 'file:') {
+            singlePointData = fallbackSinglePointData;
+            return singlePointData;
+        }
+
+        try {
+            const response = await fetch(`${APP_ROOT}json/count_trip_data.json`);
+            if (!response.ok) throw new Error('Failed to load data');
+            const data = await response.json();
+            singlePointData = Array.isArray(data.singlePoint) ? data.singlePoint : [];
+        } catch (error) {
+            console.warn('Error loading single point data, using fallback data:', error);
+            singlePointData = fallbackSinglePointData;
+        }
+
+        return singlePointData;
+    }
 
     async function loadHTML() {
         try {
@@ -94,8 +422,8 @@
                         <td><strong style="color: #0dcaf0;">${row.stayDuration}</strong></td>
                         <td>${row.timeSincePrevious}</td>
                         <td><strong>${row.distance}</strong></td>
-                        <td><span class="badge ${row.stopped === 'Có' ? 'bg-success' : 'bg-secondary'}">${row.stopped}</span></td>
-                        <td><span class="badge ${row.lifted === 'Có' ? 'bg-warning' : 'bg-secondary'}">${row.lifted}</span></td>
+                        <td>${renderStatusText(row.stopped)}</td>
+                        <td>${renderStatusText(row.lifted)}</td>
                     </tr>
                 `;
             });
@@ -136,7 +464,7 @@
     window.CountTripModules.SinglePointTrip = {
         loadHTML,
         handleSubmit,
-        // loadData,
+        loadData,
         initDateFields
     };
 

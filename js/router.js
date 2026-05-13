@@ -535,9 +535,9 @@
         localStorage.removeItem('currentPage');
         pageCache.clear();
         loadedScripts.clear();
-        currentPageName = 'home';
-        localStorage.setItem('currentPage', 'home');
-        localStorage.setItem('activeNav', 'home');
+        currentPageName = detectedPage || 'home';
+        localStorage.setItem('currentPage', currentPageName);
+        localStorage.setItem('activeNav', currentPageName);
 
         if (window.pageStateHandlers) {
             Object.keys(window.pageStateHandlers).forEach(page => {
@@ -546,21 +546,21 @@
             });
         }
 
-        if (window.updateActiveNavLink) window.updateActiveNavLink('home');
+        if (window.updateActiveNavLink) window.updateActiveNavLink(currentPageName);
         document.querySelectorAll('.nav-link, .sidebar-nav-item').forEach(link => {
             link.classList.remove('active');
-            if (link.dataset.name === 'home') link.classList.add('active');
+            if (link.dataset.name === currentPageName) link.classList.add('active');
         });
     }
 
     function wrapInitialContent() {
         if (mainBody.children.length > 0 && !mainBody.querySelector('[data-page]')) {
             const wrapper = document.createElement('div');
-            wrapper.setAttribute('data-page', 'home');
+            wrapper.setAttribute('data-page', currentPageName || 'home');
             Array.from(mainBody.children).forEach(child => wrapper.appendChild(child));
             mainBody.innerHTML = '';
             mainBody.appendChild(wrapper);
-            pageCache.set('home', { container: wrapper, styles: [], state: { scrollPosition: 0, formData: {}, mapState: null } });
+            pageCache.set(currentPageName || 'home', { container: wrapper, styles: [], state: { scrollPosition: 0, formData: {}, mapState: null } });
         }
     }
 

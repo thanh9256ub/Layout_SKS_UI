@@ -2,22 +2,67 @@
 (function () {
     'use strict';
 
+    const APP_ROOT = window.location.pathname.toLowerCase().includes('/html/') ? '../' : '';
+
     window.CountTripModules = window.CountTripModules || {};
 
     let arcFromPointData = [];
 
-    // async function loadData() {
-    //     try {
-    //         const response = await fetch('json/count_trip_data.json');
-    //         if (!response.ok) throw new Error('Failed to load data');
-    //         const data = await response.json();
-    //         arcFromPointData = data.arcFromPoint || [];
-    //         return arcFromPointData;
-    //     } catch (error) {
-    //         console.error('Error loading arc from point data:', error);
-    //         return [];
-    //     }
-    // }
+    const fallbackArcFromPointData = [
+        {
+            plate: '29A-12345',
+            arrivalDate: '27/11/2025',
+            timeAtPoint: '08:30:15',
+            timeLeavePoint: '09:45:20',
+            toPoint: 'Diem B',
+            toPointArrivalDate: '27/11/2025',
+            toPointArrivalTime: '10:05:30',
+            kmTraveled: '15.5',
+            arc: 'A - B',
+            stopped: true,
+            lifted: false
+        },
+        {
+            plate: '30B-67890',
+            arrivalDate: '27/11/2025',
+            timeAtPoint: '10:15:30',
+            timeLeavePoint: '11:20:45',
+            toPoint: 'Diem C',
+            toPointArrivalDate: '27/11/2025',
+            toPointArrivalTime: '11:50:20',
+            kmTraveled: '12.3',
+            arc: 'A - C',
+            stopped: true,
+            lifted: true
+        }
+    ];
+
+    function isYes(value) {
+        return value === true || ['yes', 'y', 'true', '1', 'co', 'cÃ³', 'cÃƒÂ³'].includes(String(value).trim().toLowerCase());
+    }
+
+    function renderStatusText(value) {
+        return isYes(value) ? 'Co' : 'Khong';
+    }
+
+    async function loadData() {
+        if (window.location.protocol === 'file:') {
+            arcFromPointData = fallbackArcFromPointData;
+            return arcFromPointData;
+        }
+
+        try {
+            const response = await fetch(`${APP_ROOT}json/count_trip_data.json`);
+            if (!response.ok) throw new Error('Failed to load data');
+            const data = await response.json();
+            arcFromPointData = Array.isArray(data.arcFromPoint) ? data.arcFromPoint : [];
+        } catch (error) {
+            console.warn('Error loading arc from point data, using fallback data:', error);
+            arcFromPointData = fallbackArcFromPointData;
+        }
+
+        return arcFromPointData;
+    }
 
     async function loadHTML() {
         try {
@@ -48,7 +93,7 @@
 
     function handleSubmit(btn, tableBody) {
         const originalHTML = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i> Đang tải...';
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i> Dang tai...';
         btn.disabled = true;
 
         setTimeout(async () => {
@@ -69,8 +114,8 @@
                         <td>${row.toPointArrivalTime || '-'}</td>
                         <td><strong>${row.kmTraveled || '-'}</strong></td>
                         <td><strong style="color: #0dcaf0;">${row.arc || '-'}</strong></td>
-                        <td><span class="badge ${row.stopped === 'Có' ? 'bg-success' : 'bg-secondary'}">${row.stopped || '-'}</span></td>
-                        <td><span class="badge ${row.lifted === 'Có' ? 'bg-warning' : 'bg-secondary'}">${row.lifted || '-'}</span></td>
+                        <td>${renderStatusText(row.stopped)}</td>
+                        <td>${renderStatusText(row.lifted)}</td>
                     </tr>
                 `;
             });
@@ -88,7 +133,7 @@
             row.style.opacity = '0';
             row.style.transform = 'translateY(20px)';
             setTimeout(() => {
-                row.style.transition = 'all 0.3s ease';
+                row.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
                 row.style.opacity = '1';
                 row.style.transform = 'translateY(0)';
             }, index * 50);
@@ -105,13 +150,12 @@
                 }
             }
         });
-        // loadData();
     }
 
     window.CountTripModules.ArcFromPointTrip = {
         loadHTML,
         handleSubmit,
-        //loadData,
+        loadData,
         initDateFields
     };
 
@@ -121,4 +165,3 @@
         init();
     }
 })();
-

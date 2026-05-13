@@ -116,7 +116,14 @@ function initChangePasswordModal() {
             button.addEventListener("mousedown", (e) => e.preventDefault());
             button.addEventListener("click", (e) => {
                 e.preventDefault();
-                setChangePasswordVisibility(!changePasswordVisible);
+                const visible = input.type === "password";
+                const icon = button.querySelector("i");
+
+                input.type = visible ? "text" : "password";
+                button.setAttribute("aria-label", visible ? "Ẩn mật khẩu" : "Hiện mật khẩu");
+                button.setAttribute("title", visible ? "Ẩn mật khẩu" : "Hiện mật khẩu");
+                icon?.classList.toggle("fa-eye", !visible);
+                icon?.classList.toggle("fa-eye-slash", visible);
             });
 
             wrapper.appendChild(button);
@@ -129,9 +136,7 @@ function initChangePasswordModal() {
         changePasswordModal.classList.add("active");
         setChangePasswordVisibility(false);
         document.body.style.overflow = "hidden";
-        setTimeout(() => {
-            currentPasswordInput?.focus();
-        }, 300);
+        currentPasswordInput?.focus();
     };
 
     function closeChangePasswordModal() {

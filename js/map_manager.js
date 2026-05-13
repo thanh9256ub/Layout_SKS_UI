@@ -353,7 +353,7 @@ if (!window.MapManager) {
                     const timeSinceInit = map._initTimestamp ? Date.now() - map._initTimestamp : Infinity;
                     if (timeSinceInit > 1000) {
                         if (saveStateTimeout) clearTimeout(saveStateTimeout);
-                        saveStateTimeout = setTimeout(() => this.saveMapState(detectedPageName), 300);
+                       this.saveMapState(detectedPageName);
                     }
                 });
 

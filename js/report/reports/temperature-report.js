@@ -2,6 +2,8 @@
 (function () {
     'use strict';
 
+    const APP_ROOT = window.location.pathname.toLowerCase().includes('/html/') ? '../' : '';
+
     // Khởi tạo namespace
     window.ReportModules = window.ReportModules || {};
 
@@ -11,7 +13,7 @@
     // Load dữ liệu từ JSON
     async function loadData() {
         try {
-            const response = await fetch('json/report_data.json');
+            const response = await fetch(`${APP_ROOT}json/report_data.json`);
             if (!response.ok) throw new Error('Failed to load data');
             const data = await response.json();
             temperatureData = data.temperature || [];
@@ -25,7 +27,7 @@
     // Load HTML từ file
     async function loadHTML() {
         try {
-            const response = await fetch('html/reports/temperature-report.html');
+            const response = await fetch(`${APP_ROOT}html/reports/temperature-report.html`);
             if (!response.ok) throw new Error('Failed to load HTML');
             const html = await response.text();
             return html;

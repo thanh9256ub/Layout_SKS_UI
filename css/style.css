@@ -12342,8 +12342,8 @@ td:last-child {
 
 .route-plate-search {
     display: grid;
-    grid-template-columns: 1fr 42px;
-    gap: 6px;
+    grid-template-columns: 1fr 36px;
+    gap: 4px;
     position: relative;
 }
 
@@ -12352,9 +12352,9 @@ td:last-child {
 }
 
 .route-inline-search-btn {
-    height: 52px;
+    height: 38px;
     border: 0;
-    border-radius: 10px;
+    border-radius: 8px;
     background: #0ea5e9;
     color: #fff;
     display: inline-flex;
@@ -12379,6 +12379,8 @@ td:last-child {
 .route-screen #filter .filter-section {
     margin-bottom: 0 !important;
     box-shadow: none !important;
+    gap: 6px;
+    padding: 8px;
 }
 
 .route-screen #filter .table-container {
@@ -12387,8 +12389,29 @@ td:last-child {
 
 .route-custom-time {
     display: none;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
+    grid-template-columns: minmax(0, 1.25fr) minmax(72px, 0.75fr);
+    gap: 4px;
+}
+
+.route-custom-time>div {
+    margin-bottom: 0 !important;
+    min-width: 0;
+}
+
+.route-custom-time>div:nth-child(1) {
+    order: 1;
+}
+
+.route-custom-time>div:nth-child(2) {
+    order: 3;
+}
+
+.route-custom-time>div:nth-child(3) {
+    order: 2;
+}
+
+.route-custom-time>div:nth-child(4) {
+    order: 4;
 }
 
 .route-custom-time.active {
@@ -12399,8 +12422,65 @@ td:last-child {
     display: grid !important;
 }
 
+.route-screen .filter-section .search-plate,
+.route-screen .filter-section .custom-dropdown {
+    margin-bottom: 0 !important;
+}
+
+.route-screen .filter-section .form-control-search {
+    height: 38px;
+    border-radius: 8px;
+    padding: 0 10px;
+    font-size: 13px;
+    min-width: 0;
+}
+
+.route-screen .filter-section .custom-dropdown select {
+    min-height: 38px;
+    padding: 8px 34px 8px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    background-size: 16px 16px;
+    background-position: right 10px center;
+}
+
+.route-screen .table-container {
+    overflow: hidden;
+}
+
 .route-screen .table-controls {
-    margin-top: auto;
+    order: 3;
+    flex: 0 0 auto;
+    margin-top: 0;
+    position: static;
+    bottom: auto;
+}
+
+.route-screen .route-progress-container {
+    order: 2;
+    flex: 0 0 auto;
+    margin-top: 0;
+    position: static;
+    bottom: auto;
+}
+
+.route-screen #resultsTable {
+    order: 1;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.route-screen #resultsTable .table-responsive {
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.route-screen #resultsTable .table-filter thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 .route-screen.camera-screen .gallery-grid {
@@ -12665,32 +12745,42 @@ td:last-child {
 
 .video-playback-filter {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 14px;
+    grid-template-columns: minmax(118px, 0.42fr) minmax(0, 1fr);
+    gap: 8px;
+    padding: 10px;
     border-bottom: 1px solid #e5e7eb;
+    align-items: end;
 }
 
 .video-filter-field {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 0;
     color: #374151;
     font-size: 13px;
     font-weight: 700;
+    min-width: 0;
+    margin: 0;
+}
+
+.video-filter-field>span {
+    display: none;
 }
 
 .video-filter-field input {
-    height: 40px;
+    height: 36px;
     border: 1px solid #d1d5db;
-    border-radius: 8px;
-    padding: 0 10px;
+    border-radius: 7px;
+    padding: 0 9px;
+    min-width: 0;
+    font-size: 12px;
 }
 
 .video-plate-search-row {
     display: grid;
-    grid-template-columns: 1fr 42px;
-    gap: 8px;
+    grid-template-columns: minmax(0, 1fr) 38px;
+    gap: 6px;
+    min-width: 0;
 }
 
 .video-plate-search-row button,
@@ -12703,6 +12793,12 @@ td:last-child {
     align-items: center;
     justify-content: center;
     text-decoration: none;
+}
+
+.video-plate-search-row button {
+    height: 36px;
+    width: 38px;
+    padding: 0;
 }
 
 .video-file-list {
@@ -14224,6 +14320,7 @@ td:last-child {
     flex-direction: column;
     overflow: hidden;
     min-height: 0;
+    height: 100%;
     margin: 0;
     border-radius: 16px 16px 0 0;
 }
@@ -14235,15 +14332,16 @@ td:last-child {
 
 /* Table Wrapper - Scrollable */
 .report-screen .report-table-wrapper {
-    flex: 1;
+    flex: 1 1 auto;
     overflow: auto;
-    min-height: 93%;
+    min-height: 0;
+    max-height: none;
 }
 
 @media (max-width:1024px) {
     .report-screen .report-table-wrapper {
-        flex: 0;
-        min-height: 89%;
+        flex: 1 1 auto;
+        min-height: 0;
     }
 }
 
@@ -14408,6 +14506,82 @@ td:last-child {
 
 .report-screen .report-page-body>* {
     min-height: 0;
+}
+
+/* Count trip tables need compact rows even though the report table card fills the viewport. */
+.report-screen .report-single-point-table-content,
+.report-screen .report-multi-point-table-content,
+.report-screen .report-arc-from-point-table-content,
+.report-screen .report-arc-to-point-table-content {
+    width: 100%;
+    min-width: 1100px;
+    height: auto !important;
+    table-layout: auto;
+}
+
+.report-screen .report-single-point-table-content tbody,
+.report-screen .report-multi-point-table-content tbody,
+.report-screen .report-arc-from-point-table-content tbody,
+.report-screen .report-arc-to-point-table-content tbody {
+    height: auto !important;
+}
+
+.report-screen .report-single-point-table-content thead th,
+.report-screen .report-multi-point-table-content thead th,
+.report-screen .report-arc-from-point-table-content thead th,
+.report-screen .report-arc-to-point-table-content thead th {
+    background: #fde68a;
+    color: #000;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.25;
+    padding: 10px 12px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 2px solid #fbbf24;
+    border-right: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+.report-screen .report-single-point-table-content tbody tr,
+.report-screen .report-multi-point-table-content tbody tr,
+.report-screen .report-arc-from-point-table-content tbody tr,
+.report-screen .report-arc-to-point-table-content tbody tr {
+    height: auto;
+    min-height: 0;
+    background: #fff;
+}
+
+.report-screen .report-single-point-table-content tbody td,
+.report-screen .report-multi-point-table-content tbody td,
+.report-screen .report-arc-from-point-table-content tbody td,
+.report-screen .report-arc-to-point-table-content tbody td {
+    height: auto;
+    min-height: 0;
+    padding: 8px 12px;
+    font-size: 13px;
+    line-height: 1.25;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+    white-space: nowrap;
+}
+
+.report-screen .report-single-point-table-content tbody tr:hover,
+.report-screen .report-multi-point-table-content tbody tr:hover,
+.report-screen .report-arc-from-point-table-content tbody tr:hover,
+.report-screen .report-arc-to-point-table-content tbody tr:hover {
+    background: rgba(251, 191, 36, 0.08);
+    transform: none;
+    box-shadow: none;
+}
+
+.report-screen .report-single-point-table-content .report-empty-row td,
+.report-screen .report-multi-point-table-content .report-empty-row td,
+.report-screen .report-arc-from-point-table-content .report-empty-row td,
+.report-screen .report-arc-to-point-table-content .report-empty-row td {
+    padding: 40px 20px;
 }
 
 /* Navbar search compacts to an icon button on tablet/mobile. */

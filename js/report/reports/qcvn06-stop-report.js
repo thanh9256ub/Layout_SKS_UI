@@ -2,13 +2,15 @@
 (function () {
     'use strict';
 
+    const APP_ROOT = window.location.pathname.toLowerCase().includes('/html/') ? '../' : '';
+
     window.ReportModules = window.ReportModules || {};
 
     let qcvn06StopData = [];
 
     async function loadData() {
         try {
-            const response = await fetch('json/report_data.json');
+            const response = await fetch(`${APP_ROOT}json/report_data.json`);
             if (!response.ok) throw new Error('Failed to load data');
             const data = await response.json();
             qcvn06StopData = data.qcvn06Stop || [];
@@ -21,7 +23,7 @@
 
     async function loadHTML() {
         try {
-            const response = await fetch('html/reports/qcvn06-stop-report.html');
+            const response = await fetch(`${APP_ROOT}html/reports/qcvn06-stop-report.html`);
             if (!response.ok) throw new Error('Failed to load HTML');
             const html = await response.text();
             return html;
