@@ -100,7 +100,7 @@ if (!window.MapManager) {
     const createDraftLocationIcon = (location) => {
         return L.divIcon({
             className: 'location-marker tracking-draft-location-marker',
-            html: `<div class="tracking-draft-crosshair" style="--marker-color:#dc2626;">
+            html: `<div class="tracking-draft-crosshair" style="--marker-color:${location.color};">
         <span class="tracking-draft-crosshair-ring"></span>
         <span class="tracking-draft-crosshair-dot"></span>
         <span class="tracking-draft-crosshair-line tracking-draft-crosshair-line-top"></span>
@@ -115,7 +115,8 @@ if (!window.MapManager) {
     };
 
     const MARKER_ICONS = ['📌', '🚧', '⚓', '🎥', '🏥', '📍', '🚌', '⛽', '✉️', '🏠', '☕', '🧳', '✈️', '🛥️', '🛩️', '📥', '🌳', '🛣️', '🏗️', '🌲', '👥', '🌴', '🚛', '🚒'];
-    const MARKER_COLORS = ['#8bc34a', '#0ea5e9', '#ef4444', '#f59e0b', '#8b5cf6', '#10b981'];
+    const DEFAULT_MARKER_COLOR = '#64748b';
+    const MARKER_COLORS = [DEFAULT_MARKER_COLOR];
 
     const escapeHtml = (value) => String(value ?? '').replace(/[&<>"']/g, char => ({
         '&': '&amp;',
@@ -658,6 +659,13 @@ if (!window.MapManager) {
 
             panel.dataset.icon = selectedIcon;
             panel.dataset.color = selectedColor;
+            const colorLabel = panel.querySelector('.tracking-marker-color-row')?.closest('label');
+            if (colorLabel) {
+                const followLabel = document.createElement('label');
+                followLabel.className = 'tracking-marker-follow';
+                followLabel.innerHTML = '<span></span><span><input name="follow" type="checkbox"> Điểm theo dõi</span>';
+                colorLabel.replaceWith(followLabel);
+            }
 
             L.DomEvent.disableClickPropagation(panel);
             L.DomEvent.disableScrollPropagation(panel);

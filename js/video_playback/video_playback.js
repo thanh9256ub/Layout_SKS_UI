@@ -40,9 +40,13 @@
         list.innerHTML = videos.map((video, index) => `
             <article class="video-file-item">
                 <div class="video-file-meta">
-                    <strong>${video.plate}</strong>
-                    <span>${video.camera} - ${video.date} ${video.time}</span>
-                    <small>${video.duration}</small>
+                    <div class="video-meta-top">
+                        <strong>${video.plate}</strong>
+                        <span>${video.camera}</span>
+                    </div>
+                    <div class="video-meta-time">
+                        <span>${video.date} ${video.time}</span>
+                    </div>
                 </div>
                 <div class="video-file-actions">
                     <button type="button" class="video-action-btn play" data-index="${index}" title="Phat">
