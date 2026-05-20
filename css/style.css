@@ -14849,21 +14849,32 @@ td:last-child {
 .report-multi-point-page .report-filter-content [class*="col-"]:has(#multiPointPlate),
 .report-arc-from-point-page .report-filter-content [class*="col-"]:has(#arcFromPointPlate),
 .report-arc-to-point-page .report-filter-content [class*="col-"]:has(#arcToPointPlate) {
-    order: 6;
+    order: 7;
+    flex-basis: 155px;
+}
+
+.report-single-point-page .report-filter-content::before,
+.report-multi-point-page .report-filter-content::before,
+.report-arc-from-point-page .report-filter-content::before,
+.report-arc-to-point-page .report-filter-content::before {
+    content: "";
+    order: 7;
+    flex: 0 0 100%;
+    height: 0;
 }
 
 .report-single-point-page .report-filter-content [class*="col-"]:has(#singlePointGroup),
 .report-multi-point-page .report-filter-content [class*="col-"]:has(#multiPointVehicleGroup),
 .report-arc-from-point-page .report-filter-content [class*="col-"]:has(#arcFromPointGroup),
 .report-arc-to-point-page .report-filter-content [class*="col-"]:has(#arcToPointGroup) {
-    order: 7;
+    order: 8;
 }
 
 .report-single-point-page .report-filter-content [class*="col-"]:has(.report-checkbox-wrapper),
 .report-multi-point-page .report-filter-content [class*="col-"]:has(.report-checkbox-wrapper),
 .report-arc-from-point-page .report-filter-content [class*="col-"]:has(.report-checkbox-wrapper),
 .report-arc-to-point-page .report-filter-content [class*="col-"]:has(.report-checkbox-wrapper) {
-    order: 8;
+    order: 6;
 }
 
 .report-single-point-page .report-filter-content [class*="col-"]:has(#singlePointSubmit),
@@ -14903,4 +14914,119 @@ td:last-child {
     font-family: "Font Awesome 6 Free";
     font-size: 13px;
     font-weight: 900;
+}
+
+/* Journey ADCO filter compact alignment */
+.report-journey-adco-page .report-journey-filter {
+    margin-bottom: 0 !important;
+    border-radius: 8px !important;
+    border: 1px solid #e5e7eb !important;
+    background: #fafafa !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.report-journey-adco-page .report-journey-filter:hover {
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.report-journey-adco-page .report-journey-filter-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px !important;
+}
+
+.report-journey-adco-page .report-journey-filter-content>.row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    display: contents !important;
+    margin: 0 !important;
+}
+
+.report-journey-adco-page .report-journey-filter-content>.row>[class*="col-"] {
+    flex: 0 1 150px;
+    width: auto !important;
+    max-width: none !important;
+    padding: 0 !important;
+}
+
+.report-journey-adco-page .report-journey-filter-content>.row>[class*="col-"]:has(select) {
+    flex-basis: 178px;
+}
+
+.report-journey-adco-page .report-journey-filter-content>.row>[class*="col-"]:has(#journeyAdcoPlate) {
+    flex-basis: 155px;
+}
+
+.report-journey-adco-page .report-journey-filter-content>.row>[class*="col-"]:has(#journeyAdcoDateFrom),
+.report-journey-adco-page .report-journey-filter-content>.row>[class*="col-"]:has(#journeyAdcoDateTo) {
+    flex-basis: 118px;
+}
+
+.report-journey-adco-page .report-form-label {
+    display: none !important;
+}
+
+.report-journey-adco-page .report-form-control {
+    height: 36px !important;
+    min-height: 36px !important;
+    padding: 0 9px !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 7px !important;
+    background: #fff !important;
+    color: #111827 !important;
+    font-size: 12px !important;
+    line-height: 18px !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.report-journey-adco-page .report-input-group .report-form-control {
+    padding-right: 34px !important;
+}
+
+.report-journey-adco-page .report-form-control:focus {
+    border-color: #0ea5e9 !important;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.14) !important;
+    transform: none !important;
+}
+
+.report-journey-adco-page .report-input-icon,
+.report-journey-adco-page .report-select-icon {
+    right: 10px !important;
+    color: #64748b !important;
+    font-size: 12px !important;
+}
+
+.report-journey-adco-page #journeyAdcoSubmit {
+    width: auto !important;
+    min-width: 104px !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    padding: 0 10px !important;
+    border: 1px solid #0284c7 !important;
+    border-radius: 7px !important;
+    background: #0ea5e9 !important;
+    box-shadow: none !important;
+    color: #fff !important;
+    font-size: 12px !important;
+    line-height: 18px !important;
+    transform: none !important;
+}
+
+.report-journey-adco-page #journeyAdcoSubmit::before {
+    display: none !important;
+}
+
+/* Report filters: hide unused titles and field labels */
+.report-screen .report-content .report-page:not(.report-single-point-page):not(.report-multi-point-page):not(.report-arc-from-point-page):not(.report-arc-to-point-page) .report-filter-header {
+    display: none !important;
+}
+
+.report-screen .report-content .report-page:not(.report-single-point-page):not(.report-multi-point-page):not(.report-arc-from-point-page):not(.report-arc-to-point-page) .report-form-label,
+.report-screen .report-content .report-page:not(.report-single-point-page):not(.report-multi-point-page):not(.report-arc-from-point-page):not(.report-arc-to-point-page) label:empty {
+    display: none !important;
 }
