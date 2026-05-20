@@ -442,6 +442,12 @@
         container.setAttribute('data-page', pageName);
         container.style.display = 'none';
         container.innerHTML = newContent.innerHTML;
+        container.querySelectorAll('[src]').forEach(element => {
+            const src = element.getAttribute('src');
+            if (src && src.startsWith('../')) {
+                element.setAttribute('src', src.replace(/^(\.\.\/)+/, ''));
+            }
+        });
 
         const pageStyles = Array.from(doc.querySelectorAll('head style')).map(style => style.textContent);
         pageCache.set(pageName, { container, styles: pageStyles, state: { scrollPosition: 0, formData: {}, mapState: null } });
