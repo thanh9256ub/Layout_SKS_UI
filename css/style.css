@@ -14700,3 +14700,207 @@ td:last-child {
         box-shadow: 0 8px 24px rgba(15, 23, 42, 0.16);
     }
 }
+
+/* Unified text field sizing - match video playback filter fields */
+.video-filter-field input,
+.report-screen .report-form-control,
+.route-screen .filter-section .form-control-search,
+.route-screen .filter-section .custom-dropdown select,
+.route-screen #vehicles-tab>.custom-dropdown select,
+.route-screen #vehicles-tab>.input-group input,
+.route-screen #locations-tab .search-box input,
+.camera-filter input[type="date"],
+.camera-filter input[type="text"],
+.camera-filter input[type="time"],
+.camera-filter select,
+.tracking-marker-panel input[type="text"],
+.tracking-marker-panel input[type="number"],
+.change-password-form input {
+    box-sizing: border-box !important;
+    width: 100%;
+    height: 36px !important;
+    min-height: 36px !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 7px !important;
+    background: #fff !important;
+    color: #111827 !important;
+    padding: 0 9px !important;
+    font-size: 12px !important;
+    line-height: 18px !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.camera-filter .field {
+    box-sizing: border-box;
+    min-height: 36px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    padding: 0;
+}
+
+.camera-filter .field .icon {
+    display: none;
+}
+
+.video-filter-field input:hover,
+.report-screen .report-form-control:hover,
+.route-screen .filter-section .form-control-search:hover,
+.route-screen .filter-section .custom-dropdown select:hover,
+.route-screen #vehicles-tab>.custom-dropdown select:hover,
+.route-screen #vehicles-tab>.input-group input:hover,
+.route-screen #locations-tab .search-box input:hover,
+.camera-filter input[type="date"]:hover,
+.camera-filter input[type="text"]:hover,
+.camera-filter input[type="time"]:hover,
+.camera-filter select:hover,
+.tracking-marker-panel input[type="text"]:hover,
+.tracking-marker-panel input[type="number"]:hover,
+.change-password-form input:hover {
+    border-color: #94a3b8 !important;
+}
+
+.video-filter-field input:focus,
+.report-screen .report-form-control:focus,
+.route-screen .filter-section .form-control-search:focus,
+.route-screen .filter-section .custom-dropdown select:focus,
+.route-screen #vehicles-tab>.custom-dropdown select:focus,
+.route-screen #vehicles-tab>.input-group input:focus,
+.route-screen #locations-tab .search-box input:focus,
+.camera-filter input[type="date"]:focus,
+.camera-filter input[type="text"]:focus,
+.camera-filter input[type="time"]:focus,
+.camera-filter select:focus,
+.tracking-marker-panel input[type="text"]:focus,
+.tracking-marker-panel input[type="number"]:focus,
+.change-password-form input:focus {
+    border-color: #0ea5e9 !important;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.14) !important;
+    transform: none !important;
+}
+
+.route-inline-search-btn,
+.video-plate-search-row button {
+    height: 36px !important;
+    min-height: 36px !important;
+    border-radius: 7px !important;
+}
+
+.route-screen #vehicles-tab>.input-group input,
+.route-screen #locations-tab .search-box input {
+    padding-left: 38px !important;
+    padding-right: 9px !important;
+}
+
+.route-screen #vehicles-tab>.custom-dropdown select {
+    padding-left: 9px !important;
+    padding-right: 34px !important;
+    background-size: 16px 16px !important;
+    background-position: right 10px center !important;
+}
+
+.route-screen #vehicles-tab>.input-group i,
+.route-screen #locations-tab .search-box i {
+    left: 13px;
+    z-index: 1;
+    font-size: 13px;
+    color: #9ca3af;
+    pointer-events: none;
+}
+
+/* Count trip filter order */
+.report-single-point-page .report-filter-content [class*="col-"]:has(#singlePointLocation),
+.report-multi-point-page .report-filter-content [class*="col-"]:has(#multiPointGroup),
+.report-arc-from-point-page .report-filter-content [class*="col-"]:has(#arcFromPointLocation),
+.report-arc-to-point-page .report-filter-content [class*="col-"]:has(#arcToPointLocation) {
+    order: 1;
+}
+
+.report-single-point-page .report-filter-content [class*="col-"]:has(#singlePointDateFrom),
+.report-multi-point-page .report-filter-content [class*="col-"]:has(#multiPointDateFrom),
+.report-arc-from-point-page .report-filter-content [class*="col-"]:has(#arcFromPointDateFrom),
+.report-arc-to-point-page .report-filter-content [class*="col-"]:has(#arcToPointDateFrom) {
+    order: 2;
+}
+
+.report-single-point-page .report-filter-content [class*="col-"]:has(#singlePointTimeFrom),
+.report-multi-point-page .report-filter-content [class*="col-"]:has(#multiPointTimeFrom),
+.report-arc-from-point-page .report-filter-content [class*="col-"]:has(#arcFromPointTimeFrom),
+.report-arc-to-point-page .report-filter-content [class*="col-"]:has(#arcToPointTimeFrom) {
+    order: 3;
+}
+
+.report-single-point-page .report-filter-content [class*="col-"]:has(#singlePointDateTo),
+.report-multi-point-page .report-filter-content [class*="col-"]:has(#multiPointDateTo),
+.report-arc-from-point-page .report-filter-content [class*="col-"]:has(#arcFromPointDateTo),
+.report-arc-to-point-page .report-filter-content [class*="col-"]:has(#arcToPointDateTo) {
+    order: 4;
+}
+
+.report-single-point-page .report-filter-content [class*="col-"]:has(#singlePointTimeTo),
+.report-multi-point-page .report-filter-content [class*="col-"]:has(#multiPointTimeTo),
+.report-arc-from-point-page .report-filter-content [class*="col-"]:has(#arcFromPointTimeTo),
+.report-arc-to-point-page .report-filter-content [class*="col-"]:has(#arcToPointTimeTo) {
+    order: 5;
+}
+
+.report-single-point-page .report-filter-content [class*="col-"]:has(#singlePointPlate),
+.report-multi-point-page .report-filter-content [class*="col-"]:has(#multiPointPlate),
+.report-arc-from-point-page .report-filter-content [class*="col-"]:has(#arcFromPointPlate),
+.report-arc-to-point-page .report-filter-content [class*="col-"]:has(#arcToPointPlate) {
+    order: 6;
+}
+
+.report-single-point-page .report-filter-content [class*="col-"]:has(#singlePointGroup),
+.report-multi-point-page .report-filter-content [class*="col-"]:has(#multiPointVehicleGroup),
+.report-arc-from-point-page .report-filter-content [class*="col-"]:has(#arcFromPointGroup),
+.report-arc-to-point-page .report-filter-content [class*="col-"]:has(#arcToPointGroup) {
+    order: 7;
+}
+
+.report-single-point-page .report-filter-content [class*="col-"]:has(.report-checkbox-wrapper),
+.report-multi-point-page .report-filter-content [class*="col-"]:has(.report-checkbox-wrapper),
+.report-arc-from-point-page .report-filter-content [class*="col-"]:has(.report-checkbox-wrapper),
+.report-arc-to-point-page .report-filter-content [class*="col-"]:has(.report-checkbox-wrapper) {
+    order: 8;
+}
+
+.report-single-point-page .report-filter-content [class*="col-"]:has(#singlePointSubmit),
+.report-multi-point-page .report-filter-content [class*="col-"]:has(#multiPointSubmit),
+.report-arc-from-point-page .report-filter-content [class*="col-"]:has(#arcFromPointSubmit),
+.report-arc-to-point-page .report-filter-content [class*="col-"]:has(#arcToPointSubmit) {
+    order: 9;
+}
+
+.report-single-point-page .report-submit-btn,
+.report-multi-point-page .report-submit-btn,
+.report-arc-from-point-page .report-submit-btn,
+.report-arc-to-point-page .report-submit-btn {
+    width: 36px !important;
+    min-width: 36px !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 0 !important;
+}
+
+.report-single-point-page .report-submit-btn i,
+.report-multi-point-page .report-submit-btn i,
+.report-arc-from-point-page .report-submit-btn i,
+.report-arc-to-point-page .report-submit-btn i {
+    font-size: 13px !important;
+}
+
+.report-single-point-page .report-submit-btn:not(:has(i))::before,
+.report-multi-point-page .report-submit-btn:not(:has(i))::before,
+.report-arc-from-point-page .report-submit-btn:not(:has(i))::before,
+.report-arc-to-point-page .report-submit-btn:not(:has(i))::before {
+    content: "\f002";
+    font-family: "Font Awesome 6 Free";
+    font-size: 13px;
+    font-weight: 900;
+}
