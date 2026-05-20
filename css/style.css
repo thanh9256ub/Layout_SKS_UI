@@ -14802,6 +14802,43 @@ td:last-child {
     display: none;
 }
 
+.lightbox-filter-container {
+    padding: 8px 16px;
+}
+
+.lightbox-filter-container .filter-main {
+    grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+    gap: 8px;
+}
+
+.lightbox-filter-container .filter-main .field:nth-child(1) {
+    grid-column: span 1;
+}
+
+.lightbox-filter-container .camera-filter .field {
+    min-height: 32px;
+}
+
+.lightbox-filter-container .camera-filter input[type="date"],
+.lightbox-filter-container .camera-filter input[type="text"],
+.lightbox-filter-container .camera-filter input[type="time"],
+.lightbox-filter-container .camera-filter select {
+    height: 32px !important;
+    min-height: 32px !important;
+    padding: 0 8px !important;
+    font-size: 11px !important;
+}
+
+.lightbox-filter-container .actions {
+    gap: 6px;
+}
+
+.lightbox-filter-container .actions button {
+    min-height: 32px;
+    padding: 5px 9px;
+    font-size: 12px;
+}
+
 .video-filter-field input:hover,
 .report-screen .report-form-control:hover,
 .route-screen .filter-section .form-control-search:hover,
