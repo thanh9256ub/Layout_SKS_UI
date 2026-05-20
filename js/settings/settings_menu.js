@@ -98,6 +98,10 @@
         const section = item.dataset.section;
         createRippleEffect(item, e);
         closeSettingsMenu();
+
+        if (section === 'groups') {
+            window.dispatchEvent(new CustomEvent('navigateToPage', { detail: { page: 'vehicleGroups' } }));
+        }
     }
 
 

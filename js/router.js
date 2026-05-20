@@ -193,10 +193,11 @@
                 'js/report/reports/qcvn06-journey-report.js', 'js/report/reports/qcvn06-overspeed-report.js', 'js/report/reports/qcvn06-driving-time-report.js',
                 'js/report/reports/qcvn06-speed-report.js', 'js/report/report_screen.js']
         },
-        support: { html: 'html/support.html', scripts: ['js/support/support.js'] }
+        support: { html: 'html/support.html', scripts: ['js/support/support.js'] },
+        vehicleGroups: { html: 'html/vehicle_groups.html', scripts: ['js/settings/vehicle_groups.js'] }
     };
 
-    const PAGE_SCRIPTS_PATHS = ['js/home/', 'js/tracking/', 'js/route/', 'js/camera/', 'js/stream/', 'js/video_playback/', 'js/oil_chart/', 'js/count_trip/', 'js/report/', 'js/support/'];
+    const PAGE_SCRIPTS_PATHS = ['js/home/', 'js/tracking/', 'js/route/', 'js/camera/', 'js/stream/', 'js/video_playback/', 'js/oil_chart/', 'js/count_trip/', 'js/report/', 'js/support/', 'js/settings/'];
     Object.values(PAGES).forEach(config => {
         config.html = `${APP_ROOT}${config.html}`;
         config.scripts = config.scripts.map(src => `${APP_ROOT}${src}`);
@@ -419,6 +420,7 @@
         if ($('.video-playback-screen')) return 'videoPlayback';
         if ($('.oil-chart-screen')) return 'oilChart';
         if ($('.support-screen')) return 'support';
+        if ($('.vehicle-groups-screen')) return 'vehicleGroups';
         if ($('.route-screen')) return $('#vehicleList') ? 'tracking' : 'route';
         if ($('.report-screen')) {
             if ($('script[src*="count_trip_screen.js"]') || $('[data-page="countTrip"]')) return 'countTrip';
@@ -518,6 +520,11 @@
             if (window.sidebarNav?.close) window.sidebarNav.close();
         }
     }, true);
+
+    window.addEventListener('navigateToPage', (e) => {
+        const pageName = e.detail?.page;
+        if (pageName && PAGES[pageName]) loadPage(pageName);
+    });
 
     window.addEventListener('forceSavePageState', (e) => {
         const pageName = e.detail?.page || currentPageName;

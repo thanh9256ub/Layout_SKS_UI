@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skysoft Go - Quản lý nhóm phương tiện</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <section id="sp-main-body">
+        <div class="container-fluid">
+            <div class="main-content vehicle-groups-screen">
+                <div class="vehicle-groups-page">
+                    <div class="vehicle-groups-header">
+                        <div>
+                            <h1 class="vehicle-groups-title">
+                                <i class="fas fa-layer-group"></i>
+                                Quản lý nhóm phương tiện
+                            </h1>
+                            <p class="vehicle-groups-subtitle">Thiết lập xe và người dùng được phân quyền trong từng nhóm.</p>
+                        </div>
+                        <div class="vehicle-groups-actions">
+                            <button class="vg-btn vg-btn-light" type="button" id="vehicleGroupAdd">
+                                <i class="fas fa-plus"></i>
+                                Thêm mới
+                            </button>
+                            <button class="vg-btn vg-btn-light" type="button" id="vehicleGroupEdit">
+                                <i class="fas fa-pen"></i>
+                                Sửa đổi
+                            </button>
+                            <button class="vg-btn vg-btn-danger" type="button" id="vehicleGroupDelete">
+                                <i class="fas fa-trash"></i>
+                                Xóa
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="vehicle-groups-toolbar">
+                        <label class="vehicle-group-field">
+                            <span>Tên nhóm</span>
+                            <select id="vehicleGroupSelect">
+                                <option value="all">1. Tất Cả</option>
+                                <option value="north">2. Miền Bắc</option>
+                                <option value="south">3. Miền Nam</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="vehicle-groups-grid">
+                        <section class="vg-panel" data-transfer-panel="vehiclesAvailable">
+                            <div class="vg-panel-header">
+                                <h2>Các xe chưa chọn</h2>
+                                <label class="vg-search">
+                                    <i class="fas fa-search"></i>
+                                    <input type="search" id="availableVehicleSearch" placeholder="Tìm biển số, mã thiết bị, tuyến">
+                                </label>
+                            </div>
+                            <div class="vg-table-wrap">
+                                <table class="vg-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Biển số</th>
+                                            <th>Mã thiết bị</th>
+                                            <th>Tuyến</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="availableVehicleBody"></tbody>
+                                </table>
+                            </div>
+                            <div class="vg-panel-footer">
+                                <span>Tổng</span>
+                                <strong id="availableVehicleCount">0</strong>
+                            </div>
+                        </section>
+
+                        <div class="vg-transfer-actions" aria-label="Chuyển xe">
+                            <button class="vg-icon-btn" type="button" id="moveVehicleOne" title="Chọn xe">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <button class="vg-icon-btn" type="button" id="moveVehicleAll" title="Chọn tất cả xe">
+                                <i class="fas fa-angles-right"></i>
+                            </button>
+                            <button class="vg-icon-btn" type="button" id="removeVehicleOne" title="Bỏ chọn xe">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="vg-icon-btn" type="button" id="removeVehicleAll" title="Bỏ chọn tất cả xe">
+                                <i class="fas fa-angles-left"></i>
+                            </button>
+                        </div>
+
+                        <section class="vg-panel" data-transfer-panel="vehiclesSelected">
+                            <div class="vg-panel-header">
+                                <h2>Các xe được chọn</h2>
+                                <label class="vg-search">
+                                    <i class="fas fa-search"></i>
+                                    <input type="search" id="selectedVehicleSearch" placeholder="Tìm biển số, mã thiết bị, tuyến">
+                                </label>
+                            </div>
+                            <div class="vg-table-wrap">
+                                <table class="vg-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Biển số</th>
+                                            <th>Mã thiết bị</th>
+                                            <th>Tuyến</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="selectedVehicleBody"></tbody>
+                                </table>
+                            </div>
+                            <div class="vg-panel-footer">
+                                <span>Tổng</span>
+                                <strong id="selectedVehicleCount">0</strong>
+                            </div>
+                        </section>
+
+                        <section class="vg-panel" data-transfer-panel="usersAvailable">
+                            <div class="vg-panel-header">
+                                <h2>Danh sách người dùng</h2>
+                                <label class="vg-search">
+                                    <i class="fas fa-search"></i>
+                                    <input type="search" id="availableUserSearch" placeholder="Tìm tên đăng nhập, tên đầy đủ, mã">
+                                </label>
+                            </div>
+                            <div class="vg-table-wrap">
+                                <table class="vg-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Tên đăng nhập</th>
+                                            <th>Tên đầy đủ</th>
+                                            <th>Mã</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="availableUserBody"></tbody>
+                                </table>
+                            </div>
+                            <div class="vg-panel-footer">
+                                <span>Tổng</span>
+                                <strong id="availableUserCount">0</strong>
+                            </div>
+                        </section>
+
+                        <div class="vg-transfer-actions" aria-label="Chuyển người dùng">
+                            <button class="vg-icon-btn" type="button" id="moveUserOne" title="Chọn người dùng">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <button class="vg-icon-btn" type="button" id="moveUserAll" title="Chọn tất cả người dùng">
+                                <i class="fas fa-angles-right"></i>
+                            </button>
+                            <button class="vg-icon-btn" type="button" id="removeUserOne" title="Bỏ chọn người dùng">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="vg-icon-btn" type="button" id="removeUserAll" title="Bỏ chọn tất cả người dùng">
+                                <i class="fas fa-angles-left"></i>
+                            </button>
+                        </div>
+
+                        <section class="vg-panel" data-transfer-panel="usersSelected">
+                            <div class="vg-panel-header">
+                                <h2>Danh sách được chọn</h2>
+                                <label class="vg-search">
+                                    <i class="fas fa-search"></i>
+                                    <input type="search" id="selectedUserSearch" placeholder="Tìm tên đăng nhập, tên đầy đủ, mã">
+                                </label>
+                            </div>
+                            <div class="vg-table-wrap">
+                                <table class="vg-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Tên đăng nhập</th>
+                                            <th>Tên đầy đủ</th>
+                                            <th>Mã</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="selectedUserBody"></tbody>
+                                </table>
+                            </div>
+                            <div class="vg-panel-footer">
+                                <span>Tổng</span>
+                                <strong id="selectedUserCount">0</strong>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="vehicle-groups-footer">
+                        <p class="vehicle-groups-message" id="vehicleGroupsMessage" aria-live="polite"></p>
+                        <div class="vehicle-groups-footer-actions">
+                            <button class="vg-btn vg-btn-primary" type="button" id="vehicleGroupSave">
+                                <i class="fas fa-save"></i>
+                                Ghi lại
+                            </button>
+                            <button class="vg-btn vg-btn-light" type="button" id="vehicleGroupExport">
+                                <i class="fas fa-qrcode"></i>
+                                Kết xuất QR
+                            </button>
+                            <button class="vg-btn vg-btn-light" type="button" id="vehicleGroupClose">
+                                <i class="fas fa-times"></i>
+                                Thoát
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/local-fetch.js"></script>
+    <script src="../js/auth-guard.js"></script>
+    <script src="../js/navbar-loader.js"></script>
+    <script src="../js/router.js"></script>
+    <script src="../js/settings/vehicle_groups.js"></script>
+    <script src="../js/home/navbar.js"></script>
+</body>
+
+</html>
