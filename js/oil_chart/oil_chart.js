@@ -39,7 +39,7 @@
   ];
 
   // ========== STATE ==========
-  let canvas, ctx, lastPointPos, isActive = false;
+  let canvas, ctx, lastPointPos, isActive = false, hasSubmitted = false;
   const maxLiters = 500;
   const yTicks = Array.from({ length: maxLiters / 20 + 1 }, (_, i) => i * 20);
 
@@ -124,7 +124,7 @@
     const availHeight = window.innerHeight - navHeight - screenPad - headerHeight - containerPad - 10;
     canvas.height = Math.max(config.minSize.height, availHeight);
 
-    if ($('licensePlate')?.value && $('date')?.value) drawChart();
+    if (hasSubmitted) drawChart();
   };
 
   // ========== CHART DRAWING ==========
@@ -428,7 +428,6 @@
           dateInput.value = `${y}-${m}-${d}`;
         }
 
-        setTimeout(handleSearch, 10);
       };
 
       list.appendChild(li);
@@ -441,6 +440,10 @@
     const plate = $('licensePlate')?.value.trim();
     const dateInput = $('date');
     const date = dateInput?.value;
+    const suggestionList = $('suggestionList');
+
+    if (suggestionList) suggestionList.style.display = 'none';
+    hasSubmitted = true;
 
     if (plate && date) {
       const car = fuelCarData.find(c => c.bienSo === plate);
@@ -460,7 +463,10 @@
       }
     }
 
-    setTimeout(resizeCanvas, 50);
+    setTimeout(() => {
+      resizeCanvas();
+      drawChart();
+    }, 50);
   };
 
   // ========== INIT ==========
@@ -483,8 +489,22 @@
       }
     });
 
+    const licenseInput = $('licensePlate');
+    if (licenseInput) {
+      licenseInput.oninput = function () { showSuggestions(this.value.trim()); };
+    }
+
+    if (dateInput) {
+      dateInput.onchange = () => {
+        if (hasSubmitted) setTimeout(resizeCanvas, 50);
+      };
+    }
+
+    const submitBtn = $('oilChartSubmit');
+    if (submitBtn) submitBtn.onclick = handleSearch;
+
     setupEvents();
-    setTimeout(() => { resizeCanvas(); drawChart(); }, 150);
+    setTimeout(resizeCanvas, 150);
   };
 
   // ========== EVENT LISTENERS ==========
@@ -495,20 +515,4 @@
     if (el && !el.width) setTimeout(init, 100);
   });
   window.addEventListener('resize', resizeCanvas);
-
-  const licenseInput = $('licensePlate');
-  if (licenseInput) {
-    licenseInput.oninput = function () { showSuggestions(this.value.trim()); };
-    licenseInput.onkeydown = function (e) {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        $('suggestionList').style.display = 'none';
-        handleSearch();
-      }
-    };
-    licenseInput.onchange = drawChart;
-  }
-
-  const dateInput = $('date');
-  if (dateInput) dateInput.onchange = () => setTimeout(resizeCanvas, 50);
 })();
